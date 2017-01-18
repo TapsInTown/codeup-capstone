@@ -7,13 +7,16 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "role")
-public class Role {
+public class UserRole {
 
 //    Generate table
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "user_id")
+    private long userId;
 
     @Column(nullable = false)
     private String role;
@@ -27,6 +30,14 @@ public class Role {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getRole() {
