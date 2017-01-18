@@ -9,13 +9,13 @@
 <body>
 <div th:fragment="theNav">
 <div id="navigation">
-    <a href="#" onclick="closeNav()" class="glyphicon glyphicon-remove nav-link"></a>
-    <a href="#" onmouseover="hoverOver()" onclick="openContact()" class="nav-link">NEWSLETTER</a>
+    <!--<a href="#" onclick="closeNav()" class="glyphicon glyphicon-remove nav-link"></a>-->
     <a href="#" onmouseover="hoverOver()" class="nav-link" >HOME</a>
     <a href="#" onmouseover="hoverOver()" class="nav-link" >BREWERIES</a>
     <a href="#" onmouseover="hoverOver()" class="nav-link" >POSTS</a>
     <a href="#" onmouseover="hoverOver()" class="nav-link" >DESTINATIONS</a>
     <a href="#" onmouseover="hoverOver()" class="nav-link" >ABOUT</a>
+    <a href="#" onmouseover="hoverOver()" onclick="openContact()" class="nav-link">NEWSLETTER</a>
 </div>
 
 <div id="contact-info">
@@ -26,15 +26,21 @@
         <label for="email">E-mail</label>
         <input type="text" id="email" name="email">
         <button class="btn btn-default" type="submit">Submit</button>
+        <button class="btn btn-danger cancel-it" onclick="closeContact()">CANCEL</button>
     </form>
-    <span onclick="closeContact()" class="glyphicon glyphicon-remove nav-link"></span>
+    <img class="hop-img" src="../static/iottaHops.png">
 </div>
     <div id="move">
         <span class="here" onclick="openNav()"><img  class="ham-img" src="../static/hamburger-trimmed.png"></span>
-        <div></div>
     </div>
     </div>
 </body>
 
+<script
+src="/https://code.jquery.com/jquery-3.1.1.js"
+integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+crossorigin="anonymous">
+
+</script>
 <script src="../static/main.js"></script>
 </html>
