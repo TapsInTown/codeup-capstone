@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Big John";
+    src: url("../static/BIGJOHN.otf");
+}
+
+.info{
+    padding-left: 10%;
+}
+
+#navigation{
+    width:0;
+    height: 100%;
+    margin-top:7%;
+    transition: .7s;
+    background-color: white;
+    font-family: "Big John";
+    position: fixed;
+    overflow-x: hidden;
+
+}
+
+#move{
+    transition: .7s;
+}
+
+.here{
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.nav-link {
+    font-size: 1.5em;
+    cursor: pointer;
+    color:black;
+}
+
+#navigation a{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+a:hover{
+    background-color:#ffc744;
+    color: black;
+    text-decoration: none;
+    transition: 1.5s;
+}
+
+#contact-info{
+    width:25%;
+    height: 0;
+    transition: .9s;
+    background-color:#ffc744;
+    color:black;
+    font-family: "Big John";
+    position: fixed;
+    overflow-x: hidden;
+    display: inline-block;
+    justify-content: flex-start;
+    padding-left: 2%;
+    padding-right: 2%;
+
+}
+
+#contact-info form{
+    padding-top: 10%;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.ham-img{
+    width: 10%;
+    padding-top:1%;
+    padding-left: 1%;
+}
