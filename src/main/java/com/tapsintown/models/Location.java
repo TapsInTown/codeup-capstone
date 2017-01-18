@@ -16,10 +16,10 @@ public class Location {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "street_number")
     private long streetNumer;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "street_name")
     private String streetName;
 
     @Column(nullable = false)
