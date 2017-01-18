@@ -4,8 +4,8 @@
 "use strict";
 function openNav() {
     document.getElementById("navigation").style.width = "25%";
-    document.getElementById("move").style.marginLeft = "25%";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.getElementById("move").style.marginLeft = "11rem";
+    document.body.style.backgroundColor = "white"; /*rgba(0,0,0,0.4)*/
 }
 
 

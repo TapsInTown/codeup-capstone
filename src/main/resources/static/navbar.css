@@ -10,6 +10,7 @@
 #navigation{
     width:0;
     height: 100%;
+    margin-top:7%;
     transition: .7s;
     background-color: white;
     font-family: "Big John";
