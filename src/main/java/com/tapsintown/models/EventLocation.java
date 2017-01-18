@@ -18,7 +18,7 @@ public class EventLocation {
     private String name;
 
     @Column(nullable = false, name = "street_number")
-    private long streetNumer;
+    private long streetNumber;
 
     @Column(nullable = false, name = "street_name")
     private String streetName;
@@ -57,11 +57,11 @@ public class EventLocation {
     }
 
     public long getStreetNumer() {
-        return streetNumer;
+        return streetNumber;
     }
 
     public void setStreetNumer(long streetNumer) {
-        this.streetNumer = streetNumer;
+        this.streetNumber = streetNumer;
     }
 
     public String getStreetName() {
