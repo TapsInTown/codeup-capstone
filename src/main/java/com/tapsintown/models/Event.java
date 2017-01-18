@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by anthonyfortney on 1/17/17.
@@ -21,7 +22,7 @@ public class Event {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "event_date")
     private String eventDate;
 
     @Column(nullable = false)
@@ -38,6 +39,25 @@ public class Event {
     @Column(name = "modify_date")
     private Date modifyDate;
 
+//  Relationship to User
+//  many events to one user
+
+    @ManyToOne
+    private User user;
+
+//Relationship to EventLocations;
+//One location to many events
+
+    @OneToMany
+    private List<EventLocation> locations;
+
+// Relationship to EventImages
+// one Event to many EventImages
+
+    @OneToMany
+    private List<EventImage> images;
+
+//  Getters and setters
 
     public long getId() {
         return id;
