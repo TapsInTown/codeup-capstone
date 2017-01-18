@@ -45,11 +45,11 @@ public class Event {
     @ManyToOne
     private User user;
 
-//Relationship to Locations;
+//Relationship to EventLocations;
 //One location to many events
 
     @OneToMany
-    private List <Location> locations;
+    private List<EventLocation> locations;
 
 // Relationship to EventImages
 // one Event to many EventImages

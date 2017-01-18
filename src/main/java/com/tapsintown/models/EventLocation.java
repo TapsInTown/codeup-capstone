@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "locations")
-public class Location {
+public class EventLocation {
 
 
     @Id
