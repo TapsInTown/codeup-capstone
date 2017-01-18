@@ -48,13 +48,13 @@ public class Event {
 //Relationship to EventLocations;
 //One location to many events
 
-    @OneToMany
+    @OneToMany(mappedBy = "event")
     private List<EventLocation> locations;
 
 // Relationship to EventImages
 // one Event to many EventImages
 
-    @OneToMany
+    @OneToMany (mappedBy = "event")
     private List<EventImage> images;
 
 //  Getters and setters
