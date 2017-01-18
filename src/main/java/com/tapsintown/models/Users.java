@@ -1,4 +1,4 @@
-package com.tapsintown.interfaces;
+package com.tapsintown.models;
 
 import org.springframework.data.repository.CrudRepository;
 
