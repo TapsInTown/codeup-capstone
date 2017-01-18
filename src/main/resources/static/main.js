@@ -2,12 +2,14 @@
  * Created by joshua on 1/18/17.
  */
 "use strict";
+
+//navbar js
 function openNav() {
     document.getElementById("navigation").style.width = "25%";
-    document.getElementById("move").style.marginLeft = "11rem";
-    document.body.style.backgroundColor = "white"; /*rgba(0,0,0,0.4)*/
-}
+    document.getElementById("move").style.marginLeft = "0";
+    /*document.body.style.backgroundColor = "white";*/ /*rgba(0,0,0,0.4)*/
 
+}
 
 function closeNav() {
     document.getElementById("navigation").style.width = "0";
@@ -18,8 +20,8 @@ function closeNav() {
 }
 
 function openContact() {
-    document.getElementById("contact-info").style.height = "40%";
-    document.getElementById("navigation").style.paddingTop="20%";
+    document.getElementById("contact-info").style.height = "100%";
+    document.getElementById("navigation").style.paddingTop="10rem";
 }
 function closeContact() {
     document.getElementById("navigation").style.paddingTop="0";

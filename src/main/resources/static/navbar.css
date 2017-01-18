@@ -1,3 +1,5 @@
+/*Styling for navbar*/
+
 @font-face {
     font-family: "Big John";
     src: url("../static/BIGJOHN.otf");
@@ -10,7 +12,7 @@
 #navigation{
     width:0;
     height: 100%;
-    margin-top:7%;
+   /* margin-top:7%;*/
     transition: .7s;
     background-color: white;
     font-family: "Big John";
@@ -48,6 +50,12 @@ a:hover{
     transition: 1.5s;
 }
 
+a:visited{
+    color:black;
+    text-decoration: none;
+
+}
+
 #contact-info{
     width:25%;
     height: 0;
@@ -79,4 +87,16 @@ input {
     width: 10%;
     padding-top:1%;
     padding-left: 1%;
+}
+
+.hop-img{
+    width: 80%;
+    padding-left: 10%;
+    padding-top: 20%;
+    opacity: .5;
+}
+
+/*Other styles*/
+body{
+    background-color: grey;
 }
