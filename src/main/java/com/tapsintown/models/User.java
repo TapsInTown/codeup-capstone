@@ -32,13 +32,25 @@ public class User {
 //  one user to one user_role
 
     @OneToOne
-    private User user_role;
+    private UserRole userRole;
 
 // Relationship to Event
 //  one user to many events
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List <Event> events;
+
+// Constructor
+
+    public User() {
+    }
+
+    public User(User user) {
+        id = user.id;
+        email = user.email;
+        username = user.username;
+        password = user.password;
+    }
 
 // Getters and setters
 
