@@ -1,6 +1,7 @@
 package com.tapsintown.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by anthonyfortney on 1/17/17.
@@ -8,6 +9,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
+
+//  Generate Table
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,13 +22,25 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String username;
 
     @Column(nullable = false)
     private String password;
 
+//  Relationship to role
+//  one user to one user_role
 
+    @OneToOne
+    private User user_role;
+
+// Relationship to Event
+//  one user to many events
+
+    @OneToMany
+    private List <Event> events;
+
+// Getters and setters
 
     public Long getId() {
         return id;

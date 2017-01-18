@@ -1,10 +1,10 @@
 package com.tapsintown.interfaces;
 
-import com.tapsintown.models.Location;
+import com.tapsintown.models.EventLocation;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  * Created by anthonyfortney on 1/18/17.
  */
-public interface Locations extends CrudRepository<Location, Long> {
+public interface EventLocations extends CrudRepository<EventLocation, Long> {
 }
