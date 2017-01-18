@@ -32,6 +32,12 @@ public class Location {
     @Column(nullable = false)
     private long zip;
 
+//Relationship to Event
+//Many Events to one location
+
+    @ManyToOne
+    private Event event;
+
 
 
     public long getId() {
