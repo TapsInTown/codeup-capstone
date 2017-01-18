@@ -40,6 +40,7 @@
     padding: 3rem 0;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 
 }
 
@@ -99,4 +100,9 @@ input {
 /*Other styles*/
 body{
     background-color: grey;
+}
+
+#profileBox{
+    padding:20% 40%;
+    background-color: black;
 }
