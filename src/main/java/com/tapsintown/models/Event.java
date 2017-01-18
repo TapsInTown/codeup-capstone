@@ -21,7 +21,7 @@ public class Event {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "event_date")
     private String eventDate;
 
     @Column(nullable = false)
