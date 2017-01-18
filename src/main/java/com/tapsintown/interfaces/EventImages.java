@@ -1,4 +1,4 @@
-package com.tapsintown.models;
+package com.tapsintown.interfaces;
 
 import com.tapsintown.models.EventImage;
 import org.springframework.data.repository.CrudRepository;

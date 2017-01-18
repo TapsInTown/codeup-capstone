@@ -20,6 +20,7 @@ public class EventImage {
 
 // Relationship to Event
 // Many images to one Event
+
     @ManyToOne
     private Event event;
 
