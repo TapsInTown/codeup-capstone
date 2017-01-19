@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/header :: theHead">
+    <meta charset="UTF-8" />
+    <title>Profile</title>
+</head>
+<body>
+<span th:replace="partials/navbar :: theNav"></span>
+
+<div class="col-md-4 clearfix" id="bodies" onclick="closeNav()">
+    <h1>NAME</h1>
+
+    <div>
+        <h3>The Place</h3>
+        <p class="da-place">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
+        </p>
+    </div>
+    <div>
+        <h3>The Brew</h3>
+        <p class="da-brew">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
+        </p>
+    </div>
+    <div>
+        <h3>About Them</h3>
+        <p class="about-dem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
+        </p>
+    </div>
+
+</div>
+
+<div class="col-md-4 clearfix" id="specific-events">
+<h2>EVENTS FOR THIS LOCATION</h2>
+</div>
+
+</body>
+<script th:src="@{/main.js}">
+
+</script>
+</html>

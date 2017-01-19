@@ -144,7 +144,6 @@ body{
 .about-dem{
     display: flex;
     justify-content: flex-start;
-    padding-top: 2%;
    /* padding-right: 45%;*/
 }
 
