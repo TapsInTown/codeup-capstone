@@ -1,10 +1,17 @@
 /*Styling for navbar*/
 
-@font-face {
+/*@font-face {*/
+    /*font-family: "Big John";*/
+    /*src: url("../static/BIGJOHN.otf");*/
+/*}*/
+
+h1, h2, h3, h4, h5, title{
     font-family: "Big John";
-    src: url("../static/BIGJOHN.otf");
 }
 
+#navbar{
+    font-family:"Big John";
+}
 .info{
     padding-left: 10%;
 }
@@ -102,7 +109,45 @@ body{
     background-color: grey;
 }
 
-#profileBox{
-    padding:20% 40%;
-    background-color: black;
+#bodies{
+    background-color: white;
+    width: 90rem;
+    height:50rem;
+    margin-left: 10%;
+    margin-top: 5%;
+    transition: 1s;
+
+}
+
+#specific-events{
+    background-color: pink;
+    width: 30rem;
+    height:50rem;
+    margin-left: 75%;
+    margin-top: 5%;
+    position: absolute;
+    transition: 1s;
+
+}
+
+.da-place{
+    display: flex;
+    /*padding-left: 45%;*/
+}
+
+.da-brew{
+    display: flex;
+    justify-content: flex-end;
+    /*padding-left: 45%;*/
+}
+
+.about-dem{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 2%;
+   /* padding-right: 45%;*/
+}
+
+.clearfix {
+    overflow: auto;
 }
