@@ -5,7 +5,12 @@
     /*src: url("../static/BIGJOHN.otf");*/
 /*}*/
 
-h1, h2, h3, h4, h5, title{
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, title{
     font-family: "Big John";
 }
 
@@ -104,25 +109,28 @@ input {
     opacity: .5;
 }
 
-/*Other styles*/
+/*Location Profile */
 body{
     background-color: grey;
 }
 
 #bodies{
     background-color: white;
-    width: 90rem;
-    height:50rem;
+    width: 60%;
+    height:40%;
     margin-left: 10%;
     margin-top: 5%;
     transition: 1s;
 
 }
+#bodies h1{
+    padding-top: 2%;
+}
 
 #specific-events{
     background-color: pink;
-    width: 30rem;
-    height:50rem;
+    width: 22%;
+    height:60%;
     margin-left: 75%;
     margin-top: 5%;
     position: absolute;
@@ -130,23 +138,9 @@ body{
 
 }
 
-.da-place{
-    display: flex;
-    /*padding-left: 45%;*/
-}
-
-.da-brew{
-    display: flex;
-    justify-content: flex-end;
-    /*padding-left: 45%;*/
-}
-
 .about-dem{
     display: flex;
     justify-content: flex-start;
+    padding-bottom: 5%;
    /* padding-right: 45%;*/
-}
-
-.clearfix {
-    overflow: auto;
 }
