@@ -4,10 +4,10 @@
     <meta charset="UTF-8"/>
     <title>Navbar</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../../../static/navbar.css" />
+    <link rel="stylesheet" th:href="/static/navbar.css" />
 </head>
 <body>
-<div th:fragment="theNav">
+<div id="navbar" th:fragment="theNav">
 <div id="navigation">
     <!--<a href="#" onclick="closeNav()" class="glyphicon glyphicon-remove nav-link"></a>-->
     <a href="#" onmouseover="hoverOver()" class="nav-link" >HOME</a>
@@ -21,17 +21,17 @@
 <div id="contact-info">
     <form>
         <label for="fname">Name</label>
-        <input type="text" id="fname" name="fname">
-        <br>
+        <input type="text" id="fname" name="fname"/>
+        <br/>
         <label for="email">E-mail</label>
-        <input type="text" id="email" name="email">
+        <input type="text" id="email" name="email"/>
         <button class="btn btn-default" type="submit">Submit</button>
         <button class="btn btn-danger cancel-it" onclick="closeContact()">CANCEL</button>
     </form>
-    <img class="hop-img" src="../../../static/iottaHops.png">
+    <img class="hop-img" th:src="@{iottaHops.png}"/>
 </div>
     <div id="move">
-        <span class="here" onclick="openNav()"><img  class="ham-img" src="../../../static/hamburger-trimmed.png"></span>
+        <span class="here" onclick="openNav()"><img  class="ham-img" th:src="@{hamburger-trimmed.png}" /></span>
     </div>
     </div>
 </body>
@@ -42,5 +42,5 @@ integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
 crossorigin="anonymous">
 
 </script>
-<script src="../../../static/main.js"></script>
+<script src="../../static/main.js"></script>
 </html>
