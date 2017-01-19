@@ -56,12 +56,12 @@ public class EventLocation {
         this.name = name;
     }
 
-    public long getStreetNumer() {
+    public long getStreetNumber() {
         return streetNumber;
     }
 
-    public void setStreetNumer(long streetNumer) {
-        this.streetNumber = streetNumer;
+    public void setStreetNumber(long streetNumber) {
+        this.streetNumber = streetNumber;
     }
 
     public String getStreetName() {
