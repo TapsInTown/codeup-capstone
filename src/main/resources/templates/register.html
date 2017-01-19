@@ -15,23 +15,17 @@
             <input th:field="*{name}" />
             <br />
 
-
             <label>Email Address:</label>
             <input th:field="*{email}" />
             <br />
-
-            <!--<p th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></p>-->
 
             <label>Username:</label>
             <input th:field="*{username}" />
             <br />
 
-            <!--<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>-->
-
             <label>Password:</label>
             <input th:field="*{password}" type="password" />
             <br />
-            <!--<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>-->
 
             <input class="btn btn-info" type="submit" value="Register" />
         </div>
