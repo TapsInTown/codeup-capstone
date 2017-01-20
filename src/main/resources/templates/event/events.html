@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="partials/header :: theHead">
     <meta charset="UTF-8" />
     <title>Events</title>
 </head>
 <body>
+<span th:replace="partials/navbar :: theNav"></span>
 
-<h1>This is Where events will be listed</h1>
+<h1 align="center" onclick="closeNav()">Taps In Town</h1>
 
-<div th:each="event : ${event}">
+<div onclick="closeNav()" style="padding-left:30%; padding-top: 2%">
+<img style="width: 60%" align="center" src="more-taps.jpg" />
+<div style="width:60%; background-color: white; padding:5%; align-content: center;"> Description and other contents for events</div>
+</div>
 
+
+<div th:each="event : ${event}" onclick="closeNav()">
 <h1 th:text="${event.title}"></h1>
     <h2>Date</h2>
 <p th:text="${event.eventDate}"></p>
@@ -19,4 +25,7 @@
 <!--<h2 th:text="${event.modifyDate}"></h2>-->
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=
+" crossorigin="anonymous"></script>
+<script th:src="@{/main.js}"></script>
 </html>
