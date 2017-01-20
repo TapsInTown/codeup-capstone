@@ -30,6 +30,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private boolean isAdmin = false;
+
 //  Relationship to role
 //  one user to one user_role
 
@@ -41,6 +44,12 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List <Event> events;
+
+// Relationship to SavedEvents
+// one user to many SavedEvents
+
+    @OneToMany(mappedBy = "user")
+    private List<SavedEvents> savedEvents;
 
 // Constructor
 

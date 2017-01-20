@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <meta charset="UTF-8"/>
     <title>Events</title>
 </head>
 <body>
+<div class="contianer">
 
-<h1>This is Where events will be listed</h1>
+    <h1>This is Where events will be listed</h1>
 
-<div th:each="event : ${event}">
+    <div th:each="event : ${event}">
 
-<h1 th:text="${event.title}"></h1>
-    <h2>Date</h2>
-<p th:text="${event.eventDate}"></p>
-    <h2>Description</h2>
-<p th:text="${event.description}"></p>
-<!--<h2 th:text="${event.createDate}"></h2>-->
-<!--<h2 th:text="${event.modifyDate}"></h2>-->
+        <h1 th:text="${event.title}"></h1>
+        <h2>Date</h2>
+        <p th:text="${event.eventDate}"></p>
+        <h2>Description</h2>
+        <p th:text="${event.description}"></p>
+        <!--<h2 th:text="${event.createDate}"></h2>-->
+        <!--<h2 th:text="${event.modifyDate}"></h2>-->
+    </div>
 </div>
 </body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </html>
