@@ -6,10 +6,7 @@ import com.tapsintown.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by anthonyfortney on 1/18/17.
@@ -33,5 +30,12 @@ public class UsersController {
         userDao.save(userCreated);
         return "redirect:/login";
     }
+
+    @GetMapping("/{id}")
+    public String getUserId(@PathVariable long id, Model m){
+        m.addAttribute("user", userDao.findOne(id));
+        return "userprofile";
+    }
+
 
 }
