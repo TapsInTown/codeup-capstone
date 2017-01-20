@@ -14,4 +14,9 @@ public class ProfileController {
     public String showProfilePage(){
         return "/profile";
     }
+
+    @GetMapping("/home")
+    public String showHomePage(){
+        return "/home";
+    }
 }
