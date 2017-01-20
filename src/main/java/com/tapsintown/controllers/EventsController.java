@@ -34,7 +34,7 @@ public class EventsController {
     @PostMapping("/create")
     public String createNewEvent(@ModelAttribute Event eventCreated){
         eventsDao.save(eventCreated);
-        return "redirect:event/createevent";
+        return "redirect:/events";
     }
 
     @GetMapping("/{id}")
@@ -46,7 +46,7 @@ public class EventsController {
     @GetMapping("/{id}/edit")
     public String showEditform(@PathVariable long id, Model m){
         m.addAttribute("event", eventsDao.findOne(id));
-        return "event/eventedit";
+        return "event/editevent";
     }
 
 
