@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/header :: theHead">
+    <meta charset="UTF-8" />
+    <title>Home</title>
+</head>
+<body>
+<span th:replace="partials/navbar :: theNav"></span>
+ <div class="container">
+        <div class="row">
+            <div class="col-lg-8 text-center">
+                <h1>Taps In Town</h1>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=
+" crossorigin="anonymous"></script>
+<script th:src="@{/main.js}"></script>
+</html>
