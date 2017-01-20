@@ -7,7 +7,7 @@
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
 
-<div class="col-md-4 clearfix" id="bodies" onclick="closeNav()">
+<div class="col-md-4 bodies" onclick="closeNav()">
     <h1>NAME</h1>
 
     <div>
@@ -43,12 +43,13 @@
 
 </div>
 
-<div class="col-md-4 clearfix" id="specific-events">
-<h2>EVENTS FOR THIS LOCATION</h2>
+<div class="col-md-4" id="specific-events">
+<h2><a href="login.html">EVENTS FOR THIS LOCATION</a></h2>
 </div>
 
 </body>
-<script th:src="@{/main.js}">
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=
+" crossorigin="anonymous"></script>
+<script th:src="@{/main.js}"></script>
 
-</script>
 </html>

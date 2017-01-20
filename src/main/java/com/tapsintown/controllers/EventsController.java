@@ -28,13 +28,13 @@ public class EventsController {
     @GetMapping("/create")
     public String showCreateEventForm(Model m){
         m.addAttribute("event", new Event());
-        return "event/addevent";
+        return "event/createevent";
     }
 
     @PostMapping("/create")
     public String createNewEvent(@ModelAttribute Event eventCreated){
         eventsDao.save(eventCreated);
-        return "redirect:event/events";
+        return "redirect:/events";
     }
 
     @GetMapping("/{id}")
@@ -46,7 +46,7 @@ public class EventsController {
     @GetMapping("/{id}/edit")
     public String showEditform(@PathVariable long id, Model m){
         m.addAttribute("event", eventsDao.findOne(id));
-        return "event/eventedit";
+        return "event/editevent";
     }
 
 

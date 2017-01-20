@@ -10,14 +10,13 @@
 <div id="navbar" th:fragment="theNav">
 <div id="navigation">
     <!--<a href="#" onclick="closeNav()" class="glyphicon glyphicon-remove nav-link"></a>-->
-    <a href="#" onmouseover="hoverOver()" class="nav-link" >HOME</a>
-    <a href="#" onmouseover="hoverOver()" class="nav-link" >BREWERIES</a>
-    <a href="#" onmouseover="hoverOver()" class="nav-link" >POSTS</a>
-    <a href="#" onmouseover="hoverOver()" class="nav-link" >DESTINATIONS</a>
-    <a href="#" onmouseover="hoverOver()" class="nav-link" >ABOUT</a>
-    <a href="#" onmouseover="hoverOver()" onclick="openContact()" class="nav-link">NEWSLETTER</a>
+    <a href="#" class="nav-link" >HOME</a>
+    <a href="#" class="nav-link" >BREWERIES</a>
+    <a href="#" class="nav-link" >POSTS</a>
+    <a href="#" class="nav-link" >DESTINATIONS</a>
+    <a href="#" class="nav-link" >ABOUT</a>
+    <a href="#" onclick="openContact()" class="nav-link">NEWSLETTER</a>
 </div>
-
 <div id="contact-info">
     <form>
         <label for="fname">Name</label>
@@ -30,7 +29,7 @@
     </form>
     <img class="hop-img" th:src="@{iottaHops.png}"/>
 </div>
-    <div id="move">
+    <div class="move">
         <span class="here" onclick="openNav()"><img  class="ham-img" th:src="@{hamburger-trimmed.png}" /></span>
     </div>
     </div>

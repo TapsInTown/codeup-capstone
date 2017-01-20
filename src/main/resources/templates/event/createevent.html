@@ -6,31 +6,35 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
 
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Locations</title>
 </head>
 <body>
 
+<h1>Add a new Location!</h1>
 
+<div>
 
-<h1>This is where all the locations will come up in a list</h1>
+    <form th:action="@{/events/create}" method="POST" th:object="${event}">
+        <div class="form-group">
 
-<div th:each="location : ${location}">
+            <label>Add an event:</label>
+            <input th:field="*{title}"/>
+            <br/>
 
-    <h2>
-        <p th:text="${location.name}"></p>
-    </h2>
+            <label>Event Date</label>
+            <input th:field="*{eventDate}"/>
+            <br/>
 
-    <p th:text="${location.streetNumber}"></p>
-    <p th:text="${location.streetName}"></p>
-    <p th:text="${location.city}"></p>
-    <p th:text="${location.state}"></p>
-    <p th:text="${locations.zip}"></p>
+            <label>Description</label>
+            <textarea th:field="*{description}"/>
+            <br/>
+
+            <input class="btn btn-info" type="submit" value="Add Event"/>
+        </div>
+    </form>
 
 </div>
-
-<a th:href="@{/events}">click here to go to events page</a>
-
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

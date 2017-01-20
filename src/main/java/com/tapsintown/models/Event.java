@@ -57,6 +57,12 @@ public class Event {
     @OneToMany (mappedBy = "event")
     private List<EventImage> images;
 
+// Relationship to SavedEvents
+// one Event to many SavedEvents
+
+    @OneToMany (mappedBy = "event")
+    private List<SavedEvents> savedEvents;
+
 //  Getters and setters
 
     public long getId() {
