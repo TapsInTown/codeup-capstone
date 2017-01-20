@@ -28,13 +28,13 @@ public class EventsController {
     @GetMapping("/create")
     public String showCreateEventForm(Model m){
         m.addAttribute("event", new Event());
-        return "event/addevent";
+        return "event/createevent";
     }
 
     @PostMapping("/create")
     public String createNewEvent(@ModelAttribute Event eventCreated){
         eventsDao.save(eventCreated);
-        return "redirect:event/events";
+        return "redirect:event/createevent";
     }
 
     @GetMapping("/{id}")
