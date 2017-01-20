@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Locations</title>
 </head>
 <body>
@@ -10,23 +10,30 @@
 
 <div>
 
-    <form th:action="@{'/events/' + *{id} + '/edit'}" method="POST" th:object="${event}" >
+    <form th:action="@{'/events/' + *{id} + '/edit'}" method="POST" th:object="${event}">
         <div class="form-group">
 
             <label>Add an event:</label>
-            <input th:field="*{title}" />
-            <br />
+            <input th:field="*{title}"/>
+            <br/>
 
             <label>Event Date</label>
-            <input th:field="*{eventDate}" />
-            <br />
+            <input th:field="*{eventDate}"/>
+            <br/>
 
             <label>Description</label>
-            <textarea th:field="*{description}" />
-            <br />
+            <textarea th:field="*{description}"/>
+            <br/>
 
-            <input class="btn btn-info" type="submit" value="Add Event" />
+            <input class="btn btn-info" type="submit" value="Add Event"/>
         </div>
+    </form>
+
+    <form th:action="@{'/fileupload/' + ${event.id}}" method="post" enctype="multipart/form-data">
+        <label for="file">Upload a file!</label>
+        <input id="file" name="file" type="file"/>
+        <br/>
+        <input type="submit" value="upload"/>
     </form>
 </div>
 

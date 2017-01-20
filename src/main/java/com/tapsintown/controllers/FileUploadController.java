@@ -1,9 +1,15 @@
 package com.tapsintown.controllers;
 
+import com.tapsintown.interfaces.EventImages;
+import com.tapsintown.interfaces.Events;
+import com.tapsintown.models.Event;
+import com.tapsintown.models.EventImage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,19 +27,24 @@ public class FileUploadController {
     @Value("${file-upload-path}")
     private String uploadPath;
 
-    @GetMapping("/fileupload")
-    public String showUploadFileForm() {
-        return "fileupload";
-    }
+    @Autowired
+    private EventImages eventImgDao;
 
-    @PostMapping("/fileupload")
+    @Autowired
+    private Events eventDao;
+
+    @PostMapping("/fileupload/{id}")
     public String saveFile(
             @RequestParam(name = "file") MultipartFile uploadedFile,
+            @PathVariable long id,
             Model model
     ) {
+        EventImage eventImage = new EventImage();
+
         String filename = uploadedFile.getOriginalFilename();
         String filepath = Paths.get(uploadPath, filename).toString();
         File destinationFile = new File(filepath);
+
         try {
             uploadedFile.transferTo(destinationFile);
             model.addAttribute("message", "File successfully uploaded!");
@@ -41,6 +52,13 @@ public class FileUploadController {
             e.printStackTrace();
             model.addAttribute("message", "Oops! Something went wrong! " + e);
         }
-        return "fileupload";
+
+        Event event = eventDao.findOne(id);
+        eventImage.setEvent(event);
+        eventImage.setImageUrl(filename);
+
+        eventImgDao.save(eventImage);
+
+        return "redirect:/events/" + id + "/edit";
     }
 }
