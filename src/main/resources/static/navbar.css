@@ -30,12 +30,14 @@ h1, h2, h3, h4, h5, h6, title{
     height: 100%;
    /* margin-top:7%;*/
     transition: .7s;
+/*-- #1 Navbar --*/
     background-color: white;
     font-family: "Big John";
     position: fixed;
     overflow-x: hidden;
 
 }
+
 
 .move{
     transition: .7s;
@@ -112,7 +114,9 @@ input {
     opacity: .5;
 }
 
-/*Location Profile */
+
+
+/*-- #2 Location Profile --*/
 body{
     background-color: grey;
 }
