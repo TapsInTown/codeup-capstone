@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Locations</title>
+</head>
+<body>
+
+
+
+<h1>This is where all the locations will come up in a list</h1>
+
+<div th:each="location : ${location}">
+
+    <h2>
+        <p th:text="${location.name}"></p>
+    </h2>
+
+    <p th:text="${location.streetNumber}"></p>
+    <p th:text="${location.streetName}"></p>
+    <p th:text="${location.city}"></p>
+    <p th:text="${location.state}"></p>
+    <p th:text="${locations.zip}"></p>
+
+</div>
+
+<a th:href="@{/events}">click here to go to events page</a>
+
+
+
+</body>
+</html>

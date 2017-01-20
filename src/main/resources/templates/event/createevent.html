@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Locations</title>
+</head>
+<body>
+
+<h1>Add a new Location!</h1>
+
+<div>
+
+    <form th:action="@{/events/create}" method="POST" th:object="${event}" >
+        <div class="form-group">
+
+            <label>Add an event:</label>
+            <input th:field="*{title}" />
+            <br />
+
+            <label>Event Date</label>
+            <input th:field="*{eventDate}" />
+            <br />
+
+            <label>Description</label>
+            <textarea th:field="*{description}" />
+            <br />
+
+            <input class="btn btn-info" type="submit" value="Add Event" />
+
+            <form action="/fileupload" method="post" enctype="multipart/form-data">
+                <label for="file">Upload a file!</label>
+                <input id="file" name="file" type="file" />
+                <br />
+                <input type="submit" value="upload" />
+            </form>
+
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>
