@@ -39,11 +39,11 @@ public class FileUploadController {
             @PathVariable long id,
             Model model
     ) {
-        EventImage eventImage = new EventImage();
-
         String filename = uploadedFile.getOriginalFilename();
         String filepath = Paths.get(uploadPath, filename).toString();
         File destinationFile = new File(filepath);
+
+        EventImage eventImage = new EventImage();
 
         try {
             uploadedFile.transferTo(destinationFile);
