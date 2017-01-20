@@ -5,12 +5,20 @@
     <title>Home</title>
 </head>
 <body>
-<span th:replace="partials/navbar :: theNav"></span>
- <div class="container">
+    <div th:replace="partials/navbar :: theNav">
+    </div>
+    <div onclick="closeNav()">
         <div class="row">
-            <div class="col-lg-8 text-center">
-                <h1>Taps In Town</h1>
-            </div>
+            <h1 id="tapsTitle" class="text-center">Taps In Town</h1>
+        </div>
+        <div class="row">
+            <img src="../static/frontPageTaps/tap_0.png">
+            <img src="../static/frontPageTaps/tap_1.png">
+            <img src="../static/frontPageTaps/tap_2.png">
+            <img src="../static/frontPageTaps/tap_3.png">
+            <img src="../static/frontPageTaps/tap_4.png">
+            <img src="../static/frontPageTaps/tap_5.png">
+            <img src="../static/frontPageTaps/tap_6.png">
         </div>
     </div>
 </body>
