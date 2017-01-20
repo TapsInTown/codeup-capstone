@@ -1,5 +1,7 @@
 package com.tapsintown.models;
 
+import com.tapsintown.SecurityConfiguration;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -91,6 +93,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        SecurityConfiguration sc = new SecurityConfiguration();
+        this.password = sc.passwordEncoder().encode(password);
     }
 }
