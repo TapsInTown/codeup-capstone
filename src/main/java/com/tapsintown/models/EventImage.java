@@ -25,8 +25,9 @@ public class EventImage {
     private Event event;
 
 
-
-
+    public EventImage(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public long getId() {
         return id;
