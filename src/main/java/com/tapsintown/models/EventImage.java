@@ -24,11 +24,6 @@ public class EventImage {
     @ManyToOne
     private Event event;
 
-
-    public EventImage(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public long getId() {
         return id;
     }
@@ -45,5 +40,11 @@ public class EventImage {
         this.imageUrl = imageUrl;
     }
 
+    public Event getEvent() {
+        return event;
+    }
 
+    public void setEvent(Event event) {
+        this.event = event;
+    }
 }
