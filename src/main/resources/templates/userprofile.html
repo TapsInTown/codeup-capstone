@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Title</title>
 </head>
 <body>
 
-<h1>Welcome: user name here</h1>
+<h1>Welcome, <span th:text="${user.username}"></span></h1>
 
 <h3>Here is a list of your saved events</h3>
 

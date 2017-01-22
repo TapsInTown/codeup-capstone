@@ -1,6 +1,7 @@
 package com.tapsintown.controllers;
 
 
+import com.sun.javafx.sg.prism.NGShape;
 import com.tapsintown.interfaces.Users;
 import com.tapsintown.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,17 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/user")
-public class UsersController {
+public class UsersController extends BaseController{
 
     @Autowired
     private Users userDao;
+
+    @GetMapping("/me")
+    public String loginRedirect(Model model){
+        User loggedInUser = loggedInUser();
+        return "redirect:/user/" + loggedInUser.getId();
+
+    }
 
     @GetMapping("/register")
     public String showRegisterForm (Model m){
