@@ -45,11 +45,11 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List <Event> events;
 
-// Relationship to SavedEvents
-// one user to many SavedEvents
+// Relationship to SaveEvent
+// one user to many SaveEvent
 
     @OneToMany(mappedBy = "user")
-    private List<SavedEvents> savedEvents;
+    private List<SaveEvent> savedEvents;
 
 // Constructor
 
