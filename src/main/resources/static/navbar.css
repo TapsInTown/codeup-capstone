@@ -18,6 +18,11 @@ h1, h2, h3, h4, h5, h6, title{
     font-family: "Big John";
 }
 
+body{
+    background-image: url("wood.jpg");
+    background-size: 100%;
+}
+
 #navbar{
     font-family:"Big John";
 }
@@ -113,7 +118,6 @@ input {
     padding-top: 20%;
     opacity: .5;
 }
-
 
 
 /*-- #2 Location Profile --*/
