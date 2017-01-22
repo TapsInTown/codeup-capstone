@@ -19,6 +19,13 @@
     <p>
         Information about event
     </p>
+
+
+    <form th:action="@{'/events/save/' + ${event.id}}" method="post">
+        <input type="submit" value="Save Event" />
+    </form>
+
+
 </div>
 
 
