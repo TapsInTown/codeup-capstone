@@ -1,5 +1,8 @@
 package com.tapsintown;
 
+import com.tapsintown.controllers.BaseController;
+import com.tapsintown.interfaces.Users;
+import com.tapsintown.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,6 +24,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    private Users userDao;
+
+
+    @Autowired
     private UserDetailsLoader userDetails;
 
     @Bean(name = "passwordEncoder")
@@ -30,10 +37,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //User user = userDao.findOne(id);
+
         http
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/location") // user's home page, it can be any URL
+                .defaultSuccessUrl("/user/me") // user's home page, it can be any URL
                 .permitAll() // Anyone can go to the login page
                 .and()
                 .authorizeRequests()
