@@ -76,10 +76,13 @@ public class EventsController extends BaseController {
         if (!isLoggedIn()){
             return "redirect:/login";
         }
+
         Event events = eventsDao.findOne(id);
         SaveEvent saveEvent = new SaveEvent();
+
         saveEvent.setEvent(events);
         saveEvent.setUser(loggedInUser());
+
         saveDao.save(saveEvent);
         return "redirect:/user/"+ loggedInUser().getId();
     }
