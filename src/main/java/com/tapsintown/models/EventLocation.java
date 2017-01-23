@@ -1,12 +1,13 @@
 package com.tapsintown.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by anthonyfortney on 1/17/17.
  */
 @Entity
-@Table(name = "locations")
+@Table(name = "event_locations")
 public class EventLocation {
 
 
@@ -14,7 +15,7 @@ public class EventLocation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
 
     @Column(nullable = false, name = "street_number")
@@ -35,10 +36,16 @@ public class EventLocation {
 //Relationship to Event
 //Many Events to one location
 
-    @ManyToOne
-    private Event event;
+    @OneToMany (mappedBy = "eventLocation")
+    private List<Event> events;
 
+    public List<Event> getEvents() {
+        return events;
+    }
 
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
 
     public long getId() {
         return id;
