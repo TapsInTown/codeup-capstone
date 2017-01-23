@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous" />
+          crossorigin="anonymous"/>
 
     <meta charset="UTF-8"/>
-    <title>Locations</title>
+    <title>Add an event</title>
 </head>
 <body>
+<div class="container">
 
-<h1>Add a new Location!</h1>
 
-<div>
+    <h1>Add a new Event!</h1>
 
-    <form th:action="@{/events/create}" method="POST" th:object="${event}">
+    <form class="" th:action="@{/events/create}" method="POST" th:object="${event}">
         <div class="form-group">
 
             <label>Add an event:</label>
@@ -33,7 +33,14 @@
             <input class="btn btn-info" type="submit" value="Add Event"/>
         </div>
     </form>
-
+    <form action="/fileupload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Upload a file!</label>
+            <input id="file" name="file" type="file"/>
+            <br/>
+            <input type="submit" value="upload"/>
+        </div>
+    </form>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

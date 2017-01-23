@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           rel="stylesheet"
@@ -10,10 +10,8 @@
     <title>Locations</title>
 </head>
 <body>
-
+<div class="container">
 <h1>Add a new Location!</h1>
-
-<div>
 
     <form th:action="@{/location/create}" method="POST" th:object="${location}" >
         <div class="form-group">
@@ -45,13 +43,6 @@
         </div>
     </form>
 
-
-    <form action="/fileupload" method="post" enctype="multipart/form-data">
-        <label for="file">Upload a file!</label>
-        <input id="file" name="file" type="file" />
-        <br />
-        <input type="submit" value="upload" />
-    </form>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

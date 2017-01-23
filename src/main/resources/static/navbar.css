@@ -1,9 +1,9 @@
 /*Styling for navbar*/
 
-/*@font-face {*/
-    /*font-family: "Big John";*/
-    /*src: url("../static/BIGJOHN.otf");*/
-/*}*/
+@font-face {
+    font-family: "Big John";
+    src: url("BIGJOHN.otf");
+}
 
 html, body {
     max-width: 100%;

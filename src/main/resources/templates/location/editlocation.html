@@ -10,10 +10,10 @@
     <title>Locations</title>
 </head>
 <body>
+<div class="contianer">
 
 <h1>Edit a Location</h1>
 
-<div>
 
     <form th:action="@{'/location/' + *{id} + '/edit'}" method="POST" th:object="${location}" >
         <div class="form-group">

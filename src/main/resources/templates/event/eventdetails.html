@@ -7,7 +7,7 @@
           crossorigin="anonymous" />
 
     <meta charset="UTF-8"/>
-    <title>Locations</title>
+    <title>Event Details</title>
 </head>
 <body>
 <div class="container">
@@ -22,7 +22,9 @@
 
 
     <form th:action="@{'/events/save/' + ${event.id}}" method="post">
-        <input type="submit" value="Save Event" />
+        <div class="form-group">
+            <input type="submit" value="Save Event" />
+        </div>
     </form>
 
 
