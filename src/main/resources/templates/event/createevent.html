@@ -19,9 +19,9 @@
         </div>
 
         <div class="form-group">
-            <label placeholder="Type a location">Which Location</label>
-            <input list="locations" class="form-control" />
-            <datalist id="locations"  name="locationId">
+            <label>Which Location?</label>
+            <input list="locations" th:name="locationId" class="form-control" />
+            <datalist id="locations">
                 <option th:value="${location.name}" th:each="location : ${locations}" th:text="${location.name}"></option>
             </datalist>
         </div>
