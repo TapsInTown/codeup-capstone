@@ -39,7 +39,7 @@ body{
     font-family: "Big John";
     position: fixed;
     overflow-x: hidden;
-    z-index: 2;
+   /* z-index: 2;*/
 
 }
 
@@ -156,6 +156,10 @@ input {
 
 /*Sliding Cards*/
 
+.cardTitle{
+    top: -50%;
+}
+
 .cards {
     width: 60%;
     height: 30%;
@@ -202,10 +206,15 @@ input {
 /* #3 splash  */
 
 #tapsTitle{
-    margin-top: 0;
+    margin: 0 auto auto auto;
+}
+
+#sticky-anchor{
+    margin: 0 auto;
 }
 
 .stick{
+    margin: 0 auto;
     position: fixed;
     left: 23.8%;
     top: -40px;

@@ -7,7 +7,7 @@
 <body>
     <div th:replace="partials/navbar :: theNav"></div>
     <div onclick="closeNav()">
-        <div class="row">
+        <div class="row center-block">
             <div id="sticky-anchor" class="center-block"></div>
             <h1 id="tapsTitle" class="text-center">Taps In Town</h1>
         </div>
@@ -17,7 +17,7 @@
         <div class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
         </div>
 
-    </div>
+    </div>s
 </body>
 <script
         th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
