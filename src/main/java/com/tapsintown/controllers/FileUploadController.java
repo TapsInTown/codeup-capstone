@@ -22,7 +22,7 @@ import java.nio.file.Paths;
  * Created by anthonyfortney on 1/19/17.
  */
 @Controller
-public class FileUploadController {
+public class  FileUploadController {
 
     @Value("${file-upload-path}")
     private String uploadPath;
