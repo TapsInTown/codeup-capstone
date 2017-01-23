@@ -11,34 +11,40 @@
 </head>
 <body>
 <div class="container">
-
-
     <h1>Add a new Event!</h1>
-
     <form class="" th:action="@{/events/create}" method="POST" th:object="${event}">
         <div class="form-group">
-
             <label>Add an event:</label>
-            <input th:field="*{title}"/>
-            <br/>
+            <input class="form-control" th:field="*{title}"/>
+        </div>
 
+        <div class="form-group">
+            <label placeholder="Type a location">Which Location</label>
+            <input list="locations" class="form-control" />
+            <datalist id="locations"  name="locationId">
+                <option th:value="${location.name}" th:each="location : ${locations}" th:text="${location.name}"></option>
+            </datalist>
+        </div>
+        <div class="form-group">
             <label>Event Date</label>
-            <input th:field="*{eventDate}"/>
-            <br/>
-
+            <input class="form-control" th:field="*{eventDate}"/>
+        </div>
+        <div class="form-group">
             <label>Description</label>
-            <textarea th:field="*{description}"/>
-            <br/>
-
-            <input class="btn btn-info" type="submit" value="Add Event"/>
+            <textarea class="form-control" th:field="*{description}"/>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-info form-control" type="submit" value="Add Event"/>
         </div>
     </form>
+
     <form action="/fileupload" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="file">Upload a file!</label>
-            <input id="file" name="file" type="file"/>
-            <br/>
-            <input type="submit" value="upload"/>
+            <input class="form-control" id="file" name="file" type="file"/>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary form-control" type="submit" value="upload"/>
         </div>
     </form>
 </div>
