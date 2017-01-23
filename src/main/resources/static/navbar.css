@@ -195,7 +195,9 @@ Sliding Cards*/
 
 .mapCanvas{
     display: none;
-    transition: 3s;
+    justify-content: center;
+    transition-delay: 2s;
     background-color: pink;
+    height: 450px;
 
 }
