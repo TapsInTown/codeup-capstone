@@ -4,24 +4,44 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous" />
+          crossorigin="anonymous"/>
 
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Locations</title>
 </head>
 <body>
+<div class="container">
 
-<h1 th:text="${location.name}"></h1>
-<h2 th:text="${location.streetNumber}"></h2>
-<h2 th:text="${location.streetName}"></h2>
-<h2 th:text="${location.city}"></h2>
-<h2 th:text="${location.state}"></h2>
-<h2 th:text="${location.zip}"></h2>
+    <h1 th:text="${location.name}"></h1>
+    <h2>
+    <span th:text="${location.streetNumber}"></span>
+    <span th:text="${location.streetName}"></span>
+    <span th:text="${location.city}"></span>
+    <span th:text="${location.state}"></span>
+    <span th:text="${location.zip}"></span>
+    </h2>
 
 
-<p>
-    Information about Location
-</p>
+    <p>
+        <h2>Hard coded location description</h2>
+
+    For example, an Ellis Island IPA indicates that the bottle of beer for a Lone Star eats the plowed Left Hand Milk Stout. A blue moon starts reminiscing about a lost buzz, or some hops almost secretly admires the Strohs defined by a Yuengling. A Pilsner Urquell near the Avery IPA ruminates, but a radioactive Red Stripe sanitizes the bill about the Hoptoberfest. When a micro brew near a mating ritual is gratifying, the cranky mating ritual plans an escape from a corona light around a coors light the spudgun. The radioactive Sam Adams assimilates a Kashmir IPA defined by the hops, because the Left Hand Milk Stout befriends the moldy scooby snack.
+    </p>
+
+    <h3>Admin only:</h3>
+
+    <a th:href="@{/location/{id}/edit (id=${location.id})}">Click here to edit Details</a>
+
+
+
+    <form th:action="@{'/location/' + ${location.id} +'/delete'}">
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+    </form>
+
+</div>
+
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

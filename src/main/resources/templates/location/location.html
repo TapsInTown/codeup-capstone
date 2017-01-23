@@ -11,25 +11,33 @@
 </head>
 <body>
 
-
+<div class="container">
 
 <h1>This is where all the locations will come up in a list</h1>
 
 <div th:each="location : ${location}">
 
     <h2>
+        <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
+        or
         <p th:text="${location.name}"></p>
+        <a th:href="@{/location/{id} (id=${location.id})}">Click here for location details</a>
     </h2>
 
-    <p th:text="${location.streetNumber}"></p>
-    <p th:text="${location.streetName}"></p>
-    <p th:text="${location.city}"></p>
-    <p th:text="${location.state}"></p>
-    <p th:text="${locations.zip}"></p>
+    <h3>
+        <span th:text="${location.streetNumber}"></span>
+        <span th:text="${location.streetName}"></span>
+        <span th:text="${location.city}"></span>
+        <span th:text="${location.state}"></span>
+        <span th:text="${location.zip}"></span>
+    </h3>
 
 </div>
 
-<a th:href="@{/events}">click here to go to events page</a>
+<a th:href="@{/events}">click here to go to events page (or this can be a button)</a>
+
+
+</div>
 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

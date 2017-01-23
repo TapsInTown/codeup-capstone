@@ -24,7 +24,8 @@
 
 
 <div th:each="event : ${event}" onclick="closeNav()">
-<h1 th:text="${event.title}"></h1>
+    <h1 th:text="${event.eventLocation.name}"></h1>
+<h2 th:text="${event.title}"></h2>
     <h2>Date</h2>
 <p th:text="${event.eventDate}"></p>
     <h2>Description</h2>
@@ -33,6 +34,8 @@
 <!--<h2 th:text="${event.modifyDate}"></h2>-->
 </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=
-" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
 <script th:src="@{/main.js}"></script>
+</html>
