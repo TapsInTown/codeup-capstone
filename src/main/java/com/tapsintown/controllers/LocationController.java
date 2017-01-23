@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 /**
  * Created by anthonyfortney on 1/18/17.
  */
@@ -32,9 +34,9 @@ public class LocationController {
     }
 
     @PostMapping("/create")
-    public String createNewLocation(@ModelAttribute EventLocation locationCreated){
+    public String createNewLocation(@Valid EventLocation locationCreated){
         locationDao.save(locationCreated);
-        return "location/location";
+        return "redirect:/location";
     }
 
     @GetMapping("/{id}")
@@ -69,7 +71,11 @@ public class LocationController {
 
         locationDao.save(currentDetails);
         return "redirect:/location";
-
     }
 
+    @GetMapping("/{id}/delete")
+    public String deleteLocation(@PathVariable long id){
+        locationDao.delete(id);
+        return "redirect:/location";
+    }
 }
