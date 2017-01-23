@@ -39,7 +39,7 @@ body{
     font-family: "Big John";
     position: fixed;
     overflow-x: hidden;
-    z-index: 2;
+    /*z-index: 1;*/
 
 }
 
@@ -96,6 +96,7 @@ a:visited{
 
 #contact-info form{
     padding-top: 10%;
+    /*z-index: 3;*/
 }
 
 input {
@@ -109,7 +110,6 @@ input {
     width: 10%;
     padding-top:1%;
     padding-left: 1%;
-    z-index: 1;
     position: fixed;
 }
 
@@ -164,9 +164,13 @@ Sliding Cards*/
     height: 30%;
     margin-left: 20%;
     margin-bottom: 2%;
-    padding-bottom: 18%;
+    padding-bottom: 5%;
     background-color:white;
     align-content: center;
+}
+
+.cards h1{
+    padding-bottom: 2%;
 }
 
 .mapBar{
@@ -195,9 +199,8 @@ Sliding Cards*/
 
 .mapCanvas{
     display: none;
-    justify-content: center;
     transition-delay: 2s;
-    background-color: pink;
-    height: 450px;
+    width: 700px;
+    height: 350px;
 
 }
