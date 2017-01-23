@@ -16,18 +16,12 @@
     <h2 th:text="${event.Description}"></h2>
 
 
-    <p>
-        Information about event
-    </p>
-
-
+    <h4>Should see if loggin in. Cannot see of not loggin in.</h4>
     <form th:action="@{'/events/save/' + ${event.id}}" method="post">
         <div class="form-group">
-            <input type="submit" value="Save Event" />
+            <input class="form-control" type="submit" value="Save Event" />
         </div>
     </form>
-
-
 </div>
 
 

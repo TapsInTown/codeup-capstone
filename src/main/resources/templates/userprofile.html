@@ -4,22 +4,29 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous" />
-    <meta charset="UTF-8" />
+          crossorigin="anonymous"/>
+    <meta charset="UTF-8"/>
     <title>User profile</title>
 </head>
 <body>
 <div class="container">
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
-<h3>Here is a list of your saved events</h3>
+    <h3>Here is a list of your saved events</h3>
 
-<a th:href="@{'/events'}">Go to events page</a>
+    <a th:href="@{'/events'}">Go to events page</a>
 
-<a th:href="@{'/events/create'}">Create an event</a>
+    <br />
 
-<a th:href="@{'/location/create'}">Add a new location</a>
+    <h3>Admin options</h3>
+
+    <br />
+    <a th:href="@{'/location/create'}">Add a new location</a>
+
+
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.1.1.js"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="

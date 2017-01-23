@@ -11,36 +11,30 @@
 </head>
 <body>
 <div class="container">
-    <h1>Edit and event</h1>
-
-
+    <h1>Edit an event</h1>
     <form th:action="@{'/events/' + *{id} + '/edit'}" method="POST" th:object="${event}">
         <div class="form-group">
-
             <label>Add an event:</label>
-            <input th:field="*{title}"/>
-            <br/>
-
+            <input class="form-control" th:field="*{title}"/>
+        </div>
+        <div class="form-control">
             <label>Event Date</label>
-            <input th:field="*{eventDate}"/>
-            <br/>
-
+            <input class="form-control" th:field="*{eventDate}"/>
+        </div>
+        <div class="form-control">
             <label>Description</label>
-            <textarea th:field="*{description}"/>
-            <br/>
-
-            <input class="btn btn-info" type="submit" value="Add Event"/>
+            <textarea class="form-control" th:field="*{description}"/>
+        </div>
+        <div class="form-control">
+            <input class="btn btn-info form-control" type="submit" value="Add Event"/>
         </div>
     </form>
-
     <form th:action="@{'/fileupload/' + ${event.id}}" method="post" enctype="multipart/form-data">
         <label for="file">Upload a file!</label>
         <input id="file" name="file" type="file"/>
         <br/>
         <input type="submit" value="upload"/>
     </form>
-
-
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
