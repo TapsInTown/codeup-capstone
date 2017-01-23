@@ -33,7 +33,24 @@ function closeContact() {
     document.getElementById("contact-info").style.height = "0";
 
 }
+function sticky_relocate() {
+    var window_top = $(window).scrollTop();
+    var div_top = $('#sticky-anchor').offset().top;
+    if (window_top > div_top) {
+        $('#tapsTitle').addClass('stick');
+        $('#tapsTitle').addClass('hvr-sink');
+        $('#sticky-anchor').height($('#tapsTitle').outerHeight());
+    } else {
+        $('#tapsTitle').removeClass('stick');
+        $('#tapsTitle').removeClass('hvr-sink');
+        $('#sticky-anchor').height(0);
+    }
+}
 
+$(function() {
+    $(window).scroll(sticky_relocate);
+    sticky_relocate();
+})
 /*
 $(document).ready(function(){
         console.log("success");
