@@ -13,10 +13,15 @@
         <div class="row">
             <img class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
         </div>
+        <div class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
+        </div>
+
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=
-" crossorigin="anonymous"></script>
+<script
+        th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
 <script th:src="@{/main.js}"></script>
 <script th:src="@{/wow.min.js}"></script>
 <script>new WOW().init();</script>
