@@ -41,6 +41,7 @@ $(document).ready(function(){
         console.log("success");
     $(".mapBar").click(function(){
         $(".mapBar").toggleClass("openMapBar");
+        $(".mapCanvas").toggle("mapCanvas");
     });
     $(".mapBar").hover(function(){
         $(".mapBar").toggleClass("hoverMapBar");
