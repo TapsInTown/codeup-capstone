@@ -34,11 +34,13 @@
             <input class="btn btn-primary form-control" type="submit" value="Log In" />
         </div>
 
+        <p>New to Taps In Town? <a th:href="@{/user/register}">Click here to register!</a></p>
+
         <div>
             <p>Welcome, Logged user: <span sec:authentication="name"></span></p>
         </div>
-
     </form>
+
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
