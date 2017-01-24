@@ -13,6 +13,10 @@
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
     <h3>Here is a list of your saved events</h3>
+    <div th:each="saveEvent : ${savedEvents}">
+        <p th:text="${saveEvent.event.title}"></p>
+    </div>
+
 
 
 
