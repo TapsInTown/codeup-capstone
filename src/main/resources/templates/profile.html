@@ -9,23 +9,21 @@
 
 <div class="col-md-4 bodies" onclick="closeNav()">
     <h1 th:text="${location.name}"></h1>
-    <h2>
-        <span th:text="${location.streetNumber}"></span>
-        <span th:text="${location.streetName}"></span>
-        <span th:text="${location.city}"></span>
-        <span th:text="${location.state}"></span>
-        <span th:text="${location.zip}"></span>
-    </h2>
-
     <div>
-        <h3>The Place</h3>
-        <p class="da-place">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
-        </p>
+        <h3>
+            <span th:text="${location.streetNumber}"></span>
+            <span th:text="${location.streetName}"></span>
+            <span th:text="${location.city}"></span>
+            <span th:text="${location.state}"></span>
+            <span th:text="${location.zip}"></span>
+        </h3>
+        <!--<p class="da-place">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do-->
+            <!--eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut-->
+            <!--enim ad minim veniam, quis nostrud exercitation ullamco laboris-->
+            <!--nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in-->
+            <!--reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla-->
+            <!--pariatur. Excepteur sint occaecat cupidatat non proident, sunt i-->
+        <!--</p>-->
     </div>
     <div>
         <h3>The Brew</h3>
