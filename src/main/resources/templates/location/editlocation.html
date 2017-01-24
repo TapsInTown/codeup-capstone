@@ -41,7 +41,15 @@
             <input class="form-control" th:field="*{zip}" />
         </div>
         <div class="form-group">
-            <input class="btn btn-info form-control" type="submit" value="Register" />
+            <label>The Brew:</label>
+            <textarea class="form-control" th:field="*{descriptionTheBrew}"/>
+        </div>
+        <div class="form-group">
+            <label>About Them:</label>
+            <textarea class="form-control" th:field="*{descriptionAboutThem}"/>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-info form-control" type="submit" value="Save Changes" />
         </div>
     </form>
 </div>
