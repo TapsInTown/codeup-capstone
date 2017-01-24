@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           rel="stylesheet"
@@ -33,6 +33,11 @@
         <div class="form-group">
             <input class="btn btn-primary form-control" type="submit" value="Log In" />
         </div>
+
+        <div>
+            <p>Welcome, Logged user: <span sec:authentication="name"></span></p>
+        </div>
+
     </form>
 </div>
 
