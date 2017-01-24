@@ -8,7 +8,14 @@
 <span th:replace="partials/navbar :: theNav"></span>
 
 <div class="col-md-4 bodies" onclick="closeNav()">
-    <h1>NAME</h1>
+    <h1 th:text="${location.name}"></h1>
+    <h2>
+        <span th:text="${location.streetNumber}"></span>
+        <span th:text="${location.streetName}"></span>
+        <span th:text="${location.city}"></span>
+        <span th:text="${location.state}"></span>
+        <span th:text="${location.zip}"></span>
+    </h2>
 
     <div>
         <h3>The Place</h3>
