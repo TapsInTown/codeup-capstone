@@ -12,12 +12,20 @@ html, body {
 h1{
     font-size: 8rem;
 }
+h2{
+    font-size: 5.5rem;
+}
 
 h1, h2, h3, h4, h5, h6, title{
     font-family: "Big John";
 }
 
 body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-image: url("wood.jpg");
     background-size: 100%;
 }
@@ -161,6 +169,7 @@ input {
 Sliding Cards*/
 
 .cards {
+    border-left: solid .5rem black;
     width: 60%;
     height: 30%;
     margin-left: 20%;
@@ -208,20 +217,21 @@ Sliding Cards*/
 
 /* #3 splash  */
 
-#tapsTitle{
+/*#tapsTitle{
     margin: 0 auto auto auto;
-}
+}*/
 
 #sticky-anchor{
     margin: 0 auto;
 }
 
 .stick{
-    margin: 0 auto;
+    margin-bottom: 2rem;
     position: fixed;
   /*  left: 23.8%;*/
     top: -40px;
-    text-align: centere;
+    text-align: center;
+    z-index: 2;
 }
 .hvr-sink {
     display: inline-block;
@@ -251,9 +261,18 @@ hr{
     height: 1px;
     width: 1px;
     margin: 0 auto;
-    position: static;
-    top:2rem;
+    position: absolute;
+    left: 50%;
+    top:4rem;
     border:1px solid deeppink;
     background-color: aqua;
     z-index:-5;
+}
+
+#aboutUs{
+
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-left: solid .5rem black;
 }
