@@ -39,6 +39,9 @@ public class EventLocation {
     @OneToMany (mappedBy = "eventLocation")
     private List<Event> events;
 
+
+    //getters and setters
+
     public List<Event> getEvents() {
         return events;
     }
