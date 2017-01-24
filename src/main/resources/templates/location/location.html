@@ -1,47 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous" />
-
-    <meta charset="UTF-8" />
-    <title>Locations</title>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="partials/header :: theHead">
+    <meta charset="UTF-8"/>
+    <title>Profile</title>
 </head>
 <body>
 
-<div class="container">
+<!--<div class="container">-->
 
-<h1>This is where all the locations will come up in a list</h1>
+<!--<h1>This is where all the locations will come up in a list</h1>-->
 
-<div th:each="location : ${location}">
+<!--<div th:each="location : ${location}">-->
 
-    <h2>
-        <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
-        or
-        <p th:text="${location.name}"></p>
-        <a th:href="@{/location/{id} (id=${location.id})}">Click here for location details</a>
-    </h2>
+<!--<h2>-->
+<!--<a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>-->
+<!--or-->
+<!--<p th:text="${location.name}"></p>-->
+<!--<a th:href="@{/location/{id} (id=${location.id})}">Click here for location details</a>-->
+<!--</h2>-->
 
+<!--<h3>-->
+<!--<span th:text="${location.streetNumber}"></span>-->
+<!--<span th:text="${location.streetName}"></span>-->
+<!--<span th:text="${location.city}"></span>-->
+<!--<span th:text="${location.state}"></span>-->
+<!--<span th:text="${location.zip}"></span>-->
+<!--</h3>-->
+
+<!--</div>-->
+
+<!--<a th:href="@{/events}">click here to go to events page (or this can be a button)</a>-->
+
+
+<!--</div>-->
+
+
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+<!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+<!--crossorigin="anonymous"></script>-->
+
+
+<span th:replace="partials/navbar :: theNav"></span>
+
+<div th:each="location : ${location}" class="col-md-6 bodies" onclick="closeNav()">
     <h3>
-        <span th:text="${location.streetNumber}"></span>
-        <span th:text="${location.streetName}"></span>
-        <span th:text="${location.city}"></span>
-        <span th:text="${location.state}"></span>
-        <span th:text="${location.zip}"></span>
+        <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
     </h3>
 
 </div>
-
-<a th:href="@{/events}">click here to go to events page (or this can be a button)</a>
-
-
-</div>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 </body>
+<script th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script th:src="@{/main.js}"></script>
 </html>
