@@ -2,6 +2,7 @@ package com.tapsintown.controllers;
 
 
 import com.sun.javafx.sg.prism.NGShape;
+import com.tapsintown.interfaces.SavedEvents;
 import com.tapsintown.interfaces.Users;
 import com.tapsintown.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class UsersController extends BaseController{
 
     @Autowired
     private Users userDao;
+
+    @Autowired
+    private SavedEvents savedEventsDao;
 
     @GetMapping("/me")
     public String loginRedirect(Model model){
@@ -42,6 +46,8 @@ public class UsersController extends BaseController{
     @GetMapping("/{id}")
     public String getUserId(@PathVariable long id, Model m){
         m.addAttribute("user", userDao.findOne(id));
+        m.addAttribute("savedEvents", savedEventsDao.findByUserId(id));
+
         return "userprofile";
     }
 

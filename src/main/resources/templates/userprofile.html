@@ -13,6 +13,12 @@
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
     <h3>Here is a list of your saved events</h3>
+    <div th:each="saveEvent : ${savedEvents}">
+        <p th:text="${saveEvent.event.title}"></p>
+    </div>
+
+
+
 
     <a th:href="@{'/events'}">Go to events page</a>
 
@@ -22,6 +28,7 @@
 
     <br />
     <a th:href="@{'/location/create'}">Add a new location</a>
+    <a th:href="@{'/events/create'}">Create a new event</a>
 
 
 </div>
