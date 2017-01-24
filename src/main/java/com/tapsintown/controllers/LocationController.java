@@ -1,12 +1,15 @@
 package com.tapsintown.controllers;
 
 import com.tapsintown.interfaces.EventLocations;
+import com.tapsintown.interfaces.Events;
 import com.tapsintown.models.Event;
 import com.tapsintown.models.EventLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * Created by anthonyfortney on 1/18/17.
@@ -18,6 +21,9 @@ public class LocationController {
 
     @Autowired
     private EventLocations locationDao;
+
+    @Autowired
+    private Events eventsDao;
 
     @GetMapping
     public String getLocations(Model m) {
@@ -32,15 +38,17 @@ public class LocationController {
     }
 
     @PostMapping("/create")
-    public String createNewLocation(@ModelAttribute EventLocation locationCreated){
+    public String createNewLocation(@Valid EventLocation locationCreated){
         locationDao.save(locationCreated);
-        return "location/location";
+        return "redirect:/location";
     }
 
     @GetMapping("/{id}")
     public String showLocationDetails(@PathVariable long id, Model m){
         m.addAttribute("location", locationDao.findOne(id));
-        return "location/locationdetails";
+        m.addAttribute("events", eventsDao.findByEventLocationId(id));
+
+        return "profile";
     }
 
     @GetMapping("/{id}/edit")
@@ -69,7 +77,11 @@ public class LocationController {
 
         locationDao.save(currentDetails);
         return "redirect:/location";
-
     }
 
+    @GetMapping("/{id}/delete")
+    public String deleteLocation(@PathVariable long id){
+        locationDao.delete(id);
+        return "redirect:/location";
+    }
 }

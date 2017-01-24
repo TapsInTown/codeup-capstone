@@ -8,43 +8,35 @@
 <span th:replace="partials/navbar :: theNav"></span>
 
 <div class="col-md-4 bodies" onclick="closeNav()">
-    <h1>NAME</h1>
-
+    <h1 th:text="${location.name}"></h1>
     <div>
-        <h3>The Place</h3>
-        <p class="da-place">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
-        </p>
+        <h3>
+            <span th:text="${location.streetNumber}"></span>
+            <span th:text="${location.streetName}"></span>
+            <span th:text="${location.city}"></span>
+            <span th:text="${location.state}"></span>
+            <span th:text="${location.zip}"></span>
+        </h3>
     </div>
     <div>
         <h3>The Brew</h3>
-        <p class="da-brew">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
+        <p th:text="${location.descriptionTheBrew}">
         </p>
     </div>
     <div>
         <h3>About Them</h3>
-        <p class="about-dem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt i
+        <p th:text="${location.descriptionAboutThem}">
         </p>
     </div>
 
 </div>
 
 <div class="col-md-4" id="specific-events">
-<h2><a href="login.html">EVENTS FOR THIS LOCATION</a></h2>
+<h2>EVENTS FOR THIS LOCATION</h2>
+    <div th:each="event : ${events}">
+        <p th:text="${event.title}"></p>
+    </div>
+
 </div>
 
 </body>

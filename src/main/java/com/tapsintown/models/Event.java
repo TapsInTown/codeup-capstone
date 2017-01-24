@@ -25,7 +25,7 @@ public class Event {
     @Column(nullable = false, name = "event_date")
     private String eventDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String description;
 
     @CreationTimestamp
@@ -48,8 +48,8 @@ public class Event {
 //Relationship to EventLocations;
 //One location to many events
 
-    @OneToMany(mappedBy = "event")
-    private List<EventLocation> locations;
+    @ManyToOne
+    private EventLocation eventLocation;
 
 // Relationship to EventImages
 // one Event to many EventImages
@@ -64,6 +64,47 @@ public class Event {
     private List<SaveEvent> savedEvents;
 
 //  Getters and setters
+
+
+    public Date getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<EventImage> getImages() {
+        return images;
+    }
+
+    public void setImages(List<EventImage> images) {
+        this.images = images;
+    }
+
+    public List<SaveEvent> getSavedEvents() {
+        return savedEvents;
+    }
+
+    public void setSavedEvents(List<SaveEvent> savedEvents) {
+        this.savedEvents = savedEvents;
+    }
+
+    public EventLocation getEventLocation() {
+        return eventLocation;
+    }
+
+    public void setEventLocation(EventLocation eventLocation) {
+        this.eventLocation = eventLocation;
+    }
 
     public long getId() {
         return id;

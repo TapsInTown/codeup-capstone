@@ -1,39 +1,56 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous" />
+          crossorigin="anonymous"/>
 
     <meta charset="UTF-8"/>
-    <title>Locations</title>
+    <title>Add an event</title>
 </head>
 <body>
-
-<h1>Add a new Location!</h1>
-
-<div>
-
-    <form th:action="@{/events/create}" method="POST" th:object="${event}">
+<div class="container">
+    <h1>Add a new Event!</h1>
+    <form class="form-group" th:action="@{/events/create}" method="POST" th:object="${event}">
         <div class="form-group">
-
             <label>Add an event:</label>
-            <input th:field="*{title}"/>
-            <br/>
+            <input class="form-control" th:field="*{title}"/>
+        </div>
 
+        <div class="form-group">
+            <label>Which Location?</label>
+            <input list="locations" th:name="locationId" class="form-control" />
+            <datalist id="locations">
+                <option th:value="${location.name}" th:each="location : ${locations}" th:text="${location.name}"></option>
+            </datalist>
+        </div>
+
+        <div class="form-group">
             <label>Event Date</label>
-            <input th:field="*{eventDate}"/>
-            <br/>
+            <input class="form-control" th:field="*{eventDate}"/>
+        </div>
 
+        <div class="form-group">
             <label>Description</label>
-            <textarea th:field="*{description}"/>
-            <br/>
+            <textarea class="form-control" th:field="*{description}"/>
+        </div>
 
-            <input class="btn btn-info" type="submit" value="Add Event"/>
+        <div class="form-group">
+            <input class="btn btn-info form-control" type="submit" value="Add Event"/>
         </div>
     </form>
 
+    <form action="/fileupload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Upload a file!</label>
+            <input class="form-control" id="file" name="file" type="file"/>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary form-control" type="submit" value="upload"/>
+        </div>
+    </form>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

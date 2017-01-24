@@ -1,5 +1,6 @@
 package com.tapsintown.controllers;
 
+import com.tapsintown.interfaces.EventLocations;
 import com.tapsintown.interfaces.Events;
 import com.tapsintown.interfaces.SavedEvents;
 import com.tapsintown.models.Event;
@@ -23,6 +24,9 @@ public class EventsController extends BaseController {
     @Autowired
     private SavedEvents saveDao;
 
+    @Autowired
+    private EventLocations locationDao;
+
 
     @GetMapping
     public String getEvents(Model m){
@@ -33,11 +37,14 @@ public class EventsController extends BaseController {
     @GetMapping("/create")
     public String showCreateEventForm(Model m){
         m.addAttribute("event", new Event());
+        m.addAttribute("locations", locationDao.findAll());
         return "event/createevent";
     }
 
     @PostMapping("/create")
-    public String createNewEvent(@ModelAttribute Event eventCreated){
+    public String createNewEvent(@ModelAttribute Event eventCreated, @RequestParam(name="locationId") String name){
+        eventCreated.setEventLocation(locationDao.findByName(name));
+        eventCreated.setUser(loggedInUser());
         eventsDao.save(eventCreated);
         return "redirect:/events";
     }
@@ -76,10 +83,13 @@ public class EventsController extends BaseController {
         if (!isLoggedIn()){
             return "redirect:/login";
         }
+
         Event events = eventsDao.findOne(id);
         SaveEvent saveEvent = new SaveEvent();
+
         saveEvent.setEvent(events);
         saveEvent.setUser(loggedInUser());
+
         saveDao.save(saveEvent);
         return "redirect:/user/"+ loggedInUser().getId();
     }

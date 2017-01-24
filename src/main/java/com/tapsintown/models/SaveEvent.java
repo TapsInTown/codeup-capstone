@@ -5,6 +5,8 @@ import java.util.List;
 
 /**
  * Created by anthonyfortney on 1/20/17.
+ *
+ * This is the model for the user to be able to save an event to there profile page
  */
 
 @Entity
