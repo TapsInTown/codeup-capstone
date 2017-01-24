@@ -200,6 +200,7 @@ Sliding Cards*/
 .mapCanvas{
     display: none;
     transition-delay: 2s;
+    margin-left: 5%;
     width: 700px;
     height: 350px;
 
