@@ -32,7 +32,11 @@
 </div>
 
 <div class="col-md-4" id="specific-events">
-<h2><a href="login.html">EVENTS FOR THIS LOCATION</a></h2>
+<h2>EVENTS FOR THIS LOCATION</h2>
+    <div th:each="event : ${events}">
+        <p th:text="${event.title}"></p>
+    </div>
+
 </div>
 
 </body>
