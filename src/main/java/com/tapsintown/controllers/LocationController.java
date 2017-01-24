@@ -1,6 +1,7 @@
 package com.tapsintown.controllers;
 
 import com.tapsintown.interfaces.EventLocations;
+import com.tapsintown.interfaces.Events;
 import com.tapsintown.models.Event;
 import com.tapsintown.models.EventLocation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class LocationController {
 
     @Autowired
     private EventLocations locationDao;
+
+    @Autowired
+    private Events eventsDao;
 
     @GetMapping
     public String getLocations(Model m) {
@@ -42,6 +46,7 @@ public class LocationController {
     @GetMapping("/{id}")
     public String showLocationDetails(@PathVariable long id, Model m){
         m.addAttribute("location", locationDao.findOne(id));
+        m.addAttribute("events", eventsDao.findByEventLocationId(id));
 
         return "profile";
     }
