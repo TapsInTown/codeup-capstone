@@ -10,9 +10,8 @@
 <div id="navbar" th:fragment="theNav">
 <div id="navigation">
     <!--<a href="#" onclick="closeNav()" class="glyphicon glyphicon-remove nav-link"></a>-->
-    <a href="#" class="nav-link" >HOME</a>
-    <a href="#" class="nav-link" >BREWERIES</a>
-    <a href="#" class="nav-link" >POSTS</a>
+    <a th:href="@{/home}" class="nav-link" >HOME</a>
+    <a th:href="@{/location}" class="nav-link" >BREWERIES</a>
     <a href="#" class="nav-link" >DESTINATIONS</a>
     <a href="#" class="nav-link" >ABOUT</a>
     <a href="#" onclick="openContact()" class="nav-link">NEWSLETTER</a>
