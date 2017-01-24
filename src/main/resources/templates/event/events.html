@@ -22,7 +22,11 @@
     <div style="width:60%; background-color: white; padding:5%; align-content: center;">
         <div th:each="event : ${event}" onclick="closeNav()">
             <h2 th:text="${event.eventLocation.name}"></h2>
-            <h4 th:text="${event.title}"></h4>
+
+            <h4>
+                <a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}"></a>
+            </h4>
+
             <h4>Date</h4>
             <p th:text="${event.eventDate}"></p>
             <h4>Description</h4>
