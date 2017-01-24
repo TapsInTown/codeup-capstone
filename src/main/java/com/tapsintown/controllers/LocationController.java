@@ -42,7 +42,8 @@ public class LocationController {
     @GetMapping("/{id}")
     public String showLocationDetails(@PathVariable long id, Model m){
         m.addAttribute("location", locationDao.findOne(id));
-        return "location/locationdetails";
+
+        return "profile";
     }
 
     @GetMapping("/{id}/edit")
