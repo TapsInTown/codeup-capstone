@@ -219,8 +219,9 @@ Sliding Cards*/
 .stick{
     margin: 0 auto;
     position: fixed;
-    left: 23.8%;
+  /*  left: 23.8%;*/
     top: -40px;
+    text-align: centere;
 }
 .hvr-sink {
     display: inline-block;
@@ -238,4 +239,21 @@ Sliding Cards*/
 .hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {
     -webkit-transform: translateY(50px);
     transform: translateY(50px);
+}
+
+hr{
+    position: relative;
+    border: 1px solid deeppink;
+    top:-15%;
+}
+
+#sticky-anchor{
+    height: 1px;
+    width: 1px;
+    margin: 0 auto;
+    position: static;
+    top:2rem;
+    border:1px solid deeppink;
+    background-color: aqua;
+    z-index:-5;
 }

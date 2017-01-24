@@ -8,8 +8,9 @@
     <div th:replace="partials/navbar :: theNav"></div>
     <div onclick="closeNav()">
         <div class="row center-block">
-            <div id="sticky-anchor" class="center-block"></div>
-            <h1 id="tapsTitle" class="text-center">Taps In Town</h1>
+            <h1 id="tapsTitle" class="col-lg-12 text-center">Taps In Town</h1>
+            <!--<div id="sticky-anchor" class="col-lg-2 justify-content-center"></div>-->
+            <div id="sticky-anchor" class=""></div>
         </div>
         <div class="row">
             <img class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
