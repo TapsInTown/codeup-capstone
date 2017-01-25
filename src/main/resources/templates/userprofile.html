@@ -7,7 +7,7 @@
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
-<div class="container" id="user-profile" onclick="closeNav()">
+<div id="user-profile" class="main" onclick="closeNav()">
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
     <div id="logout-button">
@@ -19,8 +19,9 @@
     <!--<p>Welcome, Logged user: <span sec:authentication="name"></span></p>-->
     <!--</div>-->
 
-    <div class="col-md-6 user-profile-content">
-        <h3>Here is a list of your saved events</h3>
+    <div class="col-md-6">
+    <h3>Here is a list of your saved events</h3>
+
         <div th:each="saveEvent : ${savedEvents}">
             <h1 th:text="${saveEvent.event.title}"></h1>
             <h3 th:text="${saveEvent.event.eventDate}"></h3>
@@ -28,6 +29,7 @@
         </div>
         <h5><a th:href="@{'/events'}">Go to events page</a></h5>
     </div>
+
 
     <div th:if="${isAdmin}" class="col-md-4">
         <h3>Admin options</h3>
@@ -42,6 +44,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.js"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
         crossorigin="anonymous"></script>
-<script th:src="@{/user-profile.js}"></script>
+<script th:src="@{/main.js}"></script>
 </body>
 </html>

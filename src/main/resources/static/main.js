@@ -11,7 +11,6 @@ function openNav() {
     document.getElementById("specific-events").style.opacity = "0";
     document.getElementsByClassName("move")[0].style.marginLeft = "0";
     document.getElementsByClassName("bodies")[0].style.marginLeft = "30%";
-    console.log("success 1");
 }
 
 function closeNav() {
@@ -21,7 +20,6 @@ function closeNav() {
     document.getElementById("specific-events").style.opacity = "1";
     document.getElementsByClassName("move")[0].style.marginLeft = "0";
     document.getElementsByClassName("bodies")[0].style.marginLeft = "10%";
-    console.log("success 2");
 }
 
 function openContact() {
@@ -33,6 +31,7 @@ function closeContact() {
     document.getElementById("contact-info").style.height = "0";
 
 }
+
 
 /*sticky title*/
 

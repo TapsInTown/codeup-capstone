@@ -58,7 +58,9 @@ public class UsersController extends BaseController{
         User loggedInUser = userDao.findByUsername(loggedInUser().getUsername());
         m.addAttribute("user", userDao.findOne(id));
         m.addAttribute("savedEvents", savedEventsDao.findByUserId(id));
+
         m.addAttribute("isAdmin", "admin".equalsIgnoreCase(loggedInUser.getUserRole().getRole()));
+
         return "userprofile";
     }
 
