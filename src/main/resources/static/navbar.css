@@ -74,19 +74,6 @@ body{
 
 }
 
-a:hover{
-    background-color:#ffc744;
-    color: black;
-    text-decoration: none;
-    transition: .5s;
-}
-
-a:visited{
-    color:black;
-    text-decoration: none;
-
-}
-
 #contact-info{
     display: inline-block;
     justify-content: flex-start;
@@ -131,36 +118,36 @@ input {
 
 /*-- #2 Location Profile --*/
 
-.bodies{
-    width: 60%;
-    height:40%;
-    margin-left: 10%;
-    margin-top: 5%;
-    background-color: white;
-    transition: 1s;
+/*.bodies{*/
+    /*width: 60%;*/
+    /*height:40%;*/
+    /*margin-left: 10%;*/
+    /*margin-top: 5%;*/
+    /*background-color: white;*/
+    /*transition: 1s;*/
 
-}
-.bodies h1{
-    padding-top: 2%;
-}
+/*}*/
+/*.bodies h1{*/
+    /*padding-top: 2%;*/
+/*}*/
 
-#specific-events{
-    width: 22%;
-    height:60%;
-    margin-left: 75%;
-    margin-top: 5%;
-    position: absolute;
-    background-color: pink;
-    transition: 1s;
+/*#specific-events{*/
+    /*width: 22%;*/
+    /*height:60%;*/
+    /*margin-left: 75%;*/
+    /*margin-top: 5%;*/
+    /*position: absolute;*/
+    /*background-color: pink;*/
+    /*transition: 1s;*/
 
-}
+/*}*/
 
-.about-dem{
-    display: flex;
-    justify-content: flex-start;
-    padding-bottom: 5%;
-   /* padding-right: 45%;*/
-}
+/*.about-dem{*/
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+    /*padding-bottom: 5%;*/
+   /*!* padding-right: 45%;*!*/
+/*}*/
 /* #3 splash  */
 
 
@@ -169,17 +156,7 @@ Sliding Cards*/
 
 .cards {
     border-left: solid .5rem black;
-    width: 60%;
-    height: 30%;
-    margin-left: 20%;
-    margin-bottom: 2%;
-    padding-bottom: 5%;
     background-color:white;
-    align-content: center;
-}
-
-.cards h1{
-    padding-bottom: 2%;
 }
 
 .mapBar{
@@ -265,12 +242,6 @@ Sliding Cards*/
 
 .user-profile-nav{
     width: 25%;
-}
-
-hr{
-    position: relative;
-    border: 1px solid deeppink;
-    top:-15%;
 }
 
 #sticky-anchor{
