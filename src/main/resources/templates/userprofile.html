@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
       lang="en">
 <head th:replace="partials/header :: theHead">
     <meta charset="UTF-8"/>
@@ -16,11 +16,12 @@
         </form>
     </div>
     <!--<div>-->
-        <!--<p>Welcome, Logged user: <span sec:authentication="name"></span></p>-->
+    <!--<p>Welcome, Logged user: <span sec:authentication="name"></span></p>-->
     <!--</div>-->
 
     <div class="col-md-6">
     <h3>Here is a list of your saved events</h3>
+
         <div th:each="saveEvent : ${savedEvents}">
             <h1 th:text="${saveEvent.event.title}"></h1>
             <h3 th:text="${saveEvent.event.eventDate}"></h3>
@@ -29,16 +30,15 @@
         <h5><a th:href="@{'/events'}">Go to events page</a></h5>
     </div>
 
-    <div class="col-md-4">
-    <h3>Admin options</h3>
-        <h5>This will only be accessbile to admins. Authentication to be added</h5>
-    <br />
 
+    <div th:if="${isAdmin}" class="col-md-4">
+        <h3>Admin options</h3>
+        <h5>This will only be accessbile to admins.</h5>
+        <br/>
+        <button class="btn btn-default"><a th:href="@{'/location/create'}">Add a new location</a></button>
+        <button class="btn btn-default"><a th:href="@{'/events/create'}">Create a new event</a></button>
+    </div>
 
-    <button class="btn btn-default"><a th:href="@{'/location/create'}">Add a new location</a></button>
-    <button class="btn btn-default"><a th:href="@{'/events/create'}">Create a new event</a></button>
-
-</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.js"

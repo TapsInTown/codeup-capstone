@@ -31,7 +31,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private boolean isAdmin = false;
+    private int isAdmin;
 
 //  Relationship to role
 //  one user to one user_role
@@ -106,11 +106,11 @@ public class User {
         this.password = sc.passwordEncoder().encode(password);
     }
 
-    public boolean isAdmin() {
+    public int getIsAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(boolean admin) {
+    public void setAdmin(int admin) {
         isAdmin = admin;
     }
 

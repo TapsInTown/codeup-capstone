@@ -19,10 +19,15 @@ public class UserRole {
     private long userId;
 
     @Column(nullable = false)
-    private String role;
+    private String role = "user";
 
+    public UserRole(long userId) {
+        this.userId = userId;
+    }
 
-//    Getters and setters
+    public UserRole(){}
+
+    //    Getters and setters
 
     public long getId() {
         return id;
