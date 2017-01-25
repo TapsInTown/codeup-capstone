@@ -1,6 +1,6 @@
 package com.tapsintown.interfaces;
 
-import com.tapsintown.models.Event;
+
 import com.tapsintown.models.EventLocation;
 import org.springframework.data.repository.CrudRepository;
 
@@ -9,5 +9,4 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface EventLocations extends CrudRepository<EventLocation, Long> {
     EventLocation findByName(String name);
-
 }
