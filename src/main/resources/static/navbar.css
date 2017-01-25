@@ -47,12 +47,8 @@ body{
     font-family: "Big John";
     position: fixed;
     overflow-x: hidden;
-    /*z-index: 1;*/
+    z-index: 1;
 
-}
-
-.open-nav{
-    width: 25%;
 }
 
 .move{
@@ -146,10 +142,6 @@ input {
 }
 .bodies h1{
     padding-top: 2%;
-}
-
-.bodies-open{
-    margin-left: 30%;
 }
 
 #specific-events{
@@ -267,7 +259,12 @@ Sliding Cards*/
 
 #user-profile{
     /*This is used to move container over when nav is opened. Might use just container class later*/
+    margin-left: 20%;
     transition: 1s;
+}
+
+.user-profile-nav{
+    width: 25%;
 }
 
 hr{
@@ -307,4 +304,8 @@ hr{
     margin-left:5% ;
     display: flex;
     justify-content: center;
+}
+
+.open-nav{
+    transition: 1s;
 }
