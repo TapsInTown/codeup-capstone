@@ -22,8 +22,8 @@ public class ProfileController extends BaseController{
     @Autowired
     private Events eventsDao;
 
-    @Autowired
-    private EventLocations locationsDao;
+//    @Autowired
+//    private EventLocations locationsDao;
 
     @GetMapping("/profile")
     public String showProfilePage(){
@@ -32,7 +32,8 @@ public class ProfileController extends BaseController{
 
     @GetMapping("/home")
     public String showHomePage(Model m){
-        m.addAttribute("event", eventsDao.findAll());
+        m.addAttribute("events", eventsDao.findAll());
+//
         return "home";
     }
 }
