@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
 <head>
     <meta charset="UTF-8"/>
     <title>Navbar</title>
@@ -14,8 +16,11 @@
     <a th:href="@{/location}" class="nav-link" >BREWERIES</a>
     <a href="#" class="nav-link" >DESTINATIONS</a>
     <a href="#" class="nav-link" >ABOUT</a>
-    <a th:href="@{/login}" class="nav-link" >LOGIN</a>
-    <a th:href="@{/user/me}" class="nav-link" >USER PROFILE</a>
+    <div>
+    <a sec:authorize="isAnonymous()" th:href="@{/login}" class="nav-link" >LOGIN</a>
+
+    <a sec:authorize="isAuthenticated()" th:href="@{/user/me}" class="nav-link" >USER PROFILE</a>
+    </div>
 
     <a href="#" onclick="openContact()" class="nav-link">NEWSLETTER</a>
 </div>
