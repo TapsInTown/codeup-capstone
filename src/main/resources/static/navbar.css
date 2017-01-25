@@ -55,15 +55,6 @@ body{
     width: 25%;
 }
 
-.close-nav{
-
-}
-
-.open-specific-events{
-    margin-left: 110%;
-    opacity: 0;
-}
-
 .move{
     transition: .7s;
 }
@@ -306,6 +297,7 @@ hr{
 }
 
 /* #5 LOG IN PAGE*/
+
 .login-form{
     padding-left: 20%;
     padding-right: 20%;
