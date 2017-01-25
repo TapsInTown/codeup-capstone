@@ -7,7 +7,7 @@
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
-<div class="container" onclick="closeNav()">
+<div class="container user-profile" onclick="closeNav()">
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
     <div>
@@ -30,13 +30,14 @@
     <br />
     <button class="btn btn-success"><a th:href="@{'/location/create'}">Add a new location</a></button>
     <button class="btn btn-success"><a th:href="@{'/events/create'}">Create a new event</a></button>
+
+    <div id="logout-button">
+        <form th:action="@{/logout}" method="post" id="logout">
+            <button class="btn btn-primary" type="submit" value="logout">Log Out</button>
+        </form>
+    </div>
 </div>
 
-<div>
-    <form th:action="@{/logout}" method="post" id="logout">
-        <button class="btn btn-primary" type="submit" value="logout">Log Out</button>
-    </form>
-</div>
 
 
 
