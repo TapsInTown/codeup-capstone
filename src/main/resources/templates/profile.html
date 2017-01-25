@@ -7,7 +7,7 @@
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
 
-<div class="col-md-4 bodies" onclick="closeNav()">
+<div class="col-md-4" onclick="closeNav()">
     <h1 th:text="${location.name}"></h1>
     <div>
         <h3>
@@ -31,7 +31,7 @@
 
 </div>
 
-<div class="col-md-4" id="specific-events">
+<div class="col-md-4">
 <h4>EVENTS FOR THIS LOCATION</h4>
     <div th:each="event : ${events}">
         <a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}" ></a>
