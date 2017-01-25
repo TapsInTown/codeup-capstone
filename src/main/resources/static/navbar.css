@@ -51,6 +51,10 @@ body{
 
 }
 
+.open-nav{
+    width: 25%;
+}
+
 .move{
     transition: .7s;
 }
@@ -78,7 +82,7 @@ a:hover{
     background-color:#ffc744;
     color: black;
     text-decoration: none;
-    transition: 1.5s;
+    transition: .5s;
 }
 
 a:visited{
@@ -142,6 +146,10 @@ input {
 }
 .bodies h1{
     padding-top: 2%;
+}
+
+.bodies-open{
+    margin-left: 30%;
 }
 
 #specific-events{
@@ -250,6 +258,18 @@ Sliding Cards*/
     transform: translateY(50px);
 }
 
+
+/* #4 USER PROFILE*/
+
+#logout-button{
+    margin-top: 2%;
+}
+
+#user-profile{
+    /*This is used to move container over when nav is opened. Might use just container class later*/
+    transition: 1s;
+}
+
 hr{
     position: relative;
     border: 1px solid deeppink;
@@ -274,4 +294,17 @@ hr{
     margin-bottom: 2rem;
     padding: 2rem;
     border-left: solid .5rem black;
+}
+
+/* #5 LOG IN PAGE*/
+
+.login-form{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.login-head{
+    margin-left:5% ;
+    display: flex;
+    justify-content: center;
 }

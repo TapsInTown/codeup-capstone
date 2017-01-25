@@ -32,7 +32,7 @@
 </div>
 
 <div class="col-md-4" id="specific-events">
-<h2>EVENTS FOR THIS LOCATION</h2>
+<h4>EVENTS FOR THIS LOCATION</h4>
     <div th:each="event : ${events}">
         <a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}" ></a>
     </div>

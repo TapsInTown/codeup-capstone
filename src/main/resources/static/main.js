@@ -4,13 +4,14 @@
 "use strict";
 
 /*Navbar js*/
+
 function openNav() {
     document.getElementById("navigation").style.width = "25%";
     document.getElementById("specific-events").style.marginLeft = "110%";
     document.getElementById("specific-events").style.opacity = "0";
     document.getElementsByClassName("move")[0].style.marginLeft = "0";
     document.getElementsByClassName("bodies")[0].style.marginLeft = "30%";
-    /*document.body.style.backgroundColor = "white";*/ /*rgba(0,0,0,0.4)*/
+    console.log("success 1");
 }
 
 function closeNav() {
@@ -20,7 +21,7 @@ function closeNav() {
     document.getElementById("specific-events").style.opacity = "1";
     document.getElementsByClassName("move")[0].style.marginLeft = "0";
     document.getElementsByClassName("bodies")[0].style.marginLeft = "10%";
-    /*document.body.style.backgroundColor = "white";*/
+    console.log("success 2");
 }
 
 function openContact() {
@@ -52,7 +53,7 @@ function sticky_relocate() {
 $(function() {
     $(window).scroll(sticky_relocate);
     sticky_relocate();
-})
+});
 
 /*Sliding Card Js*/
 
