@@ -20,5 +20,7 @@ public class BaseController {
             return null;
         }
         return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
     }
+
 }

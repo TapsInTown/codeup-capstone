@@ -45,7 +45,7 @@ public class UsersController extends BaseController{
     public String getUserId(@PathVariable long id, Model m){
         m.addAttribute("user", userDao.findOne(id));
         m.addAttribute("savedEvents", savedEventsDao.findByUserId(id));
-
+        m.addAttribute("isAdmin", loggedInUser().isAdmin());
         return "userprofile";
     }
 
