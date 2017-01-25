@@ -5,22 +5,40 @@
 
 /*Navbar js*/
 
-function openNav() {
-    document.getElementById("navigation").style.width = "25%";
-    document.getElementById("specific-events").style.marginLeft = "110%";
-    document.getElementById("specific-events").style.opacity = "0";
-    document.getElementsByClassName("move")[0].style.marginLeft = "0";
-    document.getElementsByClassName("bodies")[0].style.marginLeft = "30%";
-}
+$(document).ready(function(){
+    var toggle = 0;
+    document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
+        if(toggle % 2 == 0) {
+            document.getElementById("navigation").style.width = "20%";
+            document.getElementsByClassName("move")[0].style.marginLeft = "20%";
+        }else {
+            document.getElementById("navigation").style.width = "0";
+            document.getElementsByClassName("move")[0].style.marginLeft = "0";
 
-function closeNav() {
-    document.getElementById("navigation").style.width = "0";
-    document.getElementById("navigation").style.paddingTop="0";
-    document.getElementById("specific-events").style.marginLeft = "75%";
-    document.getElementById("specific-events").style.opacity = "1";
-    document.getElementsByClassName("move")[0].style.marginLeft = "0";
-    document.getElementsByClassName("bodies")[0].style.marginLeft = "10%";
-}
+        }
+        toggle++;
+        console.log(toggle);
+        $(".contanier-fluid").toggleClass("main-shift");
+        console.log("success!")
+    });
+
+    // function openNav() {
+    // document.getElementById("navigation").style.width = "25%";
+    // document.getElementById("specific-events").style.marginLeft = "110%";
+    // document.getElementById("specific-events").style.opacity = "0";
+    // document.getElementsByClassName("move")[0].style.marginLeft = "0";
+    // document.getElementsByClassName("bodies")[0].style.marginLeft = "30%";
+// / }
+
+//
+// function closeNav() {
+//     document.getElementById("navigation").style.width = "0";
+//     document.getElementById("navigation").style.paddingTop="0";
+//     document.getElementById("specific-events").style.marginLeft = "75%";
+//     document.getElementById("specific-events").style.opacity = "1";
+//     document.getElementsByClassName("move")[0].style.marginLeft = "0";
+//     document.getElementsByClassName("bodies")[0].style.marginLeft = "10%";
+// }
 
 function openContact() {
     document.getElementById("contact-info").style.height = "100%";
@@ -96,4 +114,4 @@ function doIt() {
             alert("Geocoding was not successful - STATUS: " + status);
         }
     });
-}
+}});
