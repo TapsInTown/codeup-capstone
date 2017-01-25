@@ -183,19 +183,21 @@ Sliding Cards*/
 }
 
 .mapBar{
-    width:10%;
+    /*width:10%;*/
     height: 100%;
     color: white;
     background-color: black;
-    position: absolute;
-    margin-left: 95%;
+    /*position: absolute;*/
+    /*margin-left: 95%;*/
     transition: 1s;
     z-index: 1;
+    /*transform:rotate(-90deg);*/
+
 }
 
 #mapText{
-   transform:rotate(-90deg);
-    margin-top: 190%;
+   /*transform:rotate(-90deg);*/
+    /*margin-top: 190%;*/
 }
 
 .openMapBar{
@@ -272,6 +274,10 @@ hr{
 
     background-color: white;
     margin-bottom: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     border-left: solid .5rem black;
+}
+
+.wrap{
+    padding: 1rem;
 }

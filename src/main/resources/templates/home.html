@@ -12,8 +12,8 @@
             <!--<div id="sticky-anchor" class="col-lg-2 justify-content-center"></div>-->
         </div>
         <div id="sticky-anchor" class=""></div>
-        <div class="row">
-            <img id="tapsImg" class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
+        <div class="row hidden-sm hidden-xs">
+            <img id="tapsImg" class="taps center-block hidden-sm hidden-xs" th:src="@{/frontPageTaps/taps-combined.png}"/>
         </div>
         <div class="container">
             <div class="row text-center">
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
+        <div class="cards" th:include="partials/slidingCards :: slidingCard">
         </div>
 
     </div>s

@@ -5,7 +5,7 @@
 
 /*Navbar js*/
 function openNav() {
-    document.getElementById("navigation").style.width = "25%";
+    document.getElementById("navigation").style.width = "20%";
     document.getElementById("specific-events").style.marginLeft = "110%";
     document.getElementById("specific-events").style.opacity = "0";
     document.getElementsByClassName("move")[0].style.marginLeft = "0";
