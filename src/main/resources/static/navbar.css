@@ -27,6 +27,7 @@ body{
     background-attachment: fixed;
     background-image: url("wood.jpg");
     background-size: 100%;
+    font-size: 15px;
 }
 
 /*-- #1 Navbar --*/
@@ -277,6 +278,14 @@ Sliding Cards*/
     justify-content: center;
 }
 
+/*jQuery Classes*/
+
 .open-nav{
+    transition: .7s;
+    width: 25%;
+}
+
+.main-shift{
+    margin-left: 20%;
     transition: 1s;
 }

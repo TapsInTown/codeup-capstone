@@ -5,22 +5,31 @@
 
 /*Navbar js*/
 
-function openNav() {
-    document.getElementById("navigation").style.width = "25%";
-    document.getElementById("specific-events").style.marginLeft = "110%";
-    document.getElementById("specific-events").style.opacity = "0";
-    document.getElementsByClassName("move")[0].style.marginLeft = "0";
-    document.getElementsByClassName("bodies")[0].style.marginLeft = "30%";
-}
+// function openNav() {
+    // document.getElementById("navigation").style.width = "25%";
+    // document.getElementById("specific-events").style.marginLeft = "110%";
+    // document.getElementById("specific-events").style.opacity = "0";
+    // document.getElementsByClassName("move")[0].style.marginLeft = "0";
+    // document.getElementsByClassName("bodies")[0].style.marginLeft = "30%";
+// / }
 
-function closeNav() {
-    document.getElementById("navigation").style.width = "0";
-    document.getElementById("navigation").style.paddingTop="0";
-    document.getElementById("specific-events").style.marginLeft = "75%";
-    document.getElementById("specific-events").style.opacity = "1";
-    document.getElementsByClassName("move")[0].style.marginLeft = "0";
-    document.getElementsByClassName("bodies")[0].style.marginLeft = "10%";
-}
+$(document).ready(function(){
+    $(".ham-img").click(function() {
+        $(".container-fluid").toggleClass("open-nav");
+        $("#navigation").toggleClass("main-shift");
+    });
+
+
+
+//
+// function closeNav() {
+//     document.getElementById("navigation").style.width = "0";
+//     document.getElementById("navigation").style.paddingTop="0";
+//     document.getElementById("specific-events").style.marginLeft = "75%";
+//     document.getElementById("specific-events").style.opacity = "1";
+//     document.getElementsByClassName("move")[0].style.marginLeft = "0";
+//     document.getElementsByClassName("bodies")[0].style.marginLeft = "10%";
+// }
 
 function openContact() {
     document.getElementById("contact-info").style.height = "100%";
@@ -96,4 +105,4 @@ function doIt() {
             alert("Geocoding was not successful - STATUS: " + status);
         }
     });
-}
+}});
