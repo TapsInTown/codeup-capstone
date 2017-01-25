@@ -10,6 +10,7 @@ function openNav() {
     document.getElementById("specific-events").style.opacity = "0";
     document.getElementsByClassName("move")[0].style.marginLeft = "0";
     document.getElementsByClassName("bodies")[0].style.marginLeft = "30%";
+    document.getElementsByClassName("user-profile")[0].style.marginLeft = "30%";
     /*document.body.style.backgroundColor = "white";*/ /*rgba(0,0,0,0.4)*/
 }
 
@@ -20,6 +21,7 @@ function closeNav() {
     document.getElementById("specific-events").style.opacity = "1";
     document.getElementsByClassName("move")[0].style.marginLeft = "0";
     document.getElementsByClassName("bodies")[0].style.marginLeft = "10%";
+    document.getElementsByClassName("user-profile")[0].style.marginLeft = "0";
     /*document.body.style.backgroundColor = "white";*/
 }
 

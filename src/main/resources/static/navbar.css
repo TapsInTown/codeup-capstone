@@ -238,3 +238,13 @@ Sliding Cards*/
     -webkit-transform: translateY(50px);
     transform: translateY(50px);
 }
+
+/*USER PROFILE*/
+
+#logout-button{
+    margin-top: 2%;
+}
+
+.user-profile{
+    /*This is used to move container over when nav is opened. Might use just container class later*/
+}
