@@ -7,43 +7,40 @@
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
-<div class="container user-profile" onclick="closeNav()">
+<div class="container" id="user-profile" onclick="closeNav()">
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
-
-    <div>
-        <p>Welcome, Logged user: <span sec:authentication="name"></span></p>
-    </div>
-
-    <h3>Here is a list of your saved events</h3>
-    <div th:each="saveEvent : ${savedEvents}">
-        <h1 th:text="${saveEvent.event.title}"></h1>
-        <h3 th:text="${saveEvent.event.eventDate}"></h3>
-        <p th:text="${saveEvent.event.description}"></p>
-
-    </div>
-
-    <h5><a th:href="@{'/events'}">Go to events page</a></h5>
-    <br />
-
-    <h3>Admin options</h3>
-        <h5>This will only be accessbile to admins. Authentication to be added</h5>
-    <br />
-    <button class="btn btn-success"><a th:href="@{'/location/create'}">Add a new location</a></button>
-    <button class="btn btn-success"><a th:href="@{'/events/create'}">Create a new event</a></button>
 
     <div id="logout-button">
         <form th:action="@{/logout}" method="post" id="logout">
             <button class="btn btn-primary" type="submit" value="logout">Log Out</button>
         </form>
     </div>
+    <!--<div>-->
+        <!--<p>Welcome, Logged user: <span sec:authentication="name"></span></p>-->
+    <!--</div>-->
+
+    <div class="col-md-6 user-profile-content">
+    <h3>Here is a list of your saved events</h3>
+        <div th:each="saveEvent : ${savedEvents}">
+            <h1 th:text="${saveEvent.event.title}"></h1>
+            <h3 th:text="${saveEvent.event.eventDate}"></h3>
+            <p th:text="${saveEvent.event.description}"></p>
+        </div>
+        <h5><a th:href="@{'/events'}">Go to events page</a></h5>
+    </div>
+
+    <div class="col-md-4">
+    <h3>Admin options</h3>
+        <h5>This will only be accessbile to admins. Authentication to be added</h5>
+    <br />
+    <button class="btn btn-default"><a th:href="@{'/location/create'}">Add a new location</a></button>
+    <button class="btn btn-default"><a th:href="@{'/events/create'}">Create a new event</a></button>
 </div>
-
-
-
+</div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.js"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
         crossorigin="anonymous"></script>
-<script th:src="@{/main.js}"></script>
+<script th:src="@{/user-profile.js}"></script>
 </body>
 </html>
