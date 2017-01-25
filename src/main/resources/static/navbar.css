@@ -91,7 +91,7 @@ a:hover{
     background-color:#ffc744;
     color: black;
     text-decoration: none;
-    transition: 1.5s;
+    transition: .5s;
 }
 
 a:visited{
@@ -268,7 +268,7 @@ Sliding Cards*/
 }
 
 
-/*USER PROFILE*/
+/* #4 USER PROFILE*/
 
 #logout-button{
     margin-top: 2%;
@@ -303,4 +303,16 @@ hr{
     margin-bottom: 2rem;
     padding: 2rem;
     border-left: solid .5rem black;
+}
+
+/* #5 LOG IN PAGE*/
+.login-form{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.login-head{
+    margin-left:5% ;
+    display: flex;
+    justify-content: center;
 }
