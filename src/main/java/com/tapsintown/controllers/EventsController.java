@@ -30,7 +30,7 @@ public class EventsController extends BaseController {
 
     @GetMapping
     public String getEvents(Model m){
-        m.addAttribute("event", eventsDao.findAll());
+        m.addAttribute("events", eventsDao.findAll());
         return "event/events";
     }
 
@@ -52,6 +52,8 @@ public class EventsController extends BaseController {
     @GetMapping("/{id}")
     public String showEventDetails(@PathVariable long id, Model m){
         m.addAttribute("event", eventsDao.findOne(id));
+        m.addAttribute("loggedIn", isLoggedIn());
+
         return "event/eventdetails";
     }
 
