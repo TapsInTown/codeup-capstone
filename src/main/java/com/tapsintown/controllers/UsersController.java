@@ -1,7 +1,5 @@
 package com.tapsintown.controllers;
 
-
-import com.sun.javafx.sg.prism.NGShape;
 import com.tapsintown.interfaces.SavedEvents;
 import com.tapsintown.interfaces.Users;
 import com.tapsintown.models.User;

@@ -8,13 +8,26 @@
     <div th:replace="partials/navbar :: theNav"></div>
     <div onclick="closeNav()">
         <div class="row center-block">
-            <div id="sticky-anchor" class="center-block"></div>
-            <h1 id="tapsTitle" class="text-center">Taps In Town</h1>
+            <h1 id="tapsTitle" class="col-lg-8 col-lg-offset-2 text-center">Taps In Town</h1>
+            <!--<div id="sticky-anchor" class="col-lg-2 justify-content-center"></div>-->
         </div>
+        <div id="sticky-anchor" class=""></div>
         <div class="row">
-            <img class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
+            <img id="tapsImg" class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
         </div>
-        <div class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
+        <div class="container">
+            <div class="row text-center">
+                <div id="aboutUs" class="col-lg-8 col-lg-offset-2 col-sm-12">
+                    <h2 id="hello">Hello</h2>
+                    <p class="">Taps in town was created out of love for beer.
+                        Your bones don't break, mine do. That's clear.
+                        Your cells react to bacteria and viruses differently than mine.
+                        Your bones don't break, mine do. That's clear.
+                        Your cells react to bacteria and viruses differently than mine.</p>
+                </div>
+            </div>
+        </div>
+        <div th:each="events : ${event}" class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
         </div>
 
     </div>s

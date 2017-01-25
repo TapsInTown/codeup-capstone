@@ -47,7 +47,6 @@ public class LocationController {
     public String showLocationDetails(@PathVariable long id, Model m){
         m.addAttribute("location", locationDao.findOne(id));
         m.addAttribute("events", eventsDao.findByEventLocationId(id));
-
         return "profile";
     }
 
