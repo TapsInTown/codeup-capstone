@@ -28,6 +28,7 @@
 
             <P>Should see if loggin in. Cannot see of not loggin in.</P>
             <form th:action="@{'/events/save/' + ${event.id}}" method="post">
+
                 <div th:if="${loggedIn}">
                     <div class="form-group">
                         <input class="form-control" type="submit" value="Save Event"/>
