@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
+        <div th:each="events : ${event}" class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
         </div>
 
     </div>s
