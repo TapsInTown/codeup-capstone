@@ -8,21 +8,14 @@
 <body>
     <div class="">
     <div th:fragment="slidingCard">
-        <div><h1 class="col-md-12">TITLE GOES HERE</h1>
+        <div><h1 th:text="${events.title}" class="col-md-12"></h1>
             </div>
         <div class="mapBar">
             <h3 id="mapText">MAP</h3>
         </div>
         <h5 id="address">300 Alamo Plaza, San Antonio, TX 78205</h5>
         <div id="card-hide">
-        <p>Lorem ipsum dolor sit amet, ei summo veniam neglegentur est, eros vocent qualisque eos at. Ea eum mucius
-            nostro verterem, duo nibh sanctus inciderint ne, nominavi temporibus mediocritatem qui ex. Malis erroribus
-            quo id. Per ne aliquid consequat, assum aeterno ut sit. Est no scripserit complectitur contentiones, id
-            oblique splendide qui.
-
-            Audire inermis apeirian vix te, ei posse munere persequeris usu. Iusto adipiscing ne qui.
-            Vel delicata consectetuer no, dolore ancillae eum et. Audire disputando ea cum. Denique mentitum et sed,
-            ad exerci explicari usu.</p>
+        <p th:text="${events.description}"></p>
 </div>
         <div class="mapCanvas">
         </div>
