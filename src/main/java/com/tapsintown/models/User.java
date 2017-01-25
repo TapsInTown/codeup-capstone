@@ -105,4 +105,36 @@ public class User {
         SecurityConfiguration sc = new SecurityConfiguration();
         this.password = sc.passwordEncoder().encode(password);
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
+
+    public List<SaveEvent> getSavedEvents() {
+        return savedEvents;
+    }
+
+    public void setSavedEvents(List<SaveEvent> savedEvents) {
+        this.savedEvents = savedEvents;
+    }
 }
