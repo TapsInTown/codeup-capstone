@@ -9,16 +9,19 @@ $(document).ready(function(){
     var toggle = 0;
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
+            document.getElementsByClassName("shift")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "20%";
             document.getElementsByClassName("move")[0].style.marginLeft = "20%";
+            document.getElementsByClassName("shift")[0].style.marginLeft = "20%";
         }else {
+            document.getElementsByClassName("shift")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
             document.getElementsByClassName("move")[0].style.marginLeft = "0";
-
+            document.getElementsByClassName("shift")[0].style.marginLeft = "0";
         }
         toggle++;
         console.log(toggle);
-        $(".contanier-fluid").toggleClass("main-shift");
+        // $(".container-fluid").toggleClass("main-shift");
         console.log("success!")
     });
 
@@ -73,18 +76,31 @@ $(function() {
 });
 
 /*Sliding Card Js*/
+var toggle = 0;
 
 $(document).ready(function(){
-    $(".mapBar").click(function(){
-        $(".mapBar").toggleClass("openMapBar");
-        $(".mapCanvas").toggle("mapCanvas");
-        $("#card-hide").toggle("card-hide");
-        /*$(".mapBar").toggle(doIt());*/
-        doIt()
-    });
-    $(".mapBar").hover(function(){
-        $(".mapBar").toggleClass("hoverMapBar");
-    })
+    var mapBars = document.getElementsByClassName("mapBar");
+    console.log(mapBars);
+    var mapCanvas = document.getElementsByClassName("mapCanvas");
+    for (var i = 0; i < mapBars.length; i++){
+
+        mapBars[i].addEventListener("click", function () {
+
+            if(toggle % 2 == 0) {
+                this.classList.add("openMapBar");
+                // this.parentElement().lastChild.classList.add(mapCanvas);
+                $(".card-hide").hide("slow");
+                $(".mapCanvas").show("slow");
+                doIt();
+            } else {
+                this.classList.remove("openMapBar");
+                // this.parentElement().lastChild.classList.remove(mapCanvas);
+                $(".card-hide").show("slow");
+                $(".mapCanvas").hide("slow");
+            }
+            toggle++;
+        })
+    }
 });
 
 

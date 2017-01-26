@@ -7,25 +7,25 @@
 </head>
 <body>
     <div class="">
-    <div th:fragment="slidingCard">
-        <div><h1 th:text="${event.title}" class="col-md-12"></h1>
+        <div th:fragment="slidingCard">
+            <div>
+                <h1 th:text="${event.title}" class="col-md-12"></h1>
             </div>
-        <div class="mapBar">
-            <h3 id="mapText">MAP</h3>
+            <div class="mapBar">
+                <h3 id="mapText">MAP</h3>
+            </div>
+            <h5 id="address">
+                <span th:text="${event.eventLocation.streetNumber}"></span>
+                <span th:text="${event.eventLocation.streetName}"></span>
+                <span th:text="${event.eventLocation.city}"></span>
+                <span th:text="${event.eventLocation.State}"></span>
+                <span th:text="${event.eventLocation.zip}"></span>
+            </h5>
+            <div class="card-hide">
+                <p th:text="${event.description}"></p>
+            </div>
+            <div class="mapCanvas"></div>
         </div>
-        <h5 id="address">
-            <span th:text="${event.eventLocation.streetNumber}"></span>
-            <span th:text="${event.eventLocation.streetName}"></span>
-            <span th:text="${event.eventLocation.city}"></span>
-            <span th:text="${event.eventLocation.State}"></span>
-            <span th:text="${event.eventLocation.zip}"></span>
-        </h5>
-        <div id="card-hide">
-        <p th:text="${event.description}"></p>
-</div>
-        <div class="mapCanvas">
-        </div>
-    </div>
     </div>
 </body>
 </html>
