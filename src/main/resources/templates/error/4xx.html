@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/header :: theHead">
+    <meta charset="UTF-8" />
+    <title>Error th:text="'Ooops, ' + ${error}"</title>
+</head>
+<body>
+<div th:replace="partials/navbar :: theNav"></div>
+<div class="container-fluid shift">
+<th:block th:switch="${error}">
+    <div class="error-shift" th:case="'Not Found'">
+        <h1>Nothing to see here</h1>
+        <img class="error-img" th:src="@{/taps_error_page.jpg}" />
+    </div>
+    <div th:case="'Forbidden'">
+        <h1>Hey, only brew masters are allowed here! </h1>
+    </div>
+</th:block>
+</div>
+</body>
+<script
+        th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script th:src="@{/main.js}"></script>
+</html>
