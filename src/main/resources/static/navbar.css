@@ -279,7 +279,7 @@ Sliding Cards*/
     justify-content: center;
 }
 
-/*jQuery Classes*/
+/* #6 jQuery Classes*/
 
 .open-nav{
     transition: .7s;
@@ -294,3 +294,9 @@ Sliding Cards*/
 /*.shift{*/
     /*transition: 1s;*/
 /*}*/
+
+/* #7 ERROR PAGES*/
+
+.error-shift{
+    margin-left: 15%;
+}

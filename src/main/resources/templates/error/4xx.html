@@ -8,7 +8,7 @@
 <div th:replace="partials/navbar :: theNav"></div>
 <div class="container-fluid shift">
 <th:block th:switch="${error}">
-    <div th:case="'Not Found'">
+    <div class="error-shift" th:case="'Not Found'">
         <h1>Nothing to see here</h1>
     </div>
     <div th:case="'Forbidden'">

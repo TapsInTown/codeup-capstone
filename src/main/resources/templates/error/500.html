@@ -8,8 +8,10 @@
 <div th:replace="partials/navbar :: theNav"></div>
 <div class="container-fluid shift">
 <th:block th:switch="${error}">
-    <div th:case="'Internal Server Error'">
-        <h2>Whoops, seems like something went wrong on our end. Next brew is on us!</h2>
+    <div class= "error-shift" th:case="'Internal Server Error'">
+        <h1>Whoops, seems like something went wrong on our end.</h1>
+        <br/>
+        <h1>Next brew is on us!</h1>
     </div>
 </th:block>
     </div>
