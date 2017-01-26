@@ -265,8 +265,20 @@ Sliding Cards*/
 /* #5 LOG IN PAGE*/
 
 .login-form{
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 34%;
+    padding-right: 34%;
+}
+
+.login-form input{
+    border-bottom: .5rem solid #ffc744;
+    font-size: 2rem;
+    font-family: "sans-serif";
+    height: 4rem;
+}
+
+.login-form button{
+    width:20%;
+    height: auto;
 }
 
 .login-head{

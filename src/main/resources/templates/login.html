@@ -22,20 +22,20 @@
     <form th:action="@{/login}" method="post">
 
         <div class="form-group">
-            <label for="username">Username:</label>
+            <label for="username"><h3>Username:</h3></label>
             <input class="form-control" id="username" name="username" type="text"/>
         </div>
 
         <div class="form-group">
-            <label for="password">Password:</label>
+            <label for="password"><h3>Password:</h3></label>
             <input class="form-control" id="password" name="password" type="password"/>
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary form-control" type="submit" value="Log In">Log In</button>
+            <button class="btn btn-primary form-control" type="submit" value="Log In"><h4>Log In</h4></button>
         </div>
 
-        <h3>New to Taps In Town? <span><a th:href="@{/user/register}">Click here to register!</a></span></h3>
+        <h3>New to Taps In Town? <span><a th:href="@{/user/register}">Sign Up</a></span></h3>
 
         <!--<div>-->
             <!--<h3>Welcome, Logged user: <span sec:authentication="name"></span></h3>-->
