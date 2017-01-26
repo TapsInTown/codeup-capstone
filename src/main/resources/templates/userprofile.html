@@ -10,11 +10,6 @@
 <div id="user-profile" class="container-fluid shift">
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
-    <div id="logout-button">
-        <form th:action="@{/logout}" method="post" id="logout">
-            <button class="btn btn-primary" type="submit" value="logout">Log Out</button>
-        </form>
-    </div>
     <!--<div>-->
     <!--<p>Welcome, Logged user: <span sec:authentication="name"></span></p>-->
     <!--</div>-->
@@ -26,11 +21,16 @@
             <h1 th:text="${saveEvent.event.title}"></h1>
             <h3 th:text="${saveEvent.event.eventDate}"></h3>
             <p th:text="${saveEvent.event.description}"></p>
+        <form th:action="@{'/user/delete/' + ${saveEvent.id}}" method="POST">
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        </form>
         </div>
-        <h5><a th:href="@{'/events'}">Go to events page</a></h5>
     </div>
 
 
+        <h5><a th:href="@{'/home'}">Go to Home page</a></h5>
     <div th:if="${isAdmin}" class="col-md-4">
         <h3>Admin options</h3>
         <h5>This will only be accessbile to admins.</h5>
