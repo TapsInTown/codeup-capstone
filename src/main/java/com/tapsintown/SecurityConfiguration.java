@@ -1,8 +1,6 @@
 package com.tapsintown;
 
-import com.tapsintown.controllers.BaseController;
 import com.tapsintown.interfaces.Users;
-import com.tapsintown.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -53,20 +51,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login?logout") // append a query string value
                 .and()
                 .authorizeRequests()
-//                .antMatchers("/events/create") // only authenticated users can create ads
-//                .authenticated()
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/events/{id}/edit") // only authenticated users can create ads
-//                .authenticated()
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/location/create") // only authenticated users can create ads
-//                .authenticated()
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers("/location/{id}/edit") // only authenticated users can create ads
-//                .authenticated()
+                .antMatchers("/events/create")
+                .hasAuthority("admin")
+                .and()
+                .authorizeRequests()
+                .antMatchers("/events/{id}/edit")
+                .hasAuthority("admin")
+                .and()
+                .authorizeRequests()
+                .antMatchers("/location/create")
+                .hasAuthority("admin")
+                .and()
+                .authorizeRequests()
+                .antMatchers("/location/{id}/edit")
+                .hasAuthority("admin")
         ;
     }
 

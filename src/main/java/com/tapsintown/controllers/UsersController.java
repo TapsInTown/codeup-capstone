@@ -3,6 +3,7 @@ package com.tapsintown.controllers;
 import com.tapsintown.interfaces.Roles;
 import com.tapsintown.interfaces.SavedEvents;
 import com.tapsintown.interfaces.Users;
+import com.tapsintown.models.SaveEvent;
 import com.tapsintown.models.User;
 import com.tapsintown.models.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,12 +57,22 @@ public class UsersController extends BaseController{
     public String getUserId(@PathVariable long id, Model m){
 
         User loggedInUser = userDao.findByUsername(loggedInUser().getUsername());
+
         m.addAttribute("user", userDao.findOne(id));
         m.addAttribute("savedEvents", savedEventsDao.findByUserId(id));
+
 
         m.addAttribute("isAdmin", "admin".equalsIgnoreCase(loggedInUser.getUserRole().getRole()));
 
         return "userprofile";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteUserEvent(@PathVariable long id){
+        SaveEvent saveEvent = savedEventsDao.findOne(id);
+        savedEventsDao.delete(saveEvent);
+
+        return "redirect:/user/" + loggedInUser().getId();
     }
 
 

@@ -20,6 +20,8 @@
     <a sec:authorize="isAnonymous()" th:href="@{/login}" class="nav-link" >LOGIN</a>
 
     <a sec:authorize="isAuthenticated()" th:href="@{/user/me}" class="nav-link" >USER PROFILE</a>
+        <a sec:authorize="isAuthenticated()" Id="logout-btn" class="nav-link" >LOGOUT</a>
+        <form th:action="@{/logout}" method="post" id="logout"></form>
     </div>
 
     <a href="#" onclick="openContact()" class="nav-link">NEWSLETTER</a>
