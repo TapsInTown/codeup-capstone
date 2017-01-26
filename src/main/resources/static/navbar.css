@@ -306,6 +306,18 @@ Sliding Cards*/
     text-align: center;
 }
 
+.error-shift-forbidden{
+    margin-left: 10%;
+    margin-top: 2%;
+    text-align: center;
+
+}
+
 .error-img{
     width: 100rem;
+}
+
+.error-img-barrel{
+    width: 50rem;
+    margin-top: 5%;
 }
