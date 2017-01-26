@@ -279,6 +279,7 @@ Sliding Cards*/
 .login-form button{
     width:20%;
     height: auto;
+    overflow: hidden;
 }
 
 .login-head{
