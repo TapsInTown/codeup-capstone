@@ -12,10 +12,10 @@
     <h1 class="login-head">Log in to Taps In Town</h1>
 
     <div th:if="${param.error}">
-        Invalid Username and Password.
+        <h3 style="color:darkred" align="center">Invalid Username or Password.</h3>
     </div>
     <div th:if="${param.logout}">
-        You have been logged out.
+        <h3 style="color: #ffc744" align="center">You have safely logged out</h3>
     </div>
 
     <div class="login-form">
@@ -37,9 +37,9 @@
 
         <h3>New to Taps In Town? <span><a th:href="@{/user/register}">Click here to register!</a></span></h3>
 
-        <div>
-            <h3>Welcome, Logged user: <span sec:authentication="name"></span></h3>
-        </div>
+        <!--<div>-->
+            <!--<h3>Welcome, Logged user: <span sec:authentication="name"></span></h3>-->
+        <!--</div>-->
     </form>
         </div>
 
