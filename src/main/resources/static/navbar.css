@@ -239,11 +239,7 @@ Sliding Cards*/
 #user-profile{
     /*This is used to move container over when nav is opened. Might use just container class later*/
     margin-left: 20%;
-    transition: 1s;
-}
-
-.user-profile-nav{
-    width: 25%;
+    /*transition: 1s;*/
 }
 
 #sticky-anchor{
