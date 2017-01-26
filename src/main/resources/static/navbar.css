@@ -199,6 +199,17 @@ Sliding Cards*/
     margin: 0 auto auto auto;
 }*/
 
+#tapsTitle a:link{
+    color: inherit;
+    text-decoration: none;
+}
+#tapsTitle a:hover{
+    color: #ffc744;
+}
+#tapsTitle a:visited{
+    color: inherit;
+}
+
 #sticky-anchor{
     margin: 0 auto;
 }
