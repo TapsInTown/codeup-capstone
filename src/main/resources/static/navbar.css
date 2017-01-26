@@ -181,7 +181,7 @@ Sliding Cards*/
     margin-left: -11%;
 }
 
-.hoverMapBar{
+.mapBar:hover{
     background-color: #ffc744;
 }
 
@@ -286,7 +286,11 @@ Sliding Cards*/
     width: 25%;
 }
 
-.main-shift{
-    margin-left: 20%;
-    transition: 1s;
-}
+/*.main-shift{*/
+    /*margin-left: 20%;*/
+    /*transition: 1s;*/
+/*}*/
+
+/*.shift{*/
+    /*transition: 1s;*/
+/*}*/
