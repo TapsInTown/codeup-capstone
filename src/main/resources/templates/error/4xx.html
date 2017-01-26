@@ -10,10 +10,11 @@
 <th:block th:switch="${error}">
     <div class="error-shift" th:case="'Not Found'">
         <h1>Nothing to see here</h1>
-        <img class="error-img" th:src="@{/taps_error_page.jpg}" />
+        <img class="error-img-barrel" th:src="@{/beer-barrel.png}" />
     </div>
-    <div th:case="'Forbidden'">
+    <div class="error-shift-forbidden" th:case="'Forbidden'">
         <h1>Hey, only brew masters are allowed here! </h1>
+        <img class="error-img" th:src="@{/santa-beer.png}" />
     </div>
 </th:block>
 </div>
