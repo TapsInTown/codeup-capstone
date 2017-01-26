@@ -245,10 +245,6 @@ Sliding Cards*/
     transition: 1s;
 }
 
-.user-profile-nav{
-    width: 25%;
-}
-
 #sticky-anchor{
     height: 1px;
     width: 1px;
