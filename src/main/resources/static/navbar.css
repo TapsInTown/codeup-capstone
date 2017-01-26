@@ -287,7 +287,16 @@ Sliding Cards*/
     justify-content: center;
 }
 
-/* #6 jQuery Classes*/
+/* # 6 REGISTER PAGE*/
+#register-profile{
+    /*margin-left: 1%;*/
+    transition: 1s;
+}
+
+#register-profile h1{
+    margin-left: 12%;
+}
+/* #7 jQuery Classes*/
 
 .open-nav{
     transition: .7s;
@@ -303,7 +312,7 @@ Sliding Cards*/
     /*transition: 1s;*/
 /*}*/
 
-/* #7 ERROR PAGES*/
+/* #8 ERROR PAGES*/
 
 .error-shift{
     margin-left: 5%;
