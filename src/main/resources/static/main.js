@@ -131,3 +131,17 @@ function doIt() {
         }
     });
 }});
+
+/* logout link on the nav bar */
+var logoutSubmit = function() {
+    var logoutBtn = document.getElementById('logout-btn');
+    var logoutForm = document.getElementById('logout');
+
+    if (logoutBtn != null) {
+        logoutBtn.addEventListener('click', function (e) {
+            logoutForm.submit();
+        });
+    }
+};
+
+logoutSubmit();
