@@ -30,8 +30,8 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private int isAdmin;
+//    @Column(nullable = false)
+//    private int isAdmin;
 
 //  Relationship to role
 //  one user to one user_role
@@ -106,13 +106,13 @@ public class User {
         this.password = sc.passwordEncoder().encode(password);
     }
 
-    public int getIsAdmin() {
-        return isAdmin;
-    }
+//    public int getIsAdmin() {
+//        return isAdmin;
+//    }
 
-    public void setAdmin(int admin) {
-        isAdmin = admin;
-    }
+//    public void setAdmin(int admin) {
+//        isAdmin = admin;
+//    }
 
     public UserRole getUserRole() {
         return userRole;
