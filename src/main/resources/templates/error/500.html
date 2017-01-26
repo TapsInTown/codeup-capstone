@@ -6,11 +6,13 @@
 </head>
 <body>
 <div th:replace="partials/navbar :: theNav"></div>
+<div class="container-fluid shift">
 <th:block th:switch="${error}">
     <div th:case="'Internal Server Error'">
-        <h1>Whoops, seems like something went wrong on our end. Next brew is on us!</h1>
+        <h2>Whoops, seems like something went wrong on our end. Next brew is on us!</h2>
     </div>
 </th:block>
+    </div>
 </body>
 <script
         th:src="@{https://code.jquery.com/jquery-3.1.1.js}"

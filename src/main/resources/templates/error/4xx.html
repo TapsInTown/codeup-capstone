@@ -6,6 +6,7 @@
 </head>
 <body>
 <div th:replace="partials/navbar :: theNav"></div>
+<div class="container-fluid shift">
 <th:block th:switch="${error}">
     <div th:case="'Not Found'">
         <h1>Nothing to see here</h1>
@@ -14,7 +15,7 @@
         <h1>Hey, only brew masters are allowed here! </h1>
     </div>
 </th:block>
-
+</div>
 </body>
 <script
         th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
