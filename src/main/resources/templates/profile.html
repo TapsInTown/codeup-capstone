@@ -6,8 +6,8 @@
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
-
-<div class="col-md-4" onclick="closeNav()">
+<div class="container-fluid shift">
+<div class="col-md-4">
     <h1 th:text="${location.name}"></h1>
     <div>
         <h3>
@@ -38,7 +38,7 @@
     </div>
 
 </div>
-
+</div>
 </body>
 <script th:src="@{https://code.jquery.com/jquery-3.1.1.js}" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 <script th:src="@{/main.js}"></script>

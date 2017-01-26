@@ -27,6 +27,7 @@ body{
     background-attachment: fixed;
     background-image: url("wood.jpg");
     background-size: 100%;
+    font-size: 15px;
 }
 
 /*-- #1 Navbar --*/
@@ -106,6 +107,7 @@ input {
     padding-top:1%;
     padding-left: 1%;
     position: fixed;
+    z-index: 1;
 }
 
 .hop-img{
@@ -179,7 +181,7 @@ Sliding Cards*/
     margin-left: -11%;
 }
 
-.hoverMapBar{
+.mapBar:hover{
     background-color: #ffc744;
 }
 
@@ -280,6 +282,18 @@ Sliding Cards*/
     justify-content: center;
 }
 
+/*jQuery Classes*/
+
 .open-nav{
-    transition: 1s;
+    transition: .7s;
+    width: 25%;
 }
+
+/*.main-shift{*/
+    /*margin-left: 20%;*/
+    /*transition: 1s;*/
+/*}*/
+
+/*.shift{*/
+    /*transition: 1s;*/
+/*}*/

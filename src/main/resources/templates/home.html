@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:replace="partials/navbar :: theNav"></div>
-    <div class="main" onclick="closeNav()">
+    <div class="container-fluid shift">
         <div class="row center-block">
             <h1 id="tapsTitle" class="col-lg-8 col-lg-offset-2 text-center">Taps In Town</h1>
             <!--<div id="sticky-anchor" class="col-lg-2 justify-content-center"></div>-->
@@ -30,13 +30,13 @@
         <div th:each="event : ${events}" class="col-md-6 cards" th:include="partials/slidingCards :: slidingCard">
         </div>
 
-    </div>s
+    </div>
 </body>
 <script
         th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
         crossorigin="anonymous"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=/* PUT KEY HERE */&amp;libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmBSAkIIH8tytXlTJaKTtwj488S7eVCZs&amp;libraries=places"></script>
 <script th:src="@{/main.js}"></script>
 <script th:src="@{/wow.min.js}"></script>
 <script>new WOW().init();</script>

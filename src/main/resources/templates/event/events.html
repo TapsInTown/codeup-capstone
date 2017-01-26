@@ -14,13 +14,13 @@
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
+<div class="container-fluid shift">
+<h1 align="center">Taps In Town</h1>
 
-<h1 align="center" onclick="closeNav()">Taps In Town</h1>
-
-<div onclick="closeNav()" style="padding-left:30%; padding-top: 2%">
+<div style="padding-left:30%; padding-top: 2%">
     <img style="width: 60%" align="center" src="more-taps.jpg"/>
     <div style="width:60%; background-color: white; padding:5%; align-content: center;">
-        <div th:each="event : ${events}" onclick="closeNav()">
+        <div th:each="event : ${events}">
             <h2 th:text="${event.eventLocation.name}"></h2>
 
             <h4>
@@ -36,6 +36,7 @@
         </div>
     </div>
 </div>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.js"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
