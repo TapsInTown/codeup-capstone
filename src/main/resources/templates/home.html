@@ -7,11 +7,7 @@
 <body>
     <div th:replace="partials/navbar :: theNav"></div>
     <div class="container-fluid shift">
-        <div class="row center-block">
-            <h1 id="tapsTitle" class="col-lg-8 col-lg-offset-2 text-center">Taps In Town</h1>
-            <!--<div id="sticky-anchor" class="col-lg-2 justify-content-center"></div>-->
-        </div>
-        <div id="sticky-anchor" class=""></div>
+        <div th:replace="partials/title :: title"></div>
         <div class="row">
             <img id="tapsImg" class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
         </div>

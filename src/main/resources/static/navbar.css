@@ -204,6 +204,7 @@ Sliding Cards*/
 }
 
 .stick{
+    left:0;
     margin-bottom: 2rem;
     position: fixed;
   /*  left: 23.8%;*/
@@ -227,6 +228,8 @@ Sliding Cards*/
 .hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {
     -webkit-transform: translateY(50px);
     transform: translateY(50px);
+    text-shadow: 2px 2px 6px black;
+
 }
 
 
