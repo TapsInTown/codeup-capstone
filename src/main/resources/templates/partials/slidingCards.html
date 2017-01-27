@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
     <meta charset="UTF-8" />
     <title>Title</title>
 </head>
@@ -9,7 +11,7 @@
     <div class="">
         <div th:fragment="slidingCard">
             <div>
-                <h1 th:text="${event.title}" class="col-md-12"></h1>
+                <h1><a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}" class="col-md-12"></a></h1>
             </div>
             <div class="mapBar">
                 <h3 id="mapText">MAP</h3>
@@ -20,6 +22,14 @@
                 <span th:text="${event.eventLocation.city}"></span>
                 <span th:text="${event.eventLocation.State}"></span>
                 <span th:text="${event.eventLocation.zip}"></span>
+
+                <form th:action="@{'/events/save/' + ${event.id}}" method="post">
+                    <div sec:authorize="isAuthenticated()">
+                        <div class="form-group">
+                            <input class="form-control" type="submit" value="Save Event"/>
+                        </div>
+                    </div>
+                </form>
             </h5>
             <div class="card-hide">
                 <p th:text="${event.description}"></p>
