@@ -12,12 +12,12 @@ $(document).ready(function(){
             document.getElementsByClassName("shift")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "20%";
             document.getElementsByClassName("move")[0].style.marginLeft = "20%";
-            document.getElementsByClassName("shift")[0].style.marginLeft = "20%";
+            document.getElementsByClassName("shift")[0].style.marginLeft = "30%";
         }else {
             document.getElementsByClassName("shift")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
             document.getElementsByClassName("move")[0].style.marginLeft = "0";
-            document.getElementsByClassName("shift")[0].style.marginLeft = "0";
+            document.getElementsByClassName("shift")[0].style.marginLeft = "15%";
         }
         toggle++;
         console.log(toggle);
@@ -26,19 +26,19 @@ $(document).ready(function(){
     });
 
     });
-// function profileShift() {
+
 $(document).ready(function(){
     var toggle = 0;
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
             document.getElementById("specific-events").style.marginLeft = "110%";
             document.getElementById("specific-events").style.opacity = "0";
-            document.getElementsByClassName("bodies")[0].style.marginLeft = "20%";
+            document.getElementsByClassName("bodies")[0].style.marginLeft = "15%";
         }
         else {
-            document.getElementById("specific-events").style.marginLeft = "60%";
+            document.getElementById("specific-events").style.marginLeft = "40%";
             document.getElementById("specific-events").style.opacity = "1";
-            document.getElementsByClassName("bodies")[0].style.marginLeft = "15%";
+            document.getElementsByClassName("bodies")[0].style.marginLeft = "0";
         }
         toggle++;
         console.log(toggle);
@@ -105,7 +105,7 @@ function doIt(){
             alert("Geocoding was not successful - STATUS: " + status);
         }
     });
-}
+}doIt();
 
 /* logout link on the nav bar */
 var logoutSubmit = function() {

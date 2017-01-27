@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:replace="partials/navbar :: theNav"></div>
-    <div class="container-fluid shift">
+    <div class="container-fluid shift" style="position: absolute">
         <div th:replace="partials/title :: title"></div>
         <div class="row">
             <img id="tapsImg" class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div>
             <div th:each="event : ${events}" class="" th:include="partials/slidingCards :: slidingCard"></div>
         </div>
 

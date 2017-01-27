@@ -30,6 +30,10 @@ body{
     font-size: 15px;
 }
 
+.container-fluid{
+    margin-left: 15%;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -129,49 +133,30 @@ input {
 
 /*-- #2 Location Profile --*/
 
-/*.bodies{*/
-    /*width: 60%;*/
-    /*height:40%;*/
-    /*margin-left: 10%;*/
-    /*margin-top: 5%;*/
-    /*background-color: white;*/
-    /*transition: 1s;*/
-
-/*}*/
-/*.bodies h1{*/
-    /*padding-top: 2%;*/
-/*}*/
-
 .bodies{
-    margin-left: 15%;
     transition: 1s;
+    margin-top: 2%;
 }
 #specific-events{
     width: 22%;
     height:50%;
-    margin-left: 60%;
+    margin-left: 40%;
+    margin-top: 2%;
     position: absolute;
-    /*background-color: pink;*/
     transition: 1s;
 
 }
 
-/*.about-dem{*/
-    /*display: flex;*/
-    /*justify-content: flex-start;*/
-    /*padding-bottom: 5%;*/
-   /*!* padding-right: 45%;*!*/
-/*}*/
 /* #3 splash  */
 
 
 /*LOCATION LIST*/
 
-.location-card{
-    /*margin-top: 5%;*/
-    margin-left: 15%;
-    margin-right: 0;
-}
+/*.location-card{*/
+    /*!*margin-top: 5%;*!*/
+    /*margin-left: 15%;*/
+    /*margin-right: 0;*/
+/*}*/
 
 /*
 Sliding Cards*/
@@ -282,8 +267,6 @@ Sliding Cards*/
 }
 
 #user-profile{
-    /*This is used to move container over when nav is opened. Might use just container class later*/
-    margin-left: 20%;
     transition: 1s;
 }
 
@@ -310,8 +293,8 @@ Sliding Cards*/
 /* #5 LOG IN PAGE*/
 
 .login-form{
-    padding-left: 34%;
-    padding-right: 34%;
+    margin-left: 21%;
+    margin-right: 35%;
 }
 
 .login-form input{
@@ -327,11 +310,11 @@ Sliding Cards*/
     overflow: hidden;
 }
 
-.login-head{
-    margin-left:5% ;
-    display: flex;
-    justify-content: center;
-}
+/*.login-head{*/
+    /*margin-left:5% ;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+/*}*/
 
 /* # 6 REGISTER PAGE*/
 #register-profile{
@@ -348,15 +331,6 @@ Sliding Cards*/
     transition: .7s;
     width: 25%;
 }
-
-/*.main-shift{*/
-    /*margin-left: 20%;*/
-    /*transition: 1s;*/
-/*}*/
-
-/*.shift{*/
-    /*transition: 1s;*/
-/*}*/
 
 /* #8 ERROR PAGES*/
 
