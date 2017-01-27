@@ -54,14 +54,14 @@ $(document).ready(function(){
     var toggle = 0;
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
-            document.getElementById("specific-events").style.marginLeft = "110%";
+            document.getElementById("specific-events").style.left = "110%";
             document.getElementById("specific-events").style.opacity = "0";
-            document.getElementsByClassName("bodies")[0].style.marginLeft = "15%";
+            document.getElementsByClassName("bodies")[0].style.left = "50%";
         }
         else {
-            document.getElementById("specific-events").style.marginLeft = "40%";
+            document.getElementById("specific-events").style.left = "40%";
             document.getElementById("specific-events").style.opacity = "1";
-            document.getElementsByClassName("bodies")[0].style.marginLeft = "0";
+            document.getElementsByClassName("bodies")[0].style.left = "30%";
         }
         toggle++;
         console.log(toggle);

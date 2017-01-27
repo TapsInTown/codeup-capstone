@@ -137,13 +137,15 @@ input {
 .bodies{
     transition: 1s;
     margin-top: 2%;
+    width:auto;
+    left:30%;
 }
 #specific-events{
     width: 22%;
     height:50%;
-    margin-left: 40%;
+    left: 40%;
     margin-top: 2%;
-    position: absolute;
+    /*position: absolute;*/
     transition: 1s;
 
 }
