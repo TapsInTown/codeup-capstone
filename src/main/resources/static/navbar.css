@@ -161,36 +161,47 @@ Sliding Cards*/
     background-color:white;
 }
 
-.mapBar{
+.row{
+    margin-bottom: 2%;
+}
+
+.infoBar{
     width:10%;
-    height: 100%;
+    height: 40%;
     color: white;
     background-color: black;
     position: absolute;
-    margin-left: 95%;
-    transition: 1s;
+    margin-left: 80%;
+    transition: 1.5s;
     z-index: 1;
 }
 
-#mapText{
+#infoText{
    transform:rotate(-90deg);
-    margin-top: 190%;
+    margin-top: 80%;
 }
 
 .openMapBar{
-    margin-left: -11%;
+    margin-left: 7%;
 }
 
-.mapBar:hover{
+.infoBar:hover{
     background-color: #ffc744;
 }
 
 .mapCanvas{
-    display: none;
-    transition-delay: 2s;
+    transition-delay: 1.5s;
+    /*transition-timing-function:ease;*/
     width: 700px;
-    height: 350px;
+    height: 400px;
+    overflow: hidden;
+    z-index: 1;
+}
 
+.card-hide{
+    /*transition-timing-function:ease;*/
+    transition: 1.5s;
+    z-index: 0;
 }
 
 /* #3 splash  */

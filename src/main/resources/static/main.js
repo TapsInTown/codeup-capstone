@@ -76,37 +76,61 @@ $(function() {
 });
 
 /*Sliding Card Js*/
-var toggle = 0;
+// var toggle = 0;
+//
+// $(document).ready(function(){
+//     var mapBars = document.getElementsByClassName("mapBar");
+//     console.log(mapBars);
+//     var mapCanvas = document.getElementsByClassName("mapCanvas");
+//     for (var i = 0; i < mapBars.length; i++){
+//
+//         mapBars[i].addEventListener("click", function () {
+//
+//             if(toggle % 2 == 0) {
+//                 this.classList.add("openMapBar");
+//                 // this.parentElement().lastChild.classList.add(mapCanvas);
+//                 $(".card-hide").fadeOut("fast");
+//                 $("hide-address").removeClass("col-lg-6");
+//                 $(".mapCanvas").fadeIn("fast");
+//
+//                 doIt();
+//             } else {
+//                 this.classList.remove("openMapBar");
+//                 // this.parentElement().lastChild.classList.remove(mapCanvas);
+//                 $(".card-hide").fadeIn();
+//                 $(".mapCanvas").fadeOut();
+//             }
+//             toggle++;
+//         })
+//     }
 
-$(document).ready(function(){
-    var mapBars = document.getElementsByClassName("mapBar");
-    console.log(mapBars);
-    var mapCanvas = document.getElementsByClassName("mapCanvas");
-    for (var i = 0; i < mapBars.length; i++){
+    // var address = document.getElementById("address");
+    // for (var a = 0; a < mapBars.length; a++){
+    //     mapBars[a].addEventListener("click", function () {
+    //
+    //         if(toggle % 2 == 0) {
+    //             this.classList.add("openMapBar");
+    //             // this.parentElement().lastChild.classList.add(mapCanvas);
+    //             $(".card-hide").hide("slow");
+    //             $(".mapCanvas").show("slow");
+    //             doIt();
+    //         } else {
+    //             this.classList.remove("openMapBar");
+    //             // this.parentElement().lastChild.classList.remove(mapCanvas);
+    //             $(".card-hide").show("slow");
+    //             $(".mapCanvas").hide("slow");
+    //         }
+    //         toggle++;
+    //     })
+    //
+    // }
 
-        mapBars[i].addEventListener("click", function () {
-
-            if(toggle % 2 == 0) {
-                this.classList.add("openMapBar");
-                // this.parentElement().lastChild.classList.add(mapCanvas);
-                $(".card-hide").hide("slow");
-                $(".mapCanvas").show("slow");
-                doIt();
-            } else {
-                this.classList.remove("openMapBar");
-                // this.parentElement().lastChild.classList.remove(mapCanvas);
-                $(".card-hide").show("slow");
-                $(".mapCanvas").hide("slow");
-            }
-            toggle++;
-        })
-    }
 });
 
 
 /*Map Canvas*/
 
-function doIt() {
+function doIt(){
     "use strict";
 
     var address = document.getElementById("address").innerText;
@@ -130,7 +154,7 @@ function doIt() {
             alert("Geocoding was not successful - STATUS: " + status);
         }
     });
-}});
+}
 
 /* logout link on the nav bar */
 var logoutSubmit = function() {
