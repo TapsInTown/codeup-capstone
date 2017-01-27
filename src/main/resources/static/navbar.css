@@ -310,11 +310,11 @@ Sliding Cards*/
     overflow: hidden;
 }
 
-.login-head{
-    margin-left:5% ;
-    display: flex;
-    justify-content: center;
-}
+/*.login-head{*/
+    /*margin-left:5% ;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+/*}*/
 
 /* # 6 REGISTER PAGE*/
 #register-profile{
