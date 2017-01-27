@@ -25,6 +25,9 @@ public class Event {
     @Column(nullable = false, name = "event_date")
     private String eventDate;
 
+    @Column (nullable = false, name= "event_time")
+    private String eventTime;
+
     @Column(nullable = false, length = 1000)
     private String description;
 
@@ -65,6 +68,14 @@ public class Event {
 
 //  Getters and setters
 
+
+    public String getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(String eventTime) {
+        this.eventTime = eventTime;
+    }
 
     public Date getModifyDate() {
         return modifyDate;
