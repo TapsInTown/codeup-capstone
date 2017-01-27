@@ -8,18 +8,18 @@
 <div th:replace="partials/navbar :: theNav"></div>
 
 <div class="container-fluid shift">
+    <h1>Log in to Taps In Town</h1>
 
-    <h1 class="login-head">Log in to Taps In Town</h1>
 
-    <div th:if="${param.error}">
-        <h3 style="color:darkred" align="center">Invalid Username or Password.</h3>
-    </div>
-    <div th:if="${param.logout}">
-        <h3 style="color: #ffc744" align="center">You have safely logged out</h3>
-    </div>
 
     <div class="login-form">
-    <form th:action="@{/login}" method="post">
+        <div th:if="${param.error}">
+            <h3 style="color:darkred" align="center">Invalid Username or Password.</h3>
+        </div>
+        <div th:if="${param.logout}">
+            <h3 style="color: #ffc744" align="center">You have safely logged out</h3>
+        </div>
+        <form th:action="@{/login}" method="post">
 
         <div class="form-group">
             <label for="username"><h3>Username:</h3></label>
