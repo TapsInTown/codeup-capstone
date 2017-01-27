@@ -41,7 +41,8 @@
 
 
 <span th:replace="partials/navbar :: theNav"></span>
-<div class="container-fluid shift">
+<div class="container-fluid">
+    <div class="test">
     <div th:replace="partials/title :: title"></div>
     <div class="row">
 <div th:each="location : ${location}" class="col-md-12 cards location-card">
@@ -50,6 +51,7 @@
     </h3>
 
 </div>
+    </div>
     </div>
     </div>
 </body>

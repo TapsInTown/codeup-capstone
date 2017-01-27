@@ -3,32 +3,44 @@
  */
 "use strict";
 
+/* logout link on the nav bar */
+var logoutSubmit = function() {
+    var logoutBtn = document.getElementById('logout-btn');
+
+    var logoutForm = document.getElementById('logout');
+    if (logoutBtn != null) {
+        logoutBtn.addEventListener('click', function (e) {
+            logoutForm.submit();
+        });
+    }
+};
+logoutSubmit();
+
 /*Navbar js*/
 
 $(document).ready(function(){
     var toggle = 0;
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
-            document.getElementsByClassName("shift")[0].style.transition = "1s";
+            document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "20%";
             document.getElementsByClassName("move")[0].style.marginLeft = "20%";
-            document.getElementsByClassName("shift")[0].style.marginLeft = "30%";
+            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "30%";
         }else {
-            document.getElementsByClassName("shift")[0].style.transition = "1s";
+            document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
             document.getElementsByClassName("move")[0].style.marginLeft = "0";
-            document.getElementsByClassName("shift")[0].style.marginLeft = "15%";
+            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "15%";
         }
         toggle++;
         console.log(toggle);
-        // $(".container-fluid").toggleClass("main-shift");
         console.log("success!")
     });
 
     });
-
 $(document).ready(function(){
     var toggle = 0;
+
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
             document.getElementById("specific-events").style.marginLeft = "110%";
@@ -42,20 +54,19 @@ $(document).ready(function(){
         }
         toggle++;
         console.log(toggle);
-        // $(".container-fluid").toggleClass("main-shift");
         console.log("success!")
     });
-
-function openContact() {
+    function openContact() {
     document.getElementById("contact-info").style.height = "100%";
     document.getElementById("navigation").style.paddingTop="10rem";
 }
+
+
 function closeContact() {
     document.getElementById("navigation").style.paddingTop="0";
     document.getElementById("contact-info").style.height = "0";
 
 }
-
 
 /*sticky title*/
 
@@ -73,19 +84,18 @@ function sticky_relocate() {
     }
 }
 
+
 $(function() {
     $(window).scroll(sticky_relocate);
     sticky_relocate();
 });
 
-
 /*Map Canvas*/
+    function doIt(){
 
-function doIt(){
     "use strict";
 
     var address = document.getElementById("address").innerText;
-
     var mapOptions = {
         // Set the zoom level
         zoom: 18,
@@ -105,18 +115,16 @@ function doIt(){
             alert("Geocoding was not successful - STATUS: " + status);
         }
     });
+
 }doIt();
 
-/* logout link on the nav bar */
-var logoutSubmit = function() {
-    var logoutBtn = document.getElementById('logout-btn');
-    var logoutForm = document.getElementById('logout');
+function slideUp() {
+    $("#click").click(function() {
+        console.log('run');
+        $('#topOfDiv').animate({
+            scrollTop: $("#scrollTo").offset().top}, 'slow');
+    });
 
-    if (logoutBtn != null) {
-        logoutBtn.addEventListener('click', function (e) {
-            logoutForm.submit();
-        });
-    }
-};
-
-logoutSubmit()});
+}
+slideUp()
+});
