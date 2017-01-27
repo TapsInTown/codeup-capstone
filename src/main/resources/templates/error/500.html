@@ -6,15 +6,17 @@
 </head>
 <body>
 <div th:replace="partials/navbar :: theNav"></div>
-<div class="container-fluid shift">
+<div class="container-fluid">
+    <div class="test">
 <th:block th:switch="${error}">
-    <div class= "error-shift" th:case="'Internal Server Error'">
-        <h1>Whoops, seems like something went wrong.</h1>
+    <div th:case="'Internal Server Error'">
+        <h1 style="margin-left:-10%; text-align: center">Seems like something went wrong.</h1>
         <br/>
         <img class="error-img" th:src="@{/beers-in-hand.png}" />
-        <h1>Have one on us!</h1>
+        <h1 style="margin-left:-20%; text-align: center">Have one on us!</h1>
     </div>
 </th:block>
+    </div>
     </div>
 </body>
 <script

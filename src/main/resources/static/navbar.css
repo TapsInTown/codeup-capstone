@@ -269,8 +269,8 @@ Sliding Cards*/
     transition-timing-function: ease-out;
 }
 .hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {
-    -webkit-transform: translateY(25px);
-    transform: translateY(25px);
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
     text-shadow: 2px 2px 6px black;
 
 }
@@ -370,4 +370,9 @@ Sliding Cards*/
 .error-img-barrel{
     width: 50rem;
     margin-top: 5%;
+}
+
+.test{
+    position: absolute;
+
 }
