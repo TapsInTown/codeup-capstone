@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+
 /**
  * Created by anthonyfortney on 1/18/17.
  */
@@ -30,7 +32,14 @@ public class EventsController extends BaseController {
 
     @GetMapping
     public String getEvents(Model m){
-        m.addAttribute("events", eventsDao.findAll());
+        List<Event> events = new ArrayList((Collection) eventsDao.findAll());
+        Collections.sort(events, new Comparator<Event>() {
+            @Override
+            public int compare(Event e1, Event e2) {
+                return e1.getEventDate().compareTo(e2.getEventDate());
+            }
+        });
+        m.addAttribute("events", events);
         return "event/events";
     }
 
@@ -53,7 +62,6 @@ public class EventsController extends BaseController {
     public String showEventDetails(@PathVariable long id, Model m){
         m.addAttribute("event", eventsDao.findOne(id));
         m.addAttribute("loggedIn", isLoggedIn());
-
         return "event/eventdetails";
     }
 
@@ -68,7 +76,7 @@ public class EventsController extends BaseController {
     public String updateEvent(Event existingEvent){
         Event currentDetails = eventsDao.findOne(existingEvent.getId());
         String newTitle = existingEvent.getTitle();
-        String newDate = existingEvent.getEventDate();
+        Date newDate = existingEvent.getEventDate();
         String newDescription = existingEvent.getDescription();
 
         currentDetails.setTitle(newTitle);
