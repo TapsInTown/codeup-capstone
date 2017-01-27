@@ -16,8 +16,19 @@ var logoutSubmit = function() {
 };
 logoutSubmit();
 
-/*Navbar js*/
+function openContact() {
+    document.getElementById("contact-info").style.height = "100%";
+    document.getElementById("navigation").style.paddingTop="10rem";
+}
+openContact();
 
+function closeContact() {
+    document.getElementById("navigation").style.paddingTop="0";
+    document.getElementById("contact-info").style.height = "0";
+
+}closeContact();
+
+/*Navbar js*/
 $(document).ready(function(){
     var toggle = 0;
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
@@ -25,12 +36,12 @@ $(document).ready(function(){
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "20%";
             document.getElementsByClassName("move")[0].style.marginLeft = "20%";
-            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "30%";
+            document.getElementsByClassName("container-fluid")[0].style.left = "20%";
         }else {
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
             document.getElementsByClassName("move")[0].style.marginLeft = "0";
-            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "15%";
+            document.getElementsByClassName("container-fluid")[0].style.left = "10%";
         }
         toggle++;
         console.log(toggle);
@@ -39,34 +50,23 @@ $(document).ready(function(){
 
     });
 $(document).ready(function(){
-    var toggle = 0;
 
+    var toggle = 0;
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
-            document.getElementById("specific-events").style.marginLeft = "110%";
+            document.getElementById("specific-events").style.left = "100%";
             document.getElementById("specific-events").style.opacity = "0";
-            document.getElementsByClassName("bodies")[0].style.marginLeft = "15%";
+            document.getElementsByClassName("bodies")[0].style.left = "20%";
         }
         else {
-            document.getElementById("specific-events").style.marginLeft = "40%";
+            document.getElementById("specific-events").style.left = "0";
             document.getElementById("specific-events").style.opacity = "1";
-            document.getElementsByClassName("bodies")[0].style.marginLeft = "0";
+            document.getElementsByClassName("bodies")[0].style.left = "0";
         }
         toggle++;
         console.log(toggle);
         console.log("success!")
     });
-    function openContact() {
-    document.getElementById("contact-info").style.height = "100%";
-    document.getElementById("navigation").style.paddingTop="10rem";
-}
-
-
-function closeContact() {
-    document.getElementById("navigation").style.paddingTop="0";
-    document.getElementById("contact-info").style.height = "0";
-
-}
 
 /*sticky title*/
 

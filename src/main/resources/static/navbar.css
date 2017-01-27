@@ -33,6 +33,7 @@ body{
 
 .container-fluid{
     left: 10%;
+    position: absolute;
 }
 
 a{
@@ -92,7 +93,7 @@ a:hover{
 #contact-info{
     display: inline-block;
     justify-content: flex-start;
-    width:25%;
+    width:20%;
     height: 0;
     padding-left: 2%;
     padding-right: 2%;
@@ -102,6 +103,7 @@ a:hover{
     transition: .9s;
     position: fixed;
     overflow-x: hidden;
+    z-index: 1;
 }
 
 #contact-info form{
@@ -137,13 +139,15 @@ input {
 .bodies{
     transition: 1s;
     margin-top: 2%;
+    width:auto;
+    /*left:30%;*/
 }
 #specific-events{
     width: 22%;
     height:50%;
-    margin-left: 40%;
+    /*left: 30%;*/
     margin-top: 2%;
-    position: absolute;
+    /*position: absolute;*/
     transition: 1s;
 
 }
@@ -217,7 +221,7 @@ Sliding Cards*/
     width: 700px;
     height: 400px;
     overflow: hidden;
-    z-index: 1;
+    z-index: 0;
 }
 
 .card-hide{
@@ -281,10 +285,6 @@ Sliding Cards*/
 
 #logout-button{
     margin-top: 2%;
-}
-
-#user-profile{
-    transition: 1s;
 }
 
 #sticky-anchor{
@@ -373,7 +373,6 @@ Sliding Cards*/
     margin-top: 5%;
 }
 
-.test{
-    position: absolute;
-
+.center-up{
+    left:30%;
 }

@@ -10,23 +10,23 @@
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
 <div class="container-fluid">
-    <div class="test">
     <div th:replace="partials/title :: title"></div>
+    <div class="test">
 
 <div>
-    <div class="cards">
+    <div class="cards col-md-4">
         <div>
             <h2 th:text="${event.title}"></h2>
             <h3 th:text="${#dates.format(event.eventDate, 'MM-DD-YYYY')}"></h3>
             <h3 th:text="${event.eventTime}"></h3>
             <h4 th:text="${event.Description}"></h4>
-            <p class="card-hide" id="address">
+            <h5 class="card-hide" id="address">
                 <span th:text="${event.eventLocation.streetNumber}"></span>
                 <span th:text="${event.eventLocation.streetName}"></span>
                 <span th:text="${event.eventLocation.city}"></span>
                 <span th:text="${event.eventLocation.State}"></span>
                 <span th:text="${event.eventLocation.zip}"></span>
-            </p>
+            </h5>
 
             <form th:action="@{'/events/save/' + ${event.id}}" method="post">
                 <div th:if="${loggedIn}">
@@ -37,7 +37,7 @@
             </form>
         </div>
     </div>
-    <div class="mapCanvas" style="background-color: white; margin-bottom:5% " onload="doIt()"></div>
+    <div class=" col-md-4 cards mapCanvas" style="background-color: white; margin-bottom:5% " onload="doIt()"></div>
 </div>
     </div>
     </div>
