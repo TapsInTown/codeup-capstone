@@ -5,53 +5,17 @@
     <title>Profile</title>
 </head>
 <body>
-
-<!--<div class="container">-->
-
-<!--<h1>This is where all the locations will come up in a list</h1>-->
-
-<!--<div th:each="location : ${location}">-->
-
-<!--<h2>-->
-<!--<a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>-->
-<!--or-->
-<!--<p th:text="${location.name}"></p>-->
-<!--<a th:href="@{/location/{id} (id=${location.id})}">Click here for location details</a>-->
-<!--</h2>-->
-
-<!--<h3>-->
-<!--<span th:text="${location.streetNumber}"></span>-->
-<!--<span th:text="${location.streetName}"></span>-->
-<!--<span th:text="${location.city}"></span>-->
-<!--<span th:text="${location.state}"></span>-->
-<!--<span th:text="${location.zip}"></span>-->
-<!--</h3>-->
-
-<!--</div>-->
-
-<!--<a th:href="@{/events}">click here to go to events page (or this can be a button)</a>-->
-
-
-<!--</div>-->
-
-
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
-<!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
-<!--crossorigin="anonymous"></script>-->
-
-
 <span th:replace="partials/navbar :: theNav"></span>
-<div class="container-fluid">
-    <div class="test">
-    <div th:replace="partials/title :: title"></div>
-    <div class="row">
-<div th:each="location : ${location}" class="col-md-12 cards location-card">
-    <h3>
-        <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
-    </h3>
+<div class="container-fluid test">
 
-</div>
-    </div>
+    <div th:replace="partials/title :: title"></div>
+    <div class="">
+        <div th:each="location : ${location}" class="col-md-6 cards location-card" style="margin-bottom: 5%">
+            <h2>
+                <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
+            </h2>
+
+        </div>
     </div>
     </div>
 </body>
