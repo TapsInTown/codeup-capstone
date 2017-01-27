@@ -114,7 +114,9 @@ $(function() {
             var marker = new google.maps.Marker({
                 position: results[0].geometry.location,
                 map: map,
-                title: 'Hello World!'
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                title: address
             });
         } else {
             alert("Geocoding was not successful - STATUS: " + status);
