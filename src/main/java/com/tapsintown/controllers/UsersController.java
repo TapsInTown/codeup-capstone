@@ -11,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -49,18 +46,34 @@ public class UsersController extends BaseController{
     }
 
     @PostMapping("/register")
-    public String createNewUser(@Valid User userCreated, Errors validation, Model m){
-        System.out.println("Password: " + userCreated.getPassword());
+    public String createNewUser(@Valid User userCreated,
+                                Errors validation,
+                                Model m,
+                                @RequestParam(name = "confirmPassword")String confirmPassword) {
+
+        if (!userCreated.getPassword().equals(confirmPassword)){
+            m.addAttribute("errors", validation);
+            m.addAttribute("user", userCreated);
+            m.addAttribute("passwordMatch", "Passwords must match");
+            return "/register";
+        }
         if(validation.hasErrors()){
+
+            System.out.println(userCreated.getPassword());
+            System.out.println(confirmPassword);
+
             m.addAttribute("errors", validation);
             m.addAttribute("user", userCreated);
           return "/register";
         }
 
         User newUser = userDao.save(userCreated);
+
         UserRole newRole = new UserRole(newUser.getId());
+
         SecurityConfiguration sc = new SecurityConfiguration();
         userCreated.setPassword(sc.passwordEncoder().encode(userCreated.getPassword()));
+
         userCreated.setUserRole(newRole);
         rolesDao.save(newRole);
         userDao.save(userCreated);
