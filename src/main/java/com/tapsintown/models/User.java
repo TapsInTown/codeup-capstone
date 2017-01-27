@@ -1,8 +1,10 @@
 package com.tapsintown.models;
 
 import com.tapsintown.SecurityConfiguration;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -18,20 +20,24 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Please enter your name.")
+    @Size(min = 2, message = "Names can have no less than 2 characters.")
     @Column(nullable = false)
     private String name;
 
+    @NotBlank(message = "Please enter your Email address.")
     @Column(nullable = false, unique = true)
     private String email;
 
+    @NotBlank(message = "Please enter your a Username.")
     @Column(nullable = false, unique = true)
     private String username;
 
+    @NotBlank(message = "Password cannot be blank.")
+    @Size(min = 5, message = "Password must have at least 5 Characters")
     @Column(nullable = false)
     private String password;
 
-//    @Column(nullable = false)
-//    private int isAdmin;
 
 //  Relationship to role
 //  one user to one user_role
@@ -106,13 +112,6 @@ public class User {
         this.password = sc.passwordEncoder().encode(password);
     }
 
-//    public int getIsAdmin() {
-//        return isAdmin;
-//    }
-
-//    public void setAdmin(int admin) {
-//        isAdmin = admin;
-//    }
 
     public UserRole getUserRole() {
         return userRole;
