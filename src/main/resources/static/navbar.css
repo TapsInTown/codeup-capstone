@@ -171,13 +171,17 @@ Sliding Cards*/
 }
 
 .infoBar{
+
+}
+
 #topOfDiv{
-    max-height: 360px;
-    overflow-y: scroll;
+    max-height: 359px;
+    overflow-y: hidden;
+
 }
 
 #scrollTo{
-    max-height: 360px;
+    max-height: 359px;
     background-color: aqua;
     overflow: hidden
 }
