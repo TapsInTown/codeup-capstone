@@ -133,12 +133,20 @@ $(function() {
 
     }doIt();
 
-
-    function slideUp() {
+function slideUp() {
+    var toggle = 0;
     $("#click").click(function() {
-        console.log('run');
-        $('#topOfDiv').animate({
-            scrollTop: $("#scrollTo").offset().top}, 'slow');
+        if(toggle % 2 == 0) {
+            $('#topOfDiv').animate({
+                scrollTop: $("#scrollTo").offset().top
+            }, 'slow');
+            console.log('run');
+        } else {
+            $('#topOfDiv').animate({
+                scrollTop: $("#scrollTo").offset().top - 720
+            }, 'slow');
+        }
+        toggle++;
     });
 
 }

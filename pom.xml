@@ -6,7 +6,7 @@
 	<groupId>com.tapsintown</groupId>
 	<artifactId>tapsintown</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>tapsintown</name>
 	<description>CodeUp capstone project by Anthony, Josh, and Matt</description>
