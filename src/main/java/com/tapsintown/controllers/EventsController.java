@@ -55,7 +55,7 @@ public class EventsController extends BaseController {
         eventCreated.setEventLocation(locationDao.findByName(name));
         eventCreated.setUser(loggedInUser());
         eventsDao.save(eventCreated);
-        return "redirect:/events";
+        return "redirect:/";
     }
 
     @GetMapping("/{id}")
