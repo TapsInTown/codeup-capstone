@@ -36,12 +36,12 @@ $(document).ready(function(){
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "20%";
             document.getElementsByClassName("move")[0].style.marginLeft = "20%";
-            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "30%";
+            document.getElementsByClassName("container-fluid")[0].style.left = "20%";
         }else {
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
             document.getElementsByClassName("move")[0].style.marginLeft = "0";
-            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "15%";
+            document.getElementsByClassName("container-fluid")[0].style.left = "10%";
         }
         toggle++;
         console.log(toggle);

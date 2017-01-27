@@ -7,7 +7,7 @@
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
-<div class="container-fluid">
+<div class="container-fluid text-center pagination-center">
     <div id="user-profile">
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
@@ -36,8 +36,8 @@
         <h3>Admin options</h3>
         <h5>This will only be accessible to admins.</h5>
         <br/>
-        <button class="btn btn-default"><a th:href="@{'/location/create'}">Add a new location</a></button>
-        <button class="btn btn-default"><a th:href="@{'/events/create'}">Create a new event</a></button>
+        <input class="btn btn-default"><a th:href="@{'/location/create'}">Add a new location</a></input>
+        <input class="btn btn-default"><a th:href="@{'/events/create'}">Create a new event</a></input>
     </div>
         </div>
 
