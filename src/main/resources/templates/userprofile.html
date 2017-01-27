@@ -19,7 +19,7 @@
 
         <div th:each="saveEvent : ${savedEvents}">
             <h2 th:text="${saveEvent.event.title}"></h2>
-            <h3 th:text="${saveEvent.event.eventDate}"></h3>
+            <h3 th:text="${#dates.format(saveEvent.event.eventDate, 'MM-DD-YYYY')}"></h3>
             <p th:text="${saveEvent.event.description}"></p>
         <form th:action="@{'/user/delete/' + ${saveEvent.id}}" method="POST">
             <div class="form-group">
