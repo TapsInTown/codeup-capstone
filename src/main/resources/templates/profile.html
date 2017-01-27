@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/header :: theHead">
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Profile</title>
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
-<div class="col-md-4 bodies cards">
-    <h1 th:text="${location.name}"></h1>
-    <div>
-        <h3>
-            <span th:text="${location.streetNumber}"></span>
-            <span th:text="${location.streetName}"></span>
-            <span th:text="${location.city}"></span>
-            <span th:text="${location.state}"></span>
-            <span th:text="${location.zip}"></span>
-        </h3>
-    </div>
-    <div>
-        <h3>The Brew</h3>
-        <p th:text="${location.descriptionTheBrew}">
-        </p>
-    </div>
-    <div>
-        <h3>About Them</h3>
-        <p th:text="${location.descriptionAboutThem}">
-        </p>
+    <div class="col-md-4 bodies cards">
+        <h1 th:text="${location.name}"></h1>
+        <div>
+            <h3>
+                <span th:text="${location.streetNumber}"></span>
+                <span th:text="${location.streetName}"></span>
+                <span th:text="${location.city}"></span>
+                <span th:text="${location.state}"></span>
+                <span th:text="${location.zip}"></span>
+            </h3>
+        </div>
+        <div>
+            <h3>The Brew</h3>
+            <p th:text="${location.descriptionTheBrew}">
+            </p>
+        </div>
+        <div>
+            <h3>About Them</h3>
+            <p th:text="${location.descriptionAboutThem}"></p>
+        </div>
+        <div th:if="${isAdmin}">
+            <h2><a th:href="@{/location/{id}/edit (id=${location.id})}">Click here to edit Details</a></h2>
+            <form th:action="@{'/location/' + ${location.id} + '/delete'}">
+                <input type="submit" value="Delete" class="btn btn-danger"/>
+            </form>
+        </div>
+
     </div>
 
-</div>
+    <div class="col-md-4 cards" id="specific-events">
+        <h4>EVENTS FOR THIS LOCATION</h4>
+        <div th:each="event : ${events}">
+            <h3><a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}"></a></h3>
+        </div>
 
-<div class="col-md-4 cards" id="specific-events">
-<h4>EVENTS FOR THIS LOCATION</h4>
-    <div th:each="event : ${events}">
-        <h3><a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}" ></a></h3>
     </div>
-
-</div>
 </div>
 </body>
-<script th:src="@{https://code.jquery.com/jquery-3.1.1.js}" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 <script th:src="@{/main.js}"></script>
 
 </html>

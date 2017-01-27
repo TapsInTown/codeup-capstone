@@ -2,8 +2,10 @@ package com.tapsintown.controllers;
 
 import com.tapsintown.interfaces.EventLocations;
 import com.tapsintown.interfaces.Events;
+import com.tapsintown.interfaces.Users;
 import com.tapsintown.models.Event;
 import com.tapsintown.models.EventLocation;
+import com.tapsintown.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,13 +23,16 @@ import java.util.*;
 
 @Controller
 @RequestMapping("/location")
-public class LocationController {
+public class LocationController extends BaseController {
 
     @Autowired
     private EventLocations locationDao;
 
     @Autowired
     private Events eventsDao;
+
+    @Autowired
+    private Users usersDao;
 
     @GetMapping
     public String getLocations(Model m) {
@@ -44,11 +49,18 @@ public class LocationController {
     @PostMapping("/create")
     public String createNewLocation(@Valid EventLocation locationCreated){
         locationDao.save(locationCreated);
-        return "redirect:/location";
+        return "redirect:/location/locationdetails";
     }
 
     @GetMapping("/{id}")
     public String showLocationDetails(@PathVariable long id, Model m){
+
+        boolean isAdmin = false;
+
+        if(isLoggedIn()) {
+            User loggedInUser = usersDao.findByUsername(loggedInUser().getUsername());
+            isAdmin = "admin".equalsIgnoreCase(loggedInUser.getUserRole().getRole());
+        }
 
         List<Event> events = new ArrayList((Collection) eventsDao.findByEventLocationId(id));
 
@@ -60,6 +72,8 @@ public class LocationController {
         });
         m.addAttribute("location", locationDao.findOne(id));
         m.addAttribute("events", events );
+        m.addAttribute("isAdmin", isAdmin);
+
         return "profile";
     }
 
