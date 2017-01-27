@@ -42,12 +42,15 @@
 
 <span th:replace="partials/navbar :: theNav"></span>
 <div class="container-fluid shift">
-<div th:each="location : ${location}" class="col-md-6 bodies" onclick="closeNav()">
+    <div th:replace="partials/title :: title"></div>
+    <div class="row">
+<div th:each="location : ${location}" class="col-md-12 cards location-card">
     <h3>
         <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
     </h3>
 
 </div>
+    </div>
     </div>
 </body>
 <script th:src="@{https://code.jquery.com/jquery-3.1.1.js}"

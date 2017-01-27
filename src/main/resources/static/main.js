@@ -13,11 +13,17 @@ $(document).ready(function(){
             document.getElementById("navigation").style.width = "20%";
             document.getElementsByClassName("move")[0].style.marginLeft = "20%";
             document.getElementsByClassName("shift")[0].style.marginLeft = "20%";
+            document.getElementById("specific-events").style.marginLeft = "110%";
+            document.getElementById("specific-events").style.opacity = "0";
+            document.getElementsByClassName("bodies")[0].style.marginLeft = "20%";
         }else {
             document.getElementsByClassName("shift")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
             document.getElementsByClassName("move")[0].style.marginLeft = "0";
             document.getElementsByClassName("shift")[0].style.marginLeft = "0";
+            document.getElementById("specific-events").style.marginLeft = "60%";
+            document.getElementById("specific-events").style.opacity = "1";
+            document.getElementsByClassName("bodies")[0].style.marginLeft = "15%";
         }
         toggle++;
         console.log(toggle);

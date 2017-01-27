@@ -30,6 +30,15 @@ body{
     font-size: 15px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: #ffc744;
+    transition: .5s;
+}
 /*-- #1 Navbar --*/
 
 #navbar{
@@ -133,16 +142,19 @@ input {
     /*padding-top: 2%;*/
 /*}*/
 
-/*#specific-events{*/
-    /*width: 22%;*/
-    /*height:60%;*/
-    /*margin-left: 75%;*/
-    /*margin-top: 5%;*/
-    /*position: absolute;*/
+.bodies{
+    margin-left: 15%;
+    transition: 1s;
+}
+#specific-events{
+    width: 22%;
+    height:50%;
+    margin-left: 60%;
+    position: absolute;
     /*background-color: pink;*/
-    /*transition: 1s;*/
+    transition: 1s;
 
-/*}*/
+}
 
 /*.about-dem{*/
     /*display: flex;*/
@@ -152,6 +164,14 @@ input {
 /*}*/
 /* #3 splash  */
 
+
+/*LOCATION LIST*/
+
+.location-card{
+    /*margin-top: 5%;*/
+    margin-left: 15%;
+    margin-right: 0;
+}
 
 /*
 Sliding Cards*/
