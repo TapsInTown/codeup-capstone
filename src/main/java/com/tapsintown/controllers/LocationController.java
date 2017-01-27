@@ -7,9 +7,13 @@ import com.tapsintown.models.EventLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.*;
 
 /**
  * Created by anthonyfortney on 1/18/17.
@@ -45,8 +49,17 @@ public class LocationController {
 
     @GetMapping("/{id}")
     public String showLocationDetails(@PathVariable long id, Model m){
+
+        List<Event> events = new ArrayList((Collection) eventsDao.findByEventLocationId(id));
+
+        Collections.sort(events, new Comparator<Event>() {
+            @Override
+            public int compare(Event e1, Event e2) {
+                return e1.getEventDate().compareTo(e2.getEventDate());
+            }
+        });
         m.addAttribute("location", locationDao.findOne(id));
-        m.addAttribute("events", eventsDao.findByEventLocationId(id));
+        m.addAttribute("events", events );
         return "profile";
     }
 
