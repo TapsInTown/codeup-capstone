@@ -199,7 +199,7 @@ Sliding Cards*/
 }
 
 .mapCanvas{
-    transition-delay: 1.5s;
+    transition-delay: 2s;
     /*transition-timing-function:ease;*/
     width: 700px;
     height: 400px;
