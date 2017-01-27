@@ -9,7 +9,13 @@ import com.tapsintown.models.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 /**
  * Created by anthonyfortney on 1/18/17.
@@ -42,7 +48,12 @@ public class UsersController extends BaseController{
     }
 
     @PostMapping("/register")
-    public String createNewUser(@ModelAttribute User userCreated){
+    public String createNewUser(@Valid User userCreated, Errors validation, Model model){
+
+        if(validation.hasErrors()){
+          model.addAttribute("errors", validation);
+          return "redirect:/user/register";
+        }
 
         User newUser = userDao.save(userCreated);
         UserRole newRole = new UserRole(newUser.getId());
