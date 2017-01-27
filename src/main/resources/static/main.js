@@ -34,7 +34,6 @@ $(document).ready(function(){
         }
         toggle++;
         console.log(toggle);
-        // $(".container-fluid").toggleClass("main-shift");
         console.log("success!")
     });
 
@@ -55,7 +54,6 @@ $(document).ready(function(){
         }
         toggle++;
         console.log(toggle);
-        // $(".container-fluid").toggleClass("main-shift");
         console.log("success!")
     });
     function openContact() {
