@@ -111,14 +111,20 @@ $(function() {
         if (status == google.maps.GeocoderStatus.OK) {
             console.log(results);
             map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map: map,
+                title: 'Hello World!'
+            });
         } else {
             alert("Geocoding was not successful - STATUS: " + status);
         }
     });
 
-}doIt();
+    }doIt();
 
-function slideUp() {
+
+    function slideUp() {
     $("#click").click(function() {
         console.log('run');
         $('#topOfDiv').animate({
