@@ -1,5 +1,6 @@
 package com.tapsintown.controllers;
 
+import com.tapsintown.SecurityConfiguration;
 import com.tapsintown.interfaces.Roles;
 import com.tapsintown.interfaces.SavedEvents;
 import com.tapsintown.interfaces.Users;
@@ -48,15 +49,18 @@ public class UsersController extends BaseController{
     }
 
     @PostMapping("/register")
-    public String createNewUser(@Valid User userCreated, Errors validation, Model model){
-
+    public String createNewUser(@Valid User userCreated, Errors validation, Model m){
+        System.out.println("Password: " + userCreated.getPassword());
         if(validation.hasErrors()){
-          model.addAttribute("errors", validation);
-          return "redirect:/user/register";
+            m.addAttribute("errors", validation);
+            m.addAttribute("user", userCreated);
+          return "/register";
         }
 
         User newUser = userDao.save(userCreated);
         UserRole newRole = new UserRole(newUser.getId());
+        SecurityConfiguration sc = new SecurityConfiguration();
+        userCreated.setPassword(sc.passwordEncoder().encode(userCreated.getPassword()));
         userCreated.setUserRole(newRole);
         rolesDao.save(newRole);
         userDao.save(userCreated);
