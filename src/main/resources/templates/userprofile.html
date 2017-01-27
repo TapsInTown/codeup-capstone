@@ -7,7 +7,8 @@
 </head>
 <body>
 <span th:replace="partials/navbar :: theNav"></span>
-<div id="user-profile" class="container-fluid shift">
+<div class="container-fluid shift">
+    <div id="user-profile">
     <h1>Welcome, <span th:text="${user.username}"></span></h1>
 
     <!--<div>-->
@@ -30,14 +31,15 @@
     </div>
 
 
-        <h5><a th:href="@{'/home'}">Go to Home page</a></h5>
+        <h3><a th:href="@{'/home'}">Go to Home page</a></h3>
     <div th:if="${isAdmin}" class="col-md-4">
         <h3>Admin options</h3>
-        <h5>This will only be accessbile to admins.</h5>
+        <h5>This will only be accessible to admins.</h5>
         <br/>
         <button class="btn btn-default"><a th:href="@{'/location/create'}">Add a new location</a></button>
         <button class="btn btn-default"><a th:href="@{'/events/create'}">Create a new event</a></button>
     </div>
+        </div>
 
 </div>
 
