@@ -145,3 +145,14 @@ var logoutSubmit = function() {
 };
 
 logoutSubmit();
+
+function slideUp() {
+    $("#click").click(function() {
+        console.log('run');
+        $('#topOfDiv').animate({
+            scrollTop: $("#scrollTo").offset().top}, 'slow');
+    });
+
+}
+
+slideUp();

@@ -161,6 +161,17 @@ Sliding Cards*/
     background-color:white;
 }
 
+#topOfDiv{
+    max-height: 360px;
+    overflow-y: scroll;
+}
+
+#scrollTo{
+    max-height: 360px;
+    background-color: aqua;
+    overflow: hidden
+}
+
 .mapBar{
     width:10%;
     height: 100%;
