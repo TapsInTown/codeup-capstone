@@ -105,7 +105,7 @@ function doIt(){
             alert("Geocoding was not successful - STATUS: " + status);
         }
     });
-}
+}doIt();
 
 /* logout link on the nav bar */
 var logoutSubmit = function() {
