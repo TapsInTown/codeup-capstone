@@ -22,14 +22,13 @@
     <div style="width:60%; background-color: white; padding:5%; align-content: center;">
         <div onclick="closeNav()">
             <h2 th:text="${event.title}"></h2>
-            <h3 th:text="${event.eventDate}"></h3>
+            <h3 th:text="${#dates.format(event.eventDate, 'MM-DD-YYYY')}"></h3>
             <h3 th:text="${event.eventTime}"></h3>
             <h4 th:text="${event.Description}"></h4>
 
 
             <P>Should see if loggin in. Cannot see of not loggin in.</P>
             <form th:action="@{'/events/save/' + ${event.id}}" method="post">
-
                 <div th:if="${loggedIn}">
                     <div class="form-group">
                         <input class="form-control" type="submit" value="Save Event"/>

@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "events")
-public class Event {
+public class Event{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Event {
     private String title;
 
     @Column(nullable = false, name = "event_date")
-    private String eventDate;
+    private Date eventDate;
 
     @Column (nullable = false, name= "event_time")
     private String eventTime;
@@ -133,11 +133,11 @@ public class Event {
         this.title = title;
     }
 
-    public String getEventDate() {
+    public Date getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(String eventDate) {
+    public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
     }
 
@@ -164,8 +164,5 @@ public class Event {
     public void setModifiedDate(Date modifiedDate) {
         this.modifyDate = modifiedDate;
     }
-
-
-
 
 }
