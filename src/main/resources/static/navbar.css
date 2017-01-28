@@ -567,3 +567,26 @@ Sliding Cards*/
     position: absolute;
 
 }
+#topOfDiv{
+    max-height: 398px;
+    overflow-y: hidden;
+
+}
+
+#scrollTo{
+    max-height: 398px;
+    padding:0px 0 0px 0;
+    background-color: aqua;
+    overflow: hidden
+}
+
+#click:hover{
+    background-color: #ffc744
+}
+
+#click{
+    color: #fff;
+    background-color: black;
+
+
+}

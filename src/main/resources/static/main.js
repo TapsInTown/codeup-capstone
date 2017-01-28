@@ -89,7 +89,24 @@ $(function() {
     $(window).scroll(sticky_relocate);
     sticky_relocate();
 });
+    function slideUp() {
+        var toggle = 0;
+        $("#click").click(function() {
+            if(toggle % 2 == 0) {
+                $('#topOfDiv').animate({
+                    scrollTop: $("#scrollTo").offset().top
+                }, 'slow');
+                console.log('run');
+            } else {
+                $('#topOfDiv').animate({
+                    scrollTop: $("#scrollTo").offset().top - 780
+                }, 'slow');
+            }
+            toggle++;
+        });
 
+    }
+    slideUp();
 /*Map Canvas*/
     function doIt(){
 
@@ -133,22 +150,5 @@ $(function() {
 
     }doIt();
 
-function slideUp() {
-    var toggle = 0;
-    $("#click").click(function() {
-        if(toggle % 2 == 0) {
-            $('#topOfDiv').animate({
-                scrollTop: $("#scrollTo").offset().top
-            }, 'slow');
-            console.log('run');
-        } else {
-            $('#topOfDiv').animate({
-                scrollTop: $("#scrollTo").offset().top - 720
-            }, 'slow');
-        }
-        toggle++;
-    });
 
-}
-slideUp()
 });
