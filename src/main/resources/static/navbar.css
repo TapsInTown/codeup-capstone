@@ -246,10 +246,8 @@ a{
 }
 
 a:hover{
-    color: white;
+    color: #ffc744;
     transition: .5s;
-    background-color: #ffc744;
-    text-decoration: none;
 }
 /*-- #1 Navbar --*/
 
@@ -271,6 +269,13 @@ a:hover{
     overflow-x: hidden;
     z-index: 1;
 
+}
+
+#navigation a:hover{
+    color: white;
+    transition: .5s;
+    background-color: #ffc744;
+    text-decoration: none;
 }
 
 .move{
