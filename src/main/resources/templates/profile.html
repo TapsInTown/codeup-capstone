@@ -28,6 +28,7 @@
             <h3>About Them</h3>
             <p th:text="${location.descriptionAboutThem}"></p>
         </div>
+
         <div th:if="${isAdmin}">
             <h2><a th:href="@{/location/{id}/edit (id=${location.id})}">Click here to edit Details</a></h2>
             <form th:action="@{'/location/' + ${location.id} + '/delete'}">
