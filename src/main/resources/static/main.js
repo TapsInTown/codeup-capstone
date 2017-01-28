@@ -111,11 +111,21 @@ $(function() {
         if (status == google.maps.GeocoderStatus.OK) {
             console.log(results);
             map.setCenter(results[0].geometry.location);
+            var infowindow = new google.maps.InfoWindow({
+                content: address
+            });
+
             var marker = new google.maps.Marker({
                 position: results[0].geometry.location,
                 map: map,
-                title: 'Hello World!'
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                title: address
             });
+            marker.addListener('mouseover', function() {
+                infowindow.open(map, marker);
+            });
+
         } else {
             alert("Geocoding was not successful - STATUS: " + status);
         }
@@ -123,12 +133,20 @@ $(function() {
 
     }doIt();
 
-
-    function slideUp() {
+function slideUp() {
+    var toggle = 0;
     $("#click").click(function() {
-        console.log('run');
-        $('#topOfDiv').animate({
-            scrollTop: $("#scrollTo").offset().top}, 'slow');
+        if(toggle % 2 == 0) {
+            $('#topOfDiv').animate({
+                scrollTop: $("#scrollTo").offset().top
+            }, 'slow');
+            console.log('run');
+        } else {
+            $('#topOfDiv').animate({
+                scrollTop: $("#scrollTo").offset().top - 720
+            }, 'slow');
+        }
+        toggle++;
     });
 
 }
