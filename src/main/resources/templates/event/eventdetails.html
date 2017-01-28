@@ -35,6 +35,14 @@
                     <button class="form-control btn btn-primary" type="submit" value="Save Event">Save</button>
                 </div>
             </form>
+
+                <div th:if="${isAdmin}">
+                    <h2><a th:href="@{/events/{id}/edit (id=${event.id})}">Click here to edit Details</a></h2>
+
+                    <form th:action="@{'/location/' + ${event.id} + '/delete'}">
+                        <input type="submit" value="Delete" class="btn btn-danger"/>
+                    </form>
+                </div>
         </div>
     </div>
     <div class=" col-md-4 cards mapCanvas" style="background-color: white; margin-bottom:5% " onload="doIt()"></div>
