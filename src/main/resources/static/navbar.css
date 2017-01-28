@@ -246,8 +246,10 @@ a{
 }
 
 a:hover{
-    color: #ffc744;
+    color: white;
     transition: .5s;
+    background-color: #ffc744;
+    text-decoration: none;
 }
 /*-- #1 Navbar --*/
 
