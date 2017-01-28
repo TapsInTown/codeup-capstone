@@ -31,7 +31,7 @@ body{
 }
 
 .container-fluid{
-    left: 10%;
+    margin-left: 10%;
     position: absolute;
 }
 
@@ -138,13 +138,14 @@ input {
 .bodies{
     transition: 1s;
     margin-top: 2%;
+    width: 50%;
 }
 #specific-events{
     width: 22%;
     height:50%;
-    margin-left: 40%;
+    margin-left: 5%;
     margin-top: 2%;
-    position: absolute;
+    /*position: absolute;*/
     transition: 1s;
 
 }
