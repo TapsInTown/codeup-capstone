@@ -3,8 +3,10 @@ package com.tapsintown.controllers;
 import com.tapsintown.interfaces.EventLocations;
 import com.tapsintown.interfaces.Events;
 import com.tapsintown.interfaces.SavedEvents;
+import com.tapsintown.interfaces.Users;
 import com.tapsintown.models.Event;
 import com.tapsintown.models.SaveEvent;
+import com.tapsintown.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +30,9 @@ public class EventsController extends BaseController {
 
     @Autowired
     private EventLocations locationDao;
+
+    @Autowired
+    private Users usersDao;
 
 
     @GetMapping
@@ -55,13 +60,22 @@ public class EventsController extends BaseController {
         eventCreated.setEventLocation(locationDao.findByName(name));
         eventCreated.setUser(loggedInUser());
         eventsDao.save(eventCreated);
-        return "redirect:/events";
+        return "redirect:/";
     }
 
     @GetMapping("/{id}")
     public String showEventDetails(@PathVariable long id, Model m){
+
+        boolean isAdmin = false;
+
+        if(isLoggedIn()){
+            User loggedInUser = usersDao.findByUsername(loggedInUser().getUsername());
+            isAdmin = "admin".equalsIgnoreCase(loggedInUser.getUserRole().getRole());
+        }
+
         m.addAttribute("event", eventsDao.findOne(id));
         m.addAttribute("loggedIn", isLoggedIn());
+        m.addAttribute("isAdmin", isAdmin);
         return "event/eventdetails";
     }
 
@@ -85,6 +99,13 @@ public class EventsController extends BaseController {
 
         eventsDao.save(currentDetails);
         return "redirect:/events";
+
+    }
+
+    @GetMapping("/{id}/delete")
+    public String deleteEvents(@PathVariable long id){
+        eventsDao.delete(id);
+        return "redirect:/";
 
     }
 
