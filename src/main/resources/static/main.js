@@ -150,5 +150,14 @@ function slideUp() {
     });
 
 }
-slideUp()
+slideUp();
+
+        // var clicks = 0;
+        // function count() {
+        //     clicks += 1;
+        //     document.getElementById("counter").innerHTML = clicks;
+        //
+        // }
+
 });
+
