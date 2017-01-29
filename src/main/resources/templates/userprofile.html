@@ -14,8 +14,9 @@
     <!--<p>Welcome, Logged user: <span sec:authentication="name"></span></p>-->
     <!--</div>-->
 
-    <h3><a th:href="@{'/home'}">Go to Home page</a></h3>
-    <h2>saved events</h2>
+    <h3><a th:href="@{'/'}">Go to Home page</a></h3>
+    <div class="col-md-6 cards">
+        <h3>Here is a list of your saved events</h3>
 
     <div class="col-md-12">
         <div style="padding:2% 5%; margin-bottom: 5%" class="cards" th:each="saveEvent : ${savedEvents}">

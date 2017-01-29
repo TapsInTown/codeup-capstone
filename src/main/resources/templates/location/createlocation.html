@@ -17,35 +17,35 @@
         <form th:action="@{/location/create}" method="POST" th:object="${location}">
             <div class="form-group">
                 <label>Name of location:</label>
-                <input class="form-control" th:field="*{name}"/>
+                <input class="form-control" th:field="*{name}" required="required"/>
             </div>
             <div class="form-group">
                 <label>Street Number</label>
-                <input class="form-control" th:field="*{streetNumber}"/>
+                <input class="form-control" th:field="*{streetNumber}" required="required"/>
             </div>
             <div class="form-group">
                 <label>Street Name:</label>
-                <input class="form-control" th:field="*{streetName}"/>
+                <input class="form-control" th:field="*{streetName}" required="required"/>
             </div>
             <div class="form-group">
                 <label>City:</label>
-                <input class="form-control" th:field="*{city}"/>
+                <input class="form-control" th:field="*{city}" required="required"/>
             </div>
             <div class="form-group">
                 <label>State:</label>
-                <input class="form-control" th:field="*{state}"/>
+                <input class="form-control" th:field="*{state}" required="required"/>
             </div>
             <div class="form-group">
                 <label>Zip:</label>
-                <input class="form-control" th:field="*{zip}"/>
+                <input class="form-control" th:field="*{zip}" required="required"/>
             </div>
             <div class="form-group">
                 <label>The Brew:</label>
-                <textarea class="form-control" th:field="*{descriptionTheBrew}"/>
+                <textarea class="form-control" th:field="*{descriptionTheBrew}" required="required"/>
             </div>
             <div class="form-group">
                 <label>About Them:</label>
-                <textarea class="form-control" th:field="*{descriptionAboutThem}"/>
+                <textarea class="form-control" th:field="*{descriptionAboutThem}" required="required"/>
             </div>
 
             <div class="form-group">

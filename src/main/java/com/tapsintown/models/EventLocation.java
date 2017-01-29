@@ -33,10 +33,10 @@ public class EventLocation {
     @Column(nullable = false)
     private long zip;
 
-    @Column(nullable = false, length = 1000, name = "the_brew")
+    @Column(nullable = false, length = 5000, name = "the_brew")
     private String descriptionTheBrew;
 
-    @Column(nullable = false, length = 1000, name = "about_them")
+    @Column(nullable = false, length = 5000, name = "about_them")
     private String descriptionAboutThem;
 
 

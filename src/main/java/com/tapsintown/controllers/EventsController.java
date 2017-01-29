@@ -60,7 +60,7 @@ public class EventsController extends BaseController {
         eventCreated.setEventLocation(locationDao.findByName(name));
         eventCreated.setUser(loggedInUser());
         eventsDao.save(eventCreated);
-        return "redirect:/";
+        return "redirect:/location";
     }
 
     @GetMapping("/{id}")
@@ -82,30 +82,35 @@ public class EventsController extends BaseController {
     @GetMapping("/{id}/edit")
     public String showEditform(@PathVariable long id, Model m){
         m.addAttribute("event", eventsDao.findOne(id));
+        m.addAttribute("locations", locationDao.findAll());
         return "event/editevent";
     }
 
 
     @PostMapping("/{id}/edit")
-    public String updateEvent(Event existingEvent){
+    public String updateEvent(Event existingEvent, @RequestParam(name="locationId") String name){
         Event currentDetails = eventsDao.findOne(existingEvent.getId());
+        existingEvent.setEventLocation(locationDao.findByName(name));
+
         String newTitle = existingEvent.getTitle();
-        Date newDate = existingEvent.getEventDate();
+        String newDate = existingEvent.getEventDate();
+        String newTime = existingEvent.getEventTime();
         String newDescription = existingEvent.getDescription();
 
         currentDetails.setTitle(newTitle);
         currentDetails.setEventDate(newDate);
+        currentDetails.setEventTime(newTime);
         currentDetails.setDescription(newDescription);
 
         eventsDao.save(currentDetails);
-        return "redirect:/events";
+        return "redirect:/location";
 
     }
 
     @GetMapping("/{id}/delete")
     public String deleteEvents(@PathVariable long id){
         eventsDao.delete(id);
-        return "redirect:/";
+        return "redirect:/location";
 
     }
 

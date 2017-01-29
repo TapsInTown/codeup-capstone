@@ -49,7 +49,7 @@ public class LocationController extends BaseController {
     @PostMapping("/create")
     public String createNewLocation(@Valid EventLocation locationCreated){
         locationDao.save(locationCreated);
-        return "redirect:/location/locationdetails";
+        return "redirect:/location";
     }
 
     @GetMapping("/{id}")

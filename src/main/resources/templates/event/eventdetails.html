@@ -15,7 +15,7 @@
     <div class="cards col-md-8" style="margin-left: 10%">
         <div>
             <h2 th:text="${event.title}"></h2>
-            <h3 th:text="${#dates.format(event.eventDate, 'MM-DD-YYYY')}"></h3>
+            <h3 th:text="${event.eventDate}"></h3>
             <h3 th:text="${event.eventTime}"></h3>
             <h4 th:text="${event.Description}"></h4>
             <h5 class="card-hide" id="address">
@@ -37,7 +37,7 @@
                 <div th:if="${isAdmin}">
                     <h2><a th:href="@{/events/{id}/edit (id=${event.id})}">Click here to edit Details</a></h2>
 
-                    <form th:action="@{'/location/' + ${event.id} + '/delete'}">
+                    <form th:action="@{'/events/' + ${event.id} + '/delete'}">
                         <input type="submit" value="Delete" class="btn btn-danger"/>
                     </form>
                 </div>
