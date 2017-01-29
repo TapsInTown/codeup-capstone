@@ -23,12 +23,12 @@ public class Event{
     private String title;
 
     @Column(nullable = false, name = "event_date")
-    private Date eventDate;
+    private String eventDate;
 
     @Column (nullable = false, name= "event_time")
     private String eventTime;
 
-    @Column(nullable = false, length = 1000)
+    @Column(nullable = false, length = 5000)
     private String description;
 
     @CreationTimestamp
@@ -133,11 +133,11 @@ public class Event{
         this.title = title;
     }
 
-    public Date getEventDate() {
+    public String getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
     }
 
