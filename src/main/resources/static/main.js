@@ -126,60 +126,6 @@ $(function() {
     sticky_relocate();
 });
 
-
-            // var indexToString = index.toString();
-
-            // var topString = "#topOfDiv" + index;
-            // var top = $(topString);
-            //
-            // var clickString = "#click" + index;
-            // var toClick = $(clickString);
-            //
-            //
-            // var bottomString = "#scrollTo" + index;
-            // var bottom = $(bottomString);
-            // var toggle = 0;
-            //  $('.classToInc').click(function (event) {
-            //
-            // // $(toClick).click(function (event) {
-            //     console.log(event.target);
-            //      $(event.target).closest
-
-
-            // })
-
-
-
-           // function () {
-           //
-           //  $(".incrementId").each(function (idIndex) {
-           //      $(this).attr("id", this.id + index);
-           //
-           //      idIndexs.push(idIndex);
-           //      console.log(idIndexs);
-           //  });
-           //
-           //  $(".incrementIdClick").each(function (clickIndex) {
-           //      $(this).attr("id", this.id + clickIndex);
-           //      clickIndexs.push(clickIndex);
-           //  });
-           //
-           //  $(".incrementIdBottom").each(function (bottomIndex) {
-           //      $(this).attr("id", this.id + bottomIndex);
-           //      bottomIndexs.push(bottomIndex)
-           //  });}
-
-        // for (var i = 0; i < length; i++) {
-        //
-        //     var idNumString = i.toString();
-        //     var idConcat = "#click" + idNumString;
-        //     var idToPass = $(idConcat);
-        //
-        //     idToPass.click(function () {
-        //
-        //     });
-
-
 /*Map Canvas*/
     function doIt(){
 
@@ -224,4 +170,15 @@ $(function() {
     }doIt();
 
 
+}
+slideUp();
+
+        // var clicks = 0;
+        // function count() {
+        //     clicks += 1;
+        //     document.getElementById("counter").innerHTML = clicks;
+        //
+        // }
+
 });
+
