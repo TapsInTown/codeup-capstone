@@ -17,7 +17,7 @@
     <h3><a th:href="@{'/home'}">Go to Home page</a></h3>
     <h2>saved events</h2>
 
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div style="padding:2% 5%; margin-bottom: 5%" class="cards" th:each="saveEvent : ${savedEvents}">
             <h2 th:text="${saveEvent.event.title}"></h2>
             <h3 th:text="${#dates.format(saveEvent.event.eventDate, 'MM-DD-YYYY')}"></h3>
