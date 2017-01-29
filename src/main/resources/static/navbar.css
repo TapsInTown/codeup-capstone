@@ -1,3 +1,208 @@
+/*iPad in portrait & landscape*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  { /* STYLES GO HERE */}
+
+/*iPad in landscape*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) { /* STYLES GO HERE */}
+
+/*iPad in portrait*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) { /* STYLES GO HERE */ }
+
+/*Retina iPad in portrait & landscape*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) { /* STYLES GO HERE */}
+
+/*Retina iPad in landscape*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) { /* STYLES GO HERE */}
+
+/*Retina iPad in portrait*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2) { /* STYLES GO HERE */ }
+
+/*iPad 1 & 2 in portrait & landscape*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 1){ /* STYLES GO HERE */}
+
+/*iPad 1 & 2 in landscape*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  { /* STYLES GO HERE */}
+
+/*iPad 1 & 2 in portrait*/
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1) { /* STYLES GO HERE */ }
+
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
+
 @font-face {
     font-family: "Big John";
     src: url("BIGJOHN.otf");
@@ -20,7 +225,6 @@ h1, h2, h3, h4, h5, h6, title{
 }
 
 body{
-    width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,7 +236,7 @@ body{
 }
 
 .container-fluid{
-    left: 10%;
+    margin-left: 10%;
     position: absolute;
 }
 
@@ -67,6 +271,21 @@ a:hover{
 
 }
 
+#navigation a{
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    cursor: pointer;
+
+}
+
+#navigation a:hover{
+    color: white;
+    transition: .5s;
+    background-color: #ffc744;
+    text-decoration: none;
+}
+
 .move{
     transition: .7s;
 }
@@ -80,14 +299,6 @@ a:hover{
     font-size: 1.5em;
     cursor: pointer;
     color:black;
-}
-
-#navigation a{
-    display: flex;
-    justify-content: center;
-    padding: 3rem 0;
-    cursor: pointer;
-
 }
 
 #contact-info{
@@ -139,14 +350,12 @@ input {
 .bodies{
     transition: 1s;
     margin-top: 2%;
-    width:55%;
-
-    /*left:30%;*/
+    width: 50%;
 }
 #specific-events{
-    width: 22%;
+    width: 45%;
     height:50%;
-    /*left: 30%;*/
+    margin-left: 5%;
     margin-top: 2%;
     /*position: absolute;*/
     transition: 1s;
@@ -177,22 +386,6 @@ Sliding Cards*/
 }
 
 .infoBar{
-
-}
-
-#topOfDiv{
-    max-height: 359px;
-    overflow-y: hidden;
-
-}
-
-#scrollTo{
-    max-height: 359px;
-    background-color: aqua;
-    overflow: hidden
-}
-
-.mapBar{
     width:10%;
     height: 40%;
     color: white;
@@ -217,12 +410,12 @@ Sliding Cards*/
 }
 
 .mapCanvas{
-    transition-delay: 2s;
+    transition-delay: 1.5s;
     /*transition-timing-function:ease;*/
     width: 700px;
     height: 400px;
     overflow: hidden;
-    z-index: 0;
+    z-index: 1;
 }
 
 .card-hide{
@@ -288,6 +481,10 @@ Sliding Cards*/
     margin-top: 2%;
 }
 
+#user-profile{
+    transition: 1s;
+}
+
 #sticky-anchor{
     height: 1px;
     width: 1px;
@@ -311,8 +508,8 @@ Sliding Cards*/
 /* #5 LOG IN PAGE*/
 
 .login-form{
-    margin-left: 21%;
-    margin-right: 35%;
+    /*margin-left: 21%;*/
+    /*margin-right: 35%;*/
 }
 
 .login-form input{
@@ -374,6 +571,7 @@ Sliding Cards*/
     margin-top: 5%;
 }
 
-.center-up{
-    left:30%;
+.test{
+    position: absolute;
+
 }

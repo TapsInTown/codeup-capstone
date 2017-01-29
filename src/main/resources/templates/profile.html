@@ -30,7 +30,7 @@
         </div>
 
         <div th:if="${isAdmin}">
-            <h2><a th:href="@{/location/{id}/edit (id=${location.id})}">Click here to edit Details</a></h2>
+            <h5><a th:href="@{/location/{id}/edit (id=${location.id})}">Click here to edit Details</a></h5>
             <form th:action="@{'/location/' + ${location.id} + '/delete'}">
                 <input type="submit" value="Delete" class="btn btn-danger"/>
             </form>

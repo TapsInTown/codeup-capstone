@@ -14,14 +14,15 @@
     <!--<p>Welcome, Logged user: <span sec:authentication="name"></span></p>-->
     <!--</div>-->
 
+    <h3><a th:href="@{'/'}">Go to Home page</a></h3>
     <div class="col-md-6 cards">
-    <h3>Here is a list of your saved events</h3>
+        <h3>Here is a list of your saved events</h3>
 
         <div th:each="saveEvent : ${savedEvents}">
             <h2 th:text="${saveEvent.event.title}"></h2>
             <h3 th:text="${#dates.format(saveEvent.event.eventDate, 'MM-DD-YYYY')}"></h3>
             <p th:text="${saveEvent.event.description}"></p>
-        <form th:action="@{'/user/delete/' + ${saveEvent.id}}" method="POST">
+            <form th:action="@{'/user/delete/' + ${saveEvent.id}}" method="POST">
             <div class="form-group">
                 <button type="submit" value="Delete" class="btn btn-danger">REMOVE</button>
             </div>
@@ -29,13 +30,12 @@
         </div>
     </div>
 
-        <h3><a th:href="@{'/'}">Go to Home page</a></h3>
-    <div th:if="${isAdmin}" class="col-md-6">
+    <div th:if="${isAdmin}" class="col-md-8">
         <h3>Admin options</h3>
         <h5>This will only be accessible to admins.</h5>
         <br/>
-        <input class="btn btn-default"><a th:href="@{'/location/create'}">Add a new location</a></input>
-        <input class="btn btn-default"><a th:href="@{'/events/create'}">Create a new event</a></input>
+       <a th:href="@{'/location/create'}"><button class="btn btn-primary">Add a new location</button></a>
+       <a th:href="@{'/events/create'}"><button class="btn btn-primary">Create a new event</button></a>
     </div>
         </div>
 
