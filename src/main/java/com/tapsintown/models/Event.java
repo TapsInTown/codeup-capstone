@@ -28,7 +28,7 @@ public class Event{
     @Column (nullable = false, name= "event_time")
     private String eventTime;
 
-    @Column(nullable = false, length = 5000)
+    @Column(nullable = false, length = 2000)
     private String description;
 
     @CreationTimestamp
