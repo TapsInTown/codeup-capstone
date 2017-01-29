@@ -93,6 +93,8 @@ public class LocationController extends BaseController {
         String newCity = editedLocation.getCity();
         String newState = editedLocation.getState();
         Long newZip = editedLocation.getZip();
+        String newBrew = editedLocation.getDescriptionTheBrew();
+        String newAboutThem = editedLocation.getDescriptionAboutThem();
 
         currentDetails.setName(newName);
         currentDetails.setStreetNumber(newStreetNum);
@@ -100,6 +102,9 @@ public class LocationController extends BaseController {
         currentDetails.setCity(newCity);
         currentDetails.setState(newState);
         currentDetails.setZip(newZip);
+        currentDetails.setDescriptionTheBrew(newBrew);
+        currentDetails.setDescriptionAboutThem(newAboutThem);
+
 
         locationDao.save(currentDetails);
         return "redirect:/location";
