@@ -575,24 +575,24 @@ Sliding Cards*/
     position: absolute;
 
 }
-#topOfDiv{
+.incrementId{
     max-height: 398px;
     overflow-y: hidden;
 
 }
 
-#scrollTo{
+.incrementIdBottom{
     max-height: 398px;
     padding:0px 0 0px 0;
     background-color: aqua;
     overflow: hidden
 }
 
-#click:hover{
+.incrementIdClick :hover{
     background-color: #ffc744
 }
 
-#click{
+.incrementIdClick{
     color: #fff;
     background-color: black;
 

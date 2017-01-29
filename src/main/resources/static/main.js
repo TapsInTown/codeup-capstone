@@ -2,6 +2,42 @@
  * Created by joshua on 1/18/17.
  */
 "use strict";
+function slideUp() {
+    // var idIndexs = [];
+    // var clickIndexs = [];
+    // var bottomIndexs = [];
+    //
+    // var length = idIndexs.length;
+    //$('.classToInc').each(function(index) {
+    //*                             */\\
+    var $buttonWeClick = $('.clickClass');
+    var $bottomDiv = $('.scrollBottom');
+    var $topDiv = $('.topDiv');
+    console.log("top length " + $topDiv.length);
+    console.log("click length " + $buttonWeClick.length);
+    console.log("bottom length" + $bottomDiv.length);
+
+
+    $buttonWeClick.each(function () {
+        var toggle = 0;
+        $buttonWeClick.click(function () {
+        console.log(this);
+            console.log("click" + $buttonWeClick);
+            if (toggle % 2 == 0) {
+                $topDiv.animate({
+                    scrollTop: $bottomDiv.offset().top
+                }, 'slow');
+                console.log('run');
+            } else {
+                $topDiv.animate({
+                    scrollTop: $bottomDiv.offset().top - 780
+                }, 'slow');
+            }
+            toggle++;
+        })
+    })
+}
+slideUp();
 
 /* logout link on the nav bar */
 var logoutSubmit = function() {
@@ -89,24 +125,61 @@ $(function() {
     $(window).scroll(sticky_relocate);
     sticky_relocate();
 });
-    function slideUp() {
-        var toggle = 0;
-        $("#click").click(function() {
-            if(toggle % 2 == 0) {
-                $('#topOfDiv').animate({
-                    scrollTop: $("#scrollTo").offset().top
-                }, 'slow');
-                console.log('run');
-            } else {
-                $('#topOfDiv').animate({
-                    scrollTop: $("#scrollTo").offset().top - 780
-                }, 'slow');
-            }
-            toggle++;
-        });
 
-    }
-    slideUp();
+
+            // var indexToString = index.toString();
+
+            // var topString = "#topOfDiv" + index;
+            // var top = $(topString);
+            //
+            // var clickString = "#click" + index;
+            // var toClick = $(clickString);
+            //
+            //
+            // var bottomString = "#scrollTo" + index;
+            // var bottom = $(bottomString);
+            // var toggle = 0;
+            //  $('.classToInc').click(function (event) {
+            //
+            // // $(toClick).click(function (event) {
+            //     console.log(event.target);
+            //      $(event.target).closest
+
+
+            // })
+
+
+
+           // function () {
+           //
+           //  $(".incrementId").each(function (idIndex) {
+           //      $(this).attr("id", this.id + index);
+           //
+           //      idIndexs.push(idIndex);
+           //      console.log(idIndexs);
+           //  });
+           //
+           //  $(".incrementIdClick").each(function (clickIndex) {
+           //      $(this).attr("id", this.id + clickIndex);
+           //      clickIndexs.push(clickIndex);
+           //  });
+           //
+           //  $(".incrementIdBottom").each(function (bottomIndex) {
+           //      $(this).attr("id", this.id + bottomIndex);
+           //      bottomIndexs.push(bottomIndex)
+           //  });}
+
+        // for (var i = 0; i < length; i++) {
+        //
+        //     var idNumString = i.toString();
+        //     var idConcat = "#click" + idNumString;
+        //     var idToPass = $(idConcat);
+        //
+        //     idToPass.click(function () {
+        //
+        //     });
+
+
 /*Map Canvas*/
     function doIt(){
 
