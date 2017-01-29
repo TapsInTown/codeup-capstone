@@ -271,6 +271,14 @@ a:hover{
 
 }
 
+#navigation a{
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    cursor: pointer;
+
+}
+
 #navigation a:hover{
     color: white;
     transition: .5s;
@@ -291,14 +299,6 @@ a:hover{
     font-size: 1.5em;
     cursor: pointer;
     color:black;
-}
-
-#navigation a{
-    display: flex;
-    justify-content: center;
-    padding: 3rem 0;
-    cursor: pointer;
-
 }
 
 #contact-info{
@@ -353,7 +353,7 @@ input {
     width: 50%;
 }
 #specific-events{
-    width: 22%;
+    width: 45%;
     height:50%;
     margin-left: 5%;
     margin-top: 2%;
