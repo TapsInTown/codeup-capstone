@@ -153,7 +153,7 @@ $(document).ready(function(){
             var infowindow = new google.maps.InfoWindow({
                 content: address
             });
-
+console.log(results);
             var marker = new google.maps.Marker({
                 position: results[0].geometry.location,
                 map: map,
@@ -174,13 +174,5 @@ $(document).ready(function(){
 
 
 });
-
-        // var clicks = 0;
-        // function count() {
-        //     clicks += 1;
-        //     document.getElementById("counter").innerHTML = clicks;
-        //
-        // }
-
 
 
