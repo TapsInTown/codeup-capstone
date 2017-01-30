@@ -2,6 +2,42 @@
  * Created by joshua on 1/18/17.
  */
 "use strict";
+function slideUp() {
+    // var idIndexs = [];
+    // var clickIndexs = [];
+    // var bottomIndexs = [];
+    //
+    // var length = idIndexs.length;
+    //$('.classToInc').each(function(index) {
+    //*                             */\\
+    var $buttonWeClick = $('.clickClass');
+    var $bottomDiv = $('.scrollBottom');
+    var $topDiv = $('.topDiv');
+    console.log("top length " + $topDiv.length);
+    console.log("click length " + $buttonWeClick.length);
+    console.log("bottom length" + $bottomDiv.length);
+
+
+    $buttonWeClick.each(function () {
+        var toggle = 0;
+        $buttonWeClick.click(function () {
+        console.log(this);
+            console.log("click" + $buttonWeClick);
+            if (toggle % 2 == 0) {
+                $topDiv.animate({
+                    scrollTop: $bottomDiv.offset().top
+                }, 'slow');
+                console.log('run');
+            } else {
+                $topDiv.animate({
+                    scrollTop: $bottomDiv.offset().top - 880
+                }, 'slow');
+            }
+            toggle++;
+        })
+    })
+}
+slideUp();
 
 /* logout link on the nav bar */
 var logoutSubmit = function() {
@@ -70,25 +106,25 @@ $(document).ready(function(){
 
 /*sticky title*/
 
-function sticky_relocate() {
-    var window_top = $(window).scrollTop();
-    var div_top = $('#sticky-anchor').offset().top;
-    if (window_top > div_top) {
-        $('#tapsTitle').addClass('stick');
-        $('#tapsTitle').addClass('hvr-sink');
-        $('#sticky-anchor').height($('#tapsTitle').outerHeight());
-    } else {
-        $('#tapsTitle').removeClass('stick');
-        $('#tapsTitle').removeClass('hvr-sink');
-        $('#sticky-anchor').height(0);
-    }
-}
-
-
-$(function() {
-    $(window).scroll(sticky_relocate);
-    sticky_relocate();
-});
+// function sticky_relocate() {
+//     var window_top = $(window).scrollTop();
+//     var div_top = $('#sticky-anchor').offset().top;
+//     if (window_top > div_top) {
+//         $('#tapsTitle').addClass('stick');
+//         $('#tapsTitle').addClass('hvr-sink');
+//         $('#sticky-anchor').height($('#tapsTitle').outerHeight());
+//     } else {
+//         $('#tapsTitle').removeClass('stick');
+//         $('#tapsTitle').removeClass('hvr-sink');
+//         $('#sticky-anchor').height(0);
+//     }
+// }
+//
+//
+// $(function() {
+//     $(window).scroll(sticky_relocate);
+//     sticky_relocate();
+// });
 
 /*Map Canvas*/
     function doIt(){
@@ -133,24 +169,8 @@ $(function() {
 
     }doIt();
 
-function slideUp() {
-    var toggle = 0;
-    $("#click").click(function() {
-        if(toggle % 2 == 0) {
-            $('#topOfDiv').animate({
-                scrollTop: $("#scrollTo").offset().top
-            }, 'slow');
-            console.log('run');
-        } else {
-            $('#topOfDiv').animate({
-                scrollTop: $("#scrollTo").offset().top - 720
-            }, 'slow');
-        }
-        toggle++;
-    });
 
-}
-slideUp();
+});
 
         // var clicks = 0;
         // function count() {
@@ -159,5 +179,5 @@ slideUp();
         //
         // }
 
-});
+
 

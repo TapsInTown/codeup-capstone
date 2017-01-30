@@ -575,3 +575,30 @@ Sliding Cards*/
     position: absolute;
 
 }
+.incrementId{
+    max-height: 398px;
+    overflow-y: hidden;
+
+}
+
+.incrementIdBottom{
+    margin-top: 50px;
+    max-height: 398px;
+    padding:0px 0 0px 0;
+    background-color: white;
+    overflow: hidden
+}
+
+.incrementIdClick :hover{
+    background-color: #ffc744
+}
+
+.incrementIdClick{
+    color: #fff;
+    background-color: black;
+
+
+}
+.h4Hover :hover{
+    background-color: #ffc744;
+}
