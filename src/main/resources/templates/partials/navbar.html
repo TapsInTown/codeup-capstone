@@ -15,7 +15,7 @@
     <a th:href="@{/}" class="nav-link" >HOME</a>
     <a th:href="@{/location}" class="nav-link" >BREWERIES</a>
     <a href="#" class="nav-link" >DESTINATIONS</a>
-    <a href="#" class="nav-link" >ABOUT</a>
+    <a th:href="@{/about-us}" class="nav-link" >ABOUT</a>
     <div>
     <a sec:authorize="isAnonymous()" th:href="@{/login}" class="nav-link" >LOGIN</a>
 
