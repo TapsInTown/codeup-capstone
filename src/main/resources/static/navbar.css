@@ -388,8 +388,6 @@ input {
 Sliding Cards*/
 
 .cards {
-    margin-top: 4.4rem;
-    margin-bottom: 4.4rem;
     border-left: solid .5rem black;
     border-right:solid 4.5rem black;
     background-color:white;
@@ -593,6 +591,8 @@ Sliding Cards*/
     min-height: 350px;
     max-height: 350px;
     overflow-y: visible;
+    margin-top: 4.4rem;
+    margin-bottom: 4.4rem;
 
 }
 
