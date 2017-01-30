@@ -43,4 +43,9 @@ public class ProfileController extends BaseController{
         return "/profile";
     }
 
+    @GetMapping("/about-us")
+    public String showAboutUsPage(){
+        return"aboutus";
+    }
+
 }
