@@ -2,42 +2,45 @@
  * Created by joshua on 1/18/17.
  */
 "use strict";
-function slideUp() {
-    // var idIndexs = [];
-    // var clickIndexs = [];
-    // var bottomIndexs = [];
-    //
-    // var length = idIndexs.length;
-    //$('.classToInc').each(function(index) {
-    //*                             */\\
-    var $buttonWeClick = $('.clickClass');
-    var $bottomDiv = $('.scrollBottom');
-    var $topDiv = $('.topDiv');
-    console.log("top length " + $topDiv.length);
-    console.log("click length " + $buttonWeClick.length);
-    console.log("bottom length" + $bottomDiv.length);
+(function () {
+    function slideUp() {
+        // var idIndexs = [];
+        // var clickIndexs = [];
+        // var bottomIndexs = [];
+        //
+        // var length = idIndexs.length;
+        //$('.classToInc').each(function(index) {
+        //*                             */\\
+        var $buttonWeClick = $('.clickClass');
+        var $bottomDiv = $('.scrollBottom');
+        var $topDiv = $('.topDiv');
+        console.log("top length " + $topDiv.length);
+        console.log($buttonWeClick);
+        console.log("bottom length" + $bottomDiv.length);
 
 
-    $buttonWeClick.each(function () {
-        var toggle = 0;
-        $buttonWeClick.click(function () {
-        console.log(this);
-            console.log("click" + $buttonWeClick);
-            if (toggle % 2 == 0) {
-                $topDiv.animate({
-                    scrollTop: $bottomDiv.offset().top
-                }, 'slow');
-                console.log('run');
-            } else {
-                $topDiv.animate({
-                    scrollTop: $bottomDiv.offset().top - 1000
-                }, 'slow');
-            }
-            toggle++;
-        })
-    })
-}
-slideUp();
+            // console.log("btns: " + $buttonWeClick);
+        for(var i=0; i < $buttonWeClick; i++) {
+            var toggle = 0;
+            $(this).click(function () {
+                console.log(this);
+                console.log("click" + $buttonWeClick);
+                if (toggle % 2 == 0) {
+                    $(this).parent().children(".topDiv").animate({
+                        scrollTop: $(this).parent().children(".topDiv").children(".bottom").children(".scrollBottom").offset().top
+                    }, 'slow');
+                    console.log('run');
+                } else {
+                    $topDiv[i].animate({
+                        scrollTop: $bottomDiv.offset().top - 1000
+                    }, 'slow');
+                }
+                toggle++;
+            })
+        }
+    }
+    slideUp();
+})();
 
 /* logout link on the nav bar */
 var logoutSubmit = function() {
