@@ -368,13 +368,14 @@ input {
 /*LOCATION LIST*/
 
 .location-card{
-   margin-bottom:2%;
+   /*margin-bottom:2%;*/
 
 }
-.location-card a:hover{
+.location-card :hover{
     background-color: #ffc744;
     color: white;
-    transition:1s;
+    text-decoration:none;
+    transition:.5s;
 }
 
 /*
