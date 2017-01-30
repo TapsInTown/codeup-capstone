@@ -367,11 +367,16 @@ input {
 
 /*LOCATION LIST*/
 
-/*.location-card{*/
-    /*!*margin-top: 5%;*!*/
-    /*margin-left: 15%;*/
-    /*margin-right: 0;*/
-/*}*/
+.location-card{
+   /*margin-bottom:2%;*/
+
+}
+.location-card :hover{
+    background-color: #ffc744;
+    color: white;
+    text-decoration:none;
+    transition:.5s;
+}
 
 /*
 Sliding Cards*/
@@ -412,7 +417,7 @@ Sliding Cards*/
 .mapCanvas{
     transition-delay: 1.5s;
     /*transition-timing-function:ease;*/
-    width: 840px;
+    width: 760px;
     height: 400px;
     overflow: hidden;
     z-index: 1;
