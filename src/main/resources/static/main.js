@@ -170,8 +170,7 @@ $(function() {
     }doIt();
 
 
-}
-slideUp();
+});
 
         // var clicks = 0;
         // function count() {
@@ -180,5 +179,5 @@ slideUp();
         //
         // }
 
-});
+
 

@@ -18,27 +18,33 @@
     <div class="col-md-6 cards">
         <h3>Here is a list of your saved events</h3>
 
-    <div class="col-md-12">
-        <div style="padding:2% 5%; margin-bottom: 5%" class="cards" th:each="saveEvent : ${savedEvents}">
-           <!--this is mapping incorrectly--> <h2><a th:href="@{/events/{id} (id=${saveEvent.id})}" th:text="${saveEvent.event.title}"></a></h2>
-            <h3 th:text="${#dates.format(saveEvent.event.eventDate, 'MM-DD-YYYY')}"></h3>
-            <p th:text="${saveEvent.event.description}"></p>
-            <form th:action="@{'/user/delete/' + ${saveEvent.id}}" method="POST">
-            <div class="form-group">
-                <button type="submit" value="Delete" class="btn btn-danger">REMOVE</button>
+        <div class="col-md-12">
+            <div style="padding:2% 5%; margin-bottom: 5%" class="cards" th:each="saveEvent : ${savedEvents}">
+                <!--this is mapping incorrectly--> <h2><a th:href="@{/events/{id} (id=${saveEvent.id})}"
+                                                          th:text="${saveEvent.event.title}"></a></h2>
+                <h3 th:text="${#dates.format(saveEvent.event.eventDate, 'MM-DD-YYYY')}"></h3>
+                <p th:text="${saveEvent.event.description}"></p>
+                <form th:action="@{'/user/delete/' + ${saveEvent.id}}" method="POST">
+                    <div class="form-group">
+                        <button type="submit" value="Delete" class="btn btn-danger">REMOVE</button>
+                    </div>
+                </form>
             </div>
-        </form>
         </div>
-    </div>
 
-    <div th:if="${isAdmin}" class="col-md-8">
-        <h3>Admin options</h3>
-        <h5>This will only be accessible to admins.</h5>
-        <br/>
-       <a th:href="@{'/location/create'}"><button class="btn btn-primary">Add a new location</button></a>
-       <a th:href="@{'/events/create'}"><button class="btn btn-primary">Create a new event</button></a>
-    </div>
+        <div th:if="${isAdmin}" class="col-md-8">
+            <h3>Admin options</h3>
+            <h5>This will only be accessible to admins.</h5>
+            <br/>
+            <a th:href="@{'/location/create'}">
+                <button class="btn btn-primary">Add a new location</button>
+            </a>
+            <a th:href="@{'/events/create'}">
+                <button class="btn btn-primary">Create a new event</button>
+            </a>
         </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.js"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
