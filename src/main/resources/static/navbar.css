@@ -412,7 +412,7 @@ Sliding Cards*/
 .mapCanvas{
     transition-delay: 1.5s;
     /*transition-timing-function:ease;*/
-    width: 700px;
+    width: 840px;
     height: 400px;
     overflow: hidden;
     z-index: 1;
