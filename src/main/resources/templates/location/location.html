@@ -8,7 +8,7 @@
 <span th:replace="partials/navbar :: theNav"></span>
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
-    <div class="location-card">
+    <div class="wow bounceInUp animation-delay=5000ms location-card">
         <div th:each="location : ${location}" class="col-lg-7 col-lg-offset-2 text-center cards" style="margin-bottom: 2%">
             <h2>
                 <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
@@ -20,5 +20,7 @@
 </body>
 <script th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script th:src="@{/wow.min.js}"></script>
+<script>new WOW().init();</script>
 <script th:src="@{/main.js}"></script>
 </html>
