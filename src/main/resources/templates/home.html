@@ -28,13 +28,14 @@
         </div>
 
     </div>
+
+    <script
+            th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmBSAkIIH8tytXlTJaKTtwj488S7eVCZs&amp;libraries=places"></script>
+    <script th:src="@{/wow.min.js}"></script>
+    <script>new WOW().init();</script>
+    <script th:src="@{/main.js}"></script>
 </body>
-<script
-        th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-        crossorigin="anonymous"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmBSAkIIH8tytXlTJaKTtwj488S7eVCZs&amp;libraries=places"></script>
-<script th:src="@{/main.js}"></script>
-<script th:src="@{/wow.min.js}"></script>
-<script>new WOW().init();</script>
 </html>
