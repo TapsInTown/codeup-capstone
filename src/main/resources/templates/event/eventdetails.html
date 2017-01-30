@@ -12,7 +12,7 @@
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
 <div>
-    <div class="cards col-md-4">
+    <div class="cards col-md-8" style="margin-left: 10%">
         <div>
             <h2 th:text="${event.title}"></h2>
             <h3 th:text="${event.eventDate}"></h3>
@@ -43,7 +43,7 @@
                 </div>
         </div>
     </div>
-    <div class=" col-md-4 cards mapCanvas" style="background-color: white; margin-bottom:5% " onload="doIt()"></div>
+    <div class=" col-md-4 cards mapCanvas" style="margin-left: 10%; margin-bottom:5% " onload="doIt()"></div>
 </div>
     </div>
 </body>
