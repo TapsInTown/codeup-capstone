@@ -367,11 +367,15 @@ input {
 
 /*LOCATION LIST*/
 
-/*.location-card{*/
-    /*!*margin-top: 5%;*!*/
-    /*margin-left: 15%;*/
-    /*margin-right: 0;*/
-/*}*/
+.location-card{
+   margin-bottom:2%;
+
+}
+.location-card a:hover{
+    background-color: #ffc744;
+    color: white;
+    transition:1s;
+}
 
 /*
 Sliding Cards*/

@@ -9,7 +9,7 @@
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
     <div class="">
-        <div th:each="location : ${location}" class="col-lg-7 col-lg-offset-2 text-center cards location-card" style="margin-bottom: 2%">
+        <div th:each="location : ${location}" class="col-lg-7 col-lg-offset-2 text-center cards location-card">
             <h2>
                 <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
             </h2>
