@@ -30,7 +30,7 @@ function slideUp() {
                 console.log('run');
             } else {
                 $topDiv.animate({
-                    scrollTop: $bottomDiv.offset().top - 780
+                    scrollTop: $bottomDiv.offset().top - 880
                 }, 'slow');
             }
             toggle++;
@@ -106,25 +106,25 @@ $(document).ready(function(){
 
 /*sticky title*/
 
-function sticky_relocate() {
-    var window_top = $(window).scrollTop();
-    var div_top = $('#sticky-anchor').offset().top;
-    if (window_top > div_top) {
-        $('#tapsTitle').addClass('stick');
-        $('#tapsTitle').addClass('hvr-sink');
-        $('#sticky-anchor').height($('#tapsTitle').outerHeight());
-    } else {
-        $('#tapsTitle').removeClass('stick');
-        $('#tapsTitle').removeClass('hvr-sink');
-        $('#sticky-anchor').height(0);
-    }
-}
-
-
-$(function() {
-    $(window).scroll(sticky_relocate);
-    sticky_relocate();
-});
+// function sticky_relocate() {
+//     var window_top = $(window).scrollTop();
+//     var div_top = $('#sticky-anchor').offset().top;
+//     if (window_top > div_top) {
+//         $('#tapsTitle').addClass('stick');
+//         $('#tapsTitle').addClass('hvr-sink');
+//         $('#sticky-anchor').height($('#tapsTitle').outerHeight());
+//     } else {
+//         $('#tapsTitle').removeClass('stick');
+//         $('#tapsTitle').removeClass('hvr-sink');
+//         $('#sticky-anchor').height(0);
+//     }
+// }
+//
+//
+// $(function() {
+//     $(window).scroll(sticky_relocate);
+//     sticky_relocate();
+// });
 
 /*Map Canvas*/
     function doIt(){

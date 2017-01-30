@@ -582,9 +582,10 @@ Sliding Cards*/
 }
 
 .incrementIdBottom{
+    margin-top: 50px;
     max-height: 398px;
     padding:0px 0 0px 0;
-    background-color: aqua;
+    background-color: white;
     overflow: hidden
 }
 
@@ -597,4 +598,7 @@ Sliding Cards*/
     background-color: black;
 
 
+}
+.h4Hover :hover{
+    background-color: #ffc744;
 }
