@@ -11,41 +11,41 @@
 <span th:replace="partials/navbar :: theNav"></span>
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
-<div>
-    <div class="cards col-md-8" style="margin-left: 10%">
-        <div>
-            <h2 th:text="${event.title}"></h2>
-            <h3 th:text="${event.eventDate}"></h3>
-            <h3 th:text="${event.eventTime}"></h3>
-            <h4 th:text="${event.Description}"></h4>
-            <h5 class="card-hide" id="address">
-                <span th:text="${event.eventLocation.streetNumber}"></span>
-                <span th:text="${event.eventLocation.streetName}"></span>
-                <span th:text="${event.eventLocation.city}"></span>
-                <span th:text="${event.eventLocation.State}"></span>
-                <span th:text="${event.eventLocation.zip}"></span>
-            </h5>
+    <div>
+        <div class="cards col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
+            <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-left">
+                <h2 th:text="${event.title}"></h2>
+                <h3 th:text="${event.eventDate}"></h3>
+                <h3 th:text="${event.eventTime}"></h3>
+                <h4 th:text="${event.Description}"></h4>
+                <h5 class="card-hide" id="address">
+                    <span th:text="${event.eventLocation.streetNumber}"></span>
+                    <span th:text="${event.eventLocation.streetName}"></span>
+                    <span th:text="${event.eventLocation.city}"></span>
+                    <span th:text="${event.eventLocation.State}"></span>
+                    <span th:text="${event.eventLocation.zip}"></span>
+                </h5>
+                <form th:action="@{'/events/save/' + ${event.id}}" method="post">
+                    <div th:if="${loggedIn}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-lg btn-primary" type="submit" value="Save Event">Save</button>
+                    </div>
+                </form>
+            </div>
 
-            <form th:action="@{'/events/save/' + ${event.id}}" method="post">
-                <div th:if="${loggedIn}">
-                </div>
-                <div class="form-group">
-                    <button class="form-control btn btn-primary" type="submit" value="Save Event">Save</button>
-                </div>
-            </form>
 
-                <div th:if="${isAdmin}">
-                    <h2><a th:href="@{/events/{id}/edit (id=${event.id})}">Click here to edit Details</a></h2>
+            <div th:if="${isAdmin}">
+                <h2><a th:href="@{/events/{id}/edit (id=${event.id})}">Click here to edit Details</a></h2>
 
-                    <form th:action="@{'/events/' + ${event.id} + '/delete'}">
-                        <input type="submit" value="Delete" class="btn btn-danger"/>
-                    </form>
-                </div>
+                <form th:action="@{'/events/' + ${event.id} + '/delete'}">
+                    <input type="submit" value="Delete" class="btn btn-danger"/>
+                </form>
+            </div>
         </div>
+        <div class="col-lg-8 col-md-8 col-lg-offset-3 col-md-offset-3 cards mapCanvas" onload="doIt()"></div>
     </div>
-    <div class=" col-md-4 cards mapCanvas" style="margin-left: 10%; margin-bottom:5% " onload="doIt()"></div>
 </div>
-    </div>
 </body>
 <script
         th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
