@@ -10,8 +10,11 @@
 <body>
     <div class="">
         <div th:fragment="slidingCard">
-            <div class="row">
+          
+            <div class="row col-md-12">
+
                 <!--<div class=""></div>-->
+                <div  class="col-lg-8 cards col-lg-offset-2 incrementId topDiv">
                 <div  class="col-lg-7 cards col-lg-offset-2 incrementId topDiv wow fadeInUp">
                     <div class="row">
                         <h2 id="eventHeader">
@@ -55,8 +58,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 col-lg-offset-2 clickClass incrementIdClick h4Hover">
-                    <h4 th:href="@{/events/{id} (id=${event.id})}" class="classToInc h4Hover">More</h4>
+                  
+                <div class="col-lg-8 col-lg-offset-2 clickClass incrementIdClick h4Hover">
+                    <h4 class="classToInc h4Hover">More</h4>
                 </div>
                 <!--<button id="click" class="btn">Info</button>-->
                 </div>
