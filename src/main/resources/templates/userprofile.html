@@ -15,10 +15,10 @@
     <!--</div>-->
 
     <h3><a th:href="@{'/'}">Go to Home page</a></h3>
-    <div class="col-md-6 cards">
+    <div class="col-md-12">
         <h3>Here is a list of your saved events</h3>
 
-    <div class="col-md-12">
+    <div class="col-md-12 col-md-8 col-md-offset-2">
         <div style="padding:2% 5%; margin-bottom: 5%" class="cards" th:each="saveEvent : ${savedEvents}">
            <!--this is mapping incorrectly--> <h2><a th:href="@{/events/{id} (id=${saveEvent.id})}" th:text="${saveEvent.event.title}"></a></h2>
             <h3 th:text="${saveEvent.event.eventDate}"></h3>
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-        <div th:if="${isAdmin}" class="col-md-8">
+        <div th:if="${isAdmin}" class="col-md-8 col-md-offset-2 cards">
             <h3>Admin options</h3>
             <h5>This will only be accessible to admins.</h5>
             <br/>

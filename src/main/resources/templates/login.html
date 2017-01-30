@@ -9,7 +9,7 @@
 
 <h1 style="text-align: center">Log in</h1>
 <div class="container-fluid">
-    <div class="login-form">
+    <div class="login-form" style="margin-left: 42%">
         <div th:if="${param.error}">
             <h3 style="color:darkred" align="center">Invalid Username or Password.</h3>
         </div>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary form-control" type="submit" value="Log In"><h4>Log In</h4></button>
+            <button class="btn form-control" type="submit" value="Log In" style="background-color: black; color:white"><h4>Log In</h4></button>
         </div>
 
         <h3>New to Taps In Town? <span><a th:href="@{/user/register}">Sign Up</a></span></h3>

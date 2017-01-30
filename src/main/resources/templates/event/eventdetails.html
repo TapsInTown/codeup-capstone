@@ -11,8 +11,8 @@
 <span th:replace="partials/navbar :: theNav"></span>
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
-    <div class="row">
-        <div class="cards col-md-8 col-lg-7 col-lg-offset-2 col-md-offset-2">
+    <div class="row wow bounceInUp">
+        <div class="cards col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
             <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 text-left">
                 <h2 th:text="${event.title}"></h2>
                 <h3 th:text="${event.eventDate}"></h3>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row wow bounceInUp">
         <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 cards mapCanvas" onload="doIt()"></div>
   </div>
 </div>
