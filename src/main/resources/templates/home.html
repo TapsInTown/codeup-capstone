@@ -24,7 +24,7 @@
         <div>
             <div th:each="event : ${events}" class="" th:include="partials/slidingCards :: slidingCard"></div>
         </div>
-
+        <div th:replace="partials/brewing-process :: brewing"></div>
     </div>
 
     <script
