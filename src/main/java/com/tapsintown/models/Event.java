@@ -66,6 +66,9 @@ public class Event{
     @OneToMany (mappedBy = "event")
     private List<SaveEvent> savedEvents;
 
+    @Transient
+    public List<EventImage> pics;
+
 //  Getters and setters
 
 
