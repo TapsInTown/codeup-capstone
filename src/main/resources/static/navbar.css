@@ -249,10 +249,12 @@ a:visited{
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: #ffc744;
     transition: .5s;
+    text-decoration: none;
 }
+
 /*-- #1 Navbar --*/
 
 #navbar{
