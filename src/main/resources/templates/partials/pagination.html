@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pagination</title>
+</head>
+<body>
+
+<!-- Build the pagination component -->
+<div th:fragment="pagination">
+    <nav class="text-center">
+        <ul class="pagination">
+            <li th:class="${pages.isFirst()}? 'disabled' : ''">
+                <span th:if='${pages.isFirst()}'>← First</span>
+                <a th:if='${not pages.isFirst()}' th:href="'?page=0'">
+                    ← First
+                </a>
+            </li>
+            <li th:class="${pages.hasPrevious()}? '' : 'disabled'">
+                <span th:if='${not pages.hasPrevious()}'>«</span>
+                <a
+                        th:if='${pages.hasPrevious()}'
+                        th:href="'?page=' + ${pages.getNumber() - 1}"
+                        title='Go to previous page'
+                >
+                    «
+                </a>
+            </li>
+            <!-- Show a link to each page -->
+            <li th:each="i : ${#numbers.sequence(1, pages.getTotalPages())}">
+                <span
+                        th:if='${(i - 1) == param.pages}'
+                        th:text='${i}'>
+                    1
+                </span>
+                <a
+                        th:if='${not ((i - 1) == param.pages)}'
+                        th:href="'?page=' + ${(i -1)}"
+                >
+                    <span th:text='${i}'>1</span>
+                </a>
+            </li>
+            <li th:class="${pages.hasNext()} ? '' : 'disabled'">
+                <span th:if='${not pages.hasNext()}'>»</span>
+                <a
+                        th:if='${pages.hasNext()}'
+                        th:href="'?page=' + ${pages.getNumber() + 1}"
+                        title='Go to next page'
+                >
+                    »
+                </a>
+            </li>
+            <li th:class="${pages.isLast()}? 'disabled' : ''">
+                <span th:if='${pages.isLast()}'>Last →</span>
+                <a
+                        th:if='${not pages.isLast()}'
+                        th:href="'?page=' + ${pages.getTotalPages() - 1}"
+                >
+                    Last →
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+</body>
+</html>
