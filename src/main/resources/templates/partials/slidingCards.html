@@ -21,7 +21,7 @@
                                 <span th:text="${event.eventDate}"></span>
                                 <span th:text="${event.eventTime}"></span>
                             </h4>
-                            <img style="background-image: #eventHeader" th:each="pic : ${event.pics}" alt="Bootstrap Image Preview" class="center-block" th:src="@{'/uploads/' + ${pic.imageUrl}}" />
+                            <img th:style="'background-image: #eventHeader" th:each="pic : ${event.pics}" th:src="@{'/uploads/' + ${pic.imageUrl}}" />
                     </div>
                    <!-- <div class="row">
                         &lt;!&ndash;<div class="col-lg-6 card-hide">&ndash;&gt;
