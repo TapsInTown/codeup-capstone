@@ -238,7 +238,6 @@ body{
 }
 
 .container-fluid{
-    margin-left: 10%;
     position: absolute;
 }
 
@@ -261,6 +260,7 @@ a:hover {
 
 #navbar{
     font-family:"Big John";
+    height: auto;
 }
 .info{
     padding-left: 10%;
