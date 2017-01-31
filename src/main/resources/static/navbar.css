@@ -209,7 +209,6 @@ and (orientation: landscape) {
 }
 
 html, body {
-    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -236,8 +235,16 @@ body{
 }
 
 .container-fluid{
-    margin-left: 10%;
-    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    position: relative;
+}
+
+.custom-container{
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
 }
 
 a{
@@ -259,6 +266,8 @@ a:hover {
 
 #navbar{
     font-family:"Big John";
+    height: auto;
+
 }
 .info{
     padding-left: 10%;
@@ -335,10 +344,6 @@ input {
     box-sizing: border-box;
 }
 
-.ham-img:hover{
-
-}
-
 .ham-img{
     width: 10%;
     padding-top:1%;
@@ -390,71 +395,6 @@ input {
 
 /*
 Sliding Cards*/
-
-/* Bob */
-@-webkit-keyframes hvr-bob {
-    0% {
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-    50% {
-        -webkit-transform: translateY(-4px);
-        transform: translateY(-4px);
-    }
-    100% {
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-}
-@keyframes hvr-bob {
-    0% {
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-    50% {
-        -webkit-transform: translateY(-4px);
-        transform: translateY(-4px);
-    }
-    100% {
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-}
-@-webkit-keyframes hvr-bob-float {
-    100% {
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-}
-@keyframes hvr-bob-float {
-    100% {
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-}
-.hvr-bob {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
-}
-.hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
-    -webkit-animation-name: hvr-bob-float, hvr-bob;
-    animation-name: hvr-bob-float, hvr-bob;
-    -webkit-animation-duration: .3s, 1.5s;
-    animation-duration: .3s, 1.5s;
-    -webkit-animation-delay: 0s, .3s;
-    animation-delay: 0s, .3s;
-    -webkit-animation-timing-function: ease-out, ease-in-out;
-    animation-timing-function: ease-out, ease-in-out;
-    -webkit-animation-iteration-count: 1, infinite;
-    animation-iteration-count: 1, infinite;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-direction: normal, alternate;
-    animation-direction: normal, alternate;
-}
 
 .cards {
     border-left: solid .5rem black;
@@ -699,8 +639,9 @@ Sliding Cards*/
 }
 
 .bp1{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
@@ -713,8 +654,9 @@ Sliding Cards*/
     z-index: -5;
 }
 .bp2{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
@@ -727,8 +669,9 @@ Sliding Cards*/
     z-index: -5;
 }
 .bp3{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
@@ -741,8 +684,9 @@ Sliding Cards*/
     z-index: -5;
 }
 .bp4{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
@@ -755,8 +699,9 @@ Sliding Cards*/
     z-index: -5;
 }
 .bp5{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
@@ -769,8 +714,9 @@ Sliding Cards*/
     z-index: -5;
 }
 .bp6{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
@@ -783,8 +729,9 @@ Sliding Cards*/
     z-index: -5;
 }
 .bp7{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
@@ -798,8 +745,9 @@ Sliding Cards*/
 
 }
 .bp8{
-    position: relative;
-    top:10%;
+    position: absolute;
+    right: -6%;
+    top: 6%;
     height: 100px;
     width: 200px;
     clear: right;
