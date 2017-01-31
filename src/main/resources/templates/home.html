@@ -21,9 +21,10 @@
             </div>
         </div>
         <div>
-            <div th:each="event, iter : ${events}" class="" th:include="partials/slidingCards :: slidingCard"></div>
-            <div th:include="partials/brewing-process :: brewing"></div>
+            <div th:each="event : ${pages}" class="" th:include="partials/slidingCards :: slidingCard"></div>
         </div>
+        <div th:replace="partials/brewing-process :: brewing"></div>
+        <div th:replace="partials/pagination :: pagination"></div>
     </div>
 
     <script

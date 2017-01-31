@@ -5,11 +5,13 @@ import com.tapsintown.interfaces.EventImages;
 import com.tapsintown.interfaces.Events;
 import com.tapsintown.models.Event;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.*;
 
 /**
  * Created by anthonyfortney on 1/18/17.
@@ -28,23 +30,16 @@ public class ProfileController extends BaseController{
 //    private EventLocations locationsDao;
 
     @GetMapping("/")
-    public String showHomePage(Model m){
+    public String showHomePage(Model m, @PageableDefault(value = 8, sort = "eventDate", direction = Sort.Direction.DESC)Pageable pageable){
 
-        List<Event> events = new ArrayList((Collection) eventsDao.findAll());
+        Page<Event> pages = eventsDao.findAll(pageable);
 
 //        List<EventImage> eventImages = new ArrayList<>(imagesDao.findByEventId(id));
-        for ( Event event: events) {
+        for ( Event event: pages) {
             event.pics = imagesDao.findByEventId(event.getId());
         }
 
-        Collections.sort(events, new Comparator<Event>() {
-            @Override
-            public int compare(Event e1, Event e2) {
-                return e1.getEventDate().compareTo(e2.getEventDate());
-            }
-        });
-
-        m.addAttribute("events", events);
+        m.addAttribute("pages", pages);
         return "home";
     }
 
