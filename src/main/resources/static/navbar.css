@@ -209,7 +209,6 @@ and (orientation: landscape) {
 }
 
 html, body {
-    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -237,8 +236,16 @@ body{
 }
 
 .container-fluid{
-    margin-left: 10%;
-    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    position: relative;
+}
+
+.custom-container{
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
 }
 
 a{
@@ -260,6 +267,8 @@ a:hover {
 
 #navbar{
     font-family:"Big John";
+    height: auto;
+
 }
 .info{
     padding-left: 10%;
