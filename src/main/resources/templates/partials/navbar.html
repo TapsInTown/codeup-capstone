@@ -7,7 +7,7 @@
     <title>Navbar</title>
 </head>
 <body>
-<div id="navbar" class="col-sm-12" th:fragment="theNav">
+<div id="navbar" th:fragment="theNav">
     <div id="navigation">
         <!--<a href="#" onclick="closeNav()" class="glyphicon glyphicon-remove nav-link"></a>-->
         <a th:href="@{/}" class="nav-link">HOME</a>
@@ -16,7 +16,6 @@
         <a th:href="@{/about-us}" class="nav-link">ABOUT</a>
         <div>
             <a sec:authorize="isAnonymous()" th:href="@{/login}" class="nav-link">LOGIN</a>
-
             <a sec:authorize="isAuthenticated()" th:href="@{/user/me}" class="nav-link">PROFILE</a>
             <a sec:authorize="isAuthenticated()" Id="logout-btn" class="nav-link">LOGOUT</a>
             <form th:action="@{/logout}" method="post" id="logout"></form>
