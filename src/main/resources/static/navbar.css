@@ -249,10 +249,12 @@ a:visited{
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: #ffc744;
     transition: .5s;
+    text-decoration: none;
 }
+
 /*-- #1 Navbar --*/
 
 #navbar{
@@ -333,6 +335,10 @@ input {
     box-sizing: border-box;
 }
 
+.ham-img:hover{
+
+}
+
 .ham-img{
     width: 10%;
     padding-top:1%;
@@ -385,8 +391,74 @@ input {
 /*
 Sliding Cards*/
 
+/* Bob */
+@-webkit-keyframes hvr-bob {
+    0% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+    50% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+@keyframes hvr-bob {
+    0% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+    50% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+@-webkit-keyframes hvr-bob-float {
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+@keyframes hvr-bob-float {
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+.hvr-bob {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+.hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
+    -webkit-animation-name: hvr-bob-float, hvr-bob;
+    animation-name: hvr-bob-float, hvr-bob;
+    -webkit-animation-duration: .3s, 1.5s;
+    animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
+}
+
 .cards {
     border-left: solid .5rem black;
+    border-right:solid 4.5rem black;
     background-color:white;
 }
 
@@ -584,19 +656,22 @@ Sliding Cards*/
     position: absolute;
 
 }
-.incrementId{
-    max-height: 398px;
-    overflow-y: hidden;
+.homeCard{
+    min-height: 350px;
+    max-height: 350px;
+    overflow-y: visible;
+    margin-top: 4.4rem;
+    margin-bottom: 4.4rem;
 
 }
 
-.incrementIdBottom{
-    margin-top: 50px;
-    max-height: 398px;
-    padding:0px 0 0px 0;
-    background-color: white;
-    overflow: hidden
-}
+/*.incrementIdBottom{*/
+    /*margin-top: 50px;*/
+    /*max-height: 398px;*/
+    /*padding:0px 0 0px 0;*/
+    /*background-color: white;*/
+    /*overflow: hidden*/
+/*}*/
 
 .incrementIdClick :hover{
     background-color: #ffc744
@@ -610,4 +685,123 @@ Sliding Cards*/
 }
 .h4Hover :hover{
     background-color: #ffc744;
+}
+
+.bp1{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("brewing-process/bp1.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+}
+.bp2{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("brewing-process/bp2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+}
+.bp3{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("brewing-process/bp3.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+}
+.bp4{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("brewing-process/bp4.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+}
+.bp5{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("brewing-process/bp5.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+}
+.bp6{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("brewing-process/bp6.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+}
+.bp7{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("brewing-process/bp7.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+
+}
+.bp8{
+    position: relative;
+    top:10%;
+    height: 100px;
+    width: 200px;
+    clear: right;
+    float: right;
+    margin: 10rem 3rem 10rem 0;
+    background-image: url("/static/brewing-process/bp8.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -15;
+}
+
+.textPeek{
+    position: relative;
+    top:-40px;
 }
