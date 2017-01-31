@@ -605,6 +605,17 @@ Sliding Cards*/
 
 }
 
+.cards-background{
+    height: auto;
+    width: 100%;
+}
+
+@supports(object-fit: cover) {
+    .homeCard img{height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+    }
+}
 /*.incrementIdBottom{*/
     /*margin-top: 50px;*/
     /*max-height: 398px;*/
