@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
-    <div class="">
-        <div th:fragment="slidingCard">
+<div class="">
+    <div th:fragment="slidingCard">
 
-            <div class="row col-md-12">
+        <div class="row col-md-12">
 
-                <!--<div class=""></div>-->
-                <!--<div  class="col-lg-8 cards col-lg-offset-2 incrementId topDiv">-->
-                <div  class="col-lg-8 cards col-lg-offset-2 homeCard topDiv wow fadeInUp">
-                    <div class="row">
-                        <h2 id="eventHeader" class="textPeek">
-                            <a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}"  class="col-lg-12"></a>
-                        </h2>
-                            <h4>
-                                <span th:text="${event.eventDate}"></span>
-                                <span th:text="${event.eventTime}"></span>
-                            </h4>
-                            <img th:style="'background-image: #eventHeader" th:each="pic : ${event.pics}" th:src="@{'/uploads/' + ${pic.imageUrl}}" />
-                    </div>
-                   <!-- <div class="row">
-                        &lt;!&ndash;<div class="col-lg-6 card-hide">&ndash;&gt;
-                            &lt;!&ndash;<img th:each="pic : ${event.pics}" alt="Bootstrap Image Preview" class="center-block" th:src="@{'/uploads/' + ${pic.imageUrl}}" />&ndash;&gt;
-                        &lt;!&ndash;</div>&ndash;&gt;
-                        <div class="col-lg-6">
-                                <h5 class="card-hide" id="address">
-                                    <span th:text="${event.eventLocation.streetNumber}"></span>
-                                    <span th:text="${event.eventLocation.streetName}"></span>
-                                    <span th:text="${event.eventLocation.city}"></span>
-                                    <span th:text="${event.eventLocation.State}"></span>
-                                    <span th:text="${event.eventLocation.zip}"></span>
-                                </h5>
-                            <div class="card-hide">
-                                <p th:text="${event.description}"></p>
-                            </div>
-                            <form th:action="@{'/events/save/' + ${event.id}}" method="post">
-                                <div sec:authorize="isAuthenticated()">
-                                    <div class="form-group">
-                                        <input class="form-control" type="submit" value="Save Event"/>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row bottom">
-                    </div>-->
-                    <!--<div class="row">-->
-                        <!--<div id="" class="col-lg-12 incrementIdBottom scrollBottom">-->
-                            <!--&lt;!&ndash;<img alt="Bootstrap Image Preview" class="center-block" th:src="@{'/uploads/' + ${imageUrl}" />&ndash;&gt;-->
-                        <!--</div>-->
-                    <!--</div>-->
+            <!--<div class=""></div>-->
+            <!--<div  class="col-lg-8 cards col-lg-offset-2 incrementId topDiv">-->
+            <div class="col-lg-8 cards col-lg-offset-2 homeCard topDiv wow fadeInUp">
+                <div class="row">
+                    <h2 id="eventHeader" class="textPeek">
+                        <a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}" class="col-lg-12"></a>
+                    </h2>
+                    <h4>
+                        <span th:text="${event.eventDate}"></span>
+                        <span th:text="${event.eventTime}"></span>
+                    </h4>
+                    <img th:style="'background-image: #eventHeader" th:each="pic : ${event.pics}"
+                         th:src="@{'/uploads/' + ${pic.imageUrl}}"/>
                 </div>
-                <div th:class="'bp'+ ${(iter.index) + 1} + ' wow fadeInRight'"></div>
-                <!--<div class="col-lg-8 col-lg-offset-2 clickClass incrementIdClick h4Hover">-->
-                    <!--<h4 class="classToInc h4Hover">More</h4>-->
+                <!-- <div class="row">
+                     &lt;!&ndash;<div class="col-lg-6 card-hide">&ndash;&gt;
+                         &lt;!&ndash;<img th:each="pic : ${event.pics}" alt="Bootstrap Image Preview" class="center-block" th:src="@{'/uploads/' + ${pic.imageUrl}}" />&ndash;&gt;
+                     &lt;!&ndash;</div>&ndash;&gt;
+                     <div class="col-lg-6">
+                             <h5 class="card-hide" id="address">
+                                 <span th:text="${event.eventLocation.streetNumber}"></span>
+                                 <span th:text="${event.eventLocation.streetName}"></span>
+                                 <span th:text="${event.eventLocation.city}"></span>
+                                 <span th:text="${event.eventLocation.State}"></span>
+                                 <span th:text="${event.eventLocation.zip}"></span>
+                             </h5>
+                         <div class="card-hide">
+                             <p th:text="${event.description}"></p>
+                         </div>
+                         <form th:action="@{'/events/save/' + ${event.id}}" method="post">
+                             <div sec:authorize="isAuthenticated()">
+                                 <div class="form-group">
+                                     <input class="form-control" type="submit" value="Save Event"/>
+                                 </div>
+                             </div>
+                         </form>
+                     </div>
+                 </div>
+                 <div class="row bottom">
+                 </div>-->
+                <!--<div class="row">-->
+                <!--<div id="" class="col-lg-12 incrementIdBottom scrollBottom">-->
+                <!--&lt;!&ndash;<img alt="Bootstrap Image Preview" class="center-block" th:src="@{'/uploads/' + ${imageUrl}" />&ndash;&gt;-->
                 <!--</div>-->
-                <!--<button id="click" class="btn">Info</button>-->
-                </div>
-                <!--<div class="col-lg-2"></div>-->
-                <!--<div class="infoBar">-->
-                <!--<h3 id="infoText">INFO</h3>-->
+                <!--</div>-->
+            </div>
+            <div th:class="'bp'+ ${(iter.index) + 1} + ' wow fadeInRight'"></div>
+            <!--<div class="col-lg-8 col-lg-offset-2 clickClass incrementIdClick h4Hover">-->
+            <!--<h4 class="classToInc h4Hover">More</h4>-->
             <!--</div>-->
+            <!--<button id="click" class="btn">Info</button>-->
         </div>
-    </div>
+        <!--<div class="col-lg-2"></div>-->
+        <!--<div class="infoBar">-->
+        <!--<h3 id="infoText">INFO</h3>-->
         <!--</div>-->
+    </div>
+</div>
+<!--</div>-->
 </body>
 </html>
