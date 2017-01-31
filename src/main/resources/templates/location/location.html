@@ -9,7 +9,7 @@
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
     <div class="wow bounceInUp animation-delay=5000ms location-card">
-        <div th:each="location : ${location}" class="col-lg-8 col-lg-offset-2 text-center cards" style="margin-bottom: 2%">
+        <div th:each="location : ${location}" class="col-lg-8 col-lg-offset-2 col-sm-12 text-center cards" style="margin-bottom: 2%">
             <h2>
                 <a th:href="@{/location/{id} (id=${location.id})}" th:text="${location.name}"></a>
             </h2>
