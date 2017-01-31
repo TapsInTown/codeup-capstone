@@ -22,7 +22,6 @@
                             <span th:text="${event.eventTime}"></span>
                         </h4>
                         <img  style="background-image: #eventHeader" th:each="pic : ${event.pics}"
-                             alt="Bootstrap Image Preview" class="center-block"
                              th:src="@{'/uploads/' + ${pic.imageUrl}}"/>
                     </div>
                    <!-- <div class="row">
