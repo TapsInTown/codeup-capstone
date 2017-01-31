@@ -233,6 +233,7 @@ body{
     background-image: url("wood.jpg");
     background-size: 100%;
     font-size: 15px;
+    background-color: lightgray;
 }
 
 .container-fluid{
