@@ -34,7 +34,6 @@ public class EventsController extends BaseController {
     @Autowired
     private Users usersDao;
 
-
     @GetMapping
     public String getEvents(Model m){
         List<Event> events = new ArrayList((Collection) eventsDao.findAll());
