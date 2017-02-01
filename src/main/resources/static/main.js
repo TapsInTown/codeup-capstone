@@ -162,9 +162,10 @@ console.log(results);
                 infowindow.open(map, marker);
             });
 
-        } else {
-            alert("Geocoding was not successful - STATUS: " + status);
         }
+        // else {
+        //     // alert("Geocoding was not successful - STATUS: " + status);
+        // }
     });
 
     }doIt();
