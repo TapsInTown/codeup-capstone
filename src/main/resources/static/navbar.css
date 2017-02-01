@@ -791,5 +791,11 @@ Sliding Cards*/
 }
 
 .paragraph{
-    font-size: 3rem;
+    font-size: 1.5rem;
+}
+.imgs{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
 }
