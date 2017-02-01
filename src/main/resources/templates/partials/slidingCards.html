@@ -21,8 +21,8 @@
                             <span class="card-title" th:text="${event.eventDate}"></span>
                             <span class="card-title" th:text="${event.eventTime}"></span>
                         </h4>
-                        <div class="overlay">
-                            <img style="background-image: #eventHeader" th:each="pic : ${event.pics}"
+                        <div class="overlay" style="position: absolute; top: 0;">
+                            <img class="imgs" style="background-image: #eventHeader" th:each="pic : ${event.pics}"
                                  th:src="@{'/uploads/' + ${pic.imageUrl}}"/>
                         </div>
                     </div>
