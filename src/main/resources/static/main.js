@@ -77,7 +77,7 @@ $(document).ready(function(){
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
             document.getElementsByClassName("move")[0].style.marginLeft = "0";
-            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "10%";
+            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "8.5%";
         }
         toggle++;
         console.log(toggle);
