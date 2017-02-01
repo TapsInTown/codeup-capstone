@@ -626,6 +626,7 @@ Sliding Cards*/
 
 @supports(object-fit: cover) {
     .homeCard img{height: 100%;
+                    opacity: 0.5;
                     object-fit: cover;
                     object-position: center center;
     }
