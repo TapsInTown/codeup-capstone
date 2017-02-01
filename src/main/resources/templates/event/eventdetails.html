@@ -17,7 +17,7 @@
                 <h2 th:text="${event.title}"></h2>
                 <h3 th:text="${event.eventDate}"></h3>
                 <h3 th:text="${event.eventTime}"></h3>
-                <h4 th:text="${event.Description}"></h4>
+                <p class="paragraph" th:text="${event.Description}"></p>
                 <h5 class="card-hide" id="address">
                     <span th:text="${event.eventLocation.streetNumber}"></span>
                     <span th:text="${event.eventLocation.streetName}"></span>
@@ -52,8 +52,8 @@
 <script
         th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-        crossorigin="anonymous"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyy3Zq3-FgZYYAgK25ZuzVFhkRrPukPKU&amp;libraries=places&amp;callback=doIt"></script>
+        crossorigin="anonymous"></script>              <!--API KEY HERE/--->
+<script src="https://maps.googleapis.com/maps/api/js?key=&amp;libraries=places&amp;callback=doIt"></script>
 <script th:src="@{/main.js}"></script>
 <script th:src="@{/wow.min.js}"></script>
 <script>new WOW().init();</script>
