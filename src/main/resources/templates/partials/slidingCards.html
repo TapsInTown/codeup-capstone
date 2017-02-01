@@ -15,14 +15,16 @@
                 <div  class="col-lg-8 cards col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 homeCard topDiv wow fadeInUp">
                     <div class="row">
                         <h2 id="eventHeader" class="textPeek">
-                            <a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}"  class="col-lg-12"></a>
+                            <a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title}"  class="col-lg-12 card-title"></a>
                         </h2>
                         <h4>
-                            <span th:text="${event.eventDate}"></span>
-                            <span th:text="${event.eventTime}"></span>
+                            <span class="card-title" th:text="${event.eventDate}"></span>
+                            <span class="card-title" th:text="${event.eventTime}"></span>
                         </h4>
-                        <img  style="background-image: #eventHeader" th:each="pic : ${event.pics}"
-                             th:src="@{'/uploads/' + ${pic.imageUrl}}"/>
+                        <div class="overlay">
+                            <img style="background-image: #eventHeader" th:each="pic : ${event.pics}"
+                                 th:src="@{'/uploads/' + ${pic.imageUrl}}"/>
+                        </div>
                     </div>
                    <!-- <div class="row">
                         &lt;!&ndash;<div class="col-lg-6 card-hide">&ndash;&gt;
