@@ -378,6 +378,19 @@ input {
 
 }
 
+.card-title{
+    text-shadow: 1px 1px 0 black;
+    color: white;
+}
+
+.overlay{
+    background: rgba(255, 199, 68,0.82);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
+
+
 /* #3 splash  */
 
 
