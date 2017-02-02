@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/header :: theHead">
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
 <div th:replace="partials/navbar :: theNav"></div>
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
-    <div class="row col-md-12">
-        <div class="row">
-        <div class="row col-md-6 wow fadeInLeft cards">
+    <div class="row">
+        <div class="col-md-4 col-lg-4 wow fadeInLeft cards aboutMe hvr-overline-from-center">
             <h2>Josh</h2>
-            <div class="col-md-6">
-                <image></image>
-                <h5>Javascript, Front End Developer and Founder</h5>
-                <p>(Coming Soon)
-                </p>
-            </div>
+            <img th:src="@{/josh.jpg}"/>
+            <h5>Javascript, Front End Developer and Founder</h5>
+            <p>(Coming Soon)</p>
         </div>
-        <div class="row col-md-6 wow fadeInRight cards">
+        <div class="col-md-4 col-lg-4 wow fadeInUp cards aboutMe hvr-overline-from-center">
             <h2>Matt</h2>
-            <div class="col-md-6">
-                <image></image>
-                <h5>UI/UX Designer, Front End Developer and Founder</h5>
-                <p>Making a beautiful web one div at a time.
-                </p>
-            </div>
+            <img th:src="@{/matt.jpg}"/>
+            <h5>UI/UX Designer, Front End Developer and Founder</h5>
+            <p>Making a beautiful web one div at a time.
+            </p>
         </div>
-            </div>
-        <div class="row col-md-6 col-md-offset-2 wow fadeInUp cards">
+        <div class="col-md-4 col-lg-4 wow fadeInRight cards aboutMe hvr-overline-from-center">
             <h2>Anthony</h2>
-            <div class="col-md-6">
-                <image></image>
-                <h5>Backend Developer and Founder</h5>
-                <p>I believe that any problem can be solved through the application of knowledge and unrelenting effort.
-                </p>
-            </div>
+            <img th:src="@{/anthony.jpg}"/>
+            <h5>Backend Developer and Founder</h5>
+            <p>I believe that any problem can be solved through the application of knowledge and unrelenting effort.
+            </p>
         </div>
     </div>
 </div>
