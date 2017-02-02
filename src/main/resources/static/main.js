@@ -95,9 +95,9 @@ $(document).ready(function(){
             document.getElementsByClassName("bodies")[0].style.left = "20%";
         }
         else {
-            document.getElementById("specific-events").style.left = "initial";
+            document.getElementById("specific-events").style.left = "0";
             document.getElementById("specific-events").style.opacity = "1";
-            document.getElementsByClassName("bodies")[0].style.left = "initial";
+            document.getElementsByClassName("bodies")[0].style.left = "0";
         }
         toggle++;
         console.log(toggle);
