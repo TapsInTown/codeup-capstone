@@ -4,7 +4,6 @@ package com.tapsintown.controllers;
 import com.tapsintown.interfaces.EventImages;
 import com.tapsintown.interfaces.Events;
 import com.tapsintown.models.Event;
-import com.tapsintown.models.EventImage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,9 +12,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by anthonyfortney on 1/18/17.
@@ -35,15 +31,12 @@ public class ProfileController extends BaseController{
 
     @GetMapping("/")
     public String showHomePage(Model m, @PageableDefault(value = 7, sort = "eventDate", direction = Sort.Direction.DESC)Pageable pageable){
-
-
         Page<Event> pages = eventsDao.findAll(pageable);
 
 //        List<EventImage> eventImages = new ArrayList<>(imagesDao.findByEventId(id));
         for ( Event event: pages) {
             event.pics = imagesDao.findByEventId(event.getId());
         }
-
         m.addAttribute("pages", pages);
         return "home";
     }
