@@ -30,7 +30,7 @@ public class ProfileController extends BaseController{
 //    private EventLocations locationsDao;
 
     @GetMapping("/")
-    public String showHomePage(Model m, @PageableDefault(value = 7, sort = "eventDate", direction = Sort.Direction.DESC)Pageable pageable){
+    public String showHomePage(Model m, @PageableDefault(value = 7, sort = "eventDate", direction = Sort.Direction.ASC)Pageable pageable){
         Page<Event> pages = eventsDao.findAll(pageable);
 
 //        List<EventImage> eventImages = new ArrayList<>(imagesDao.findByEventId(id));

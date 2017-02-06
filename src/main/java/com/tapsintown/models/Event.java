@@ -25,6 +25,9 @@ public class Event{
     @Column(nullable = false, name = "event_date")
     private String eventDate;
 
+    @Column(nullable = false, name = "typed_date")
+    private String typedDate;
+
     @Column (nullable = false, name= "event_time")
     private String eventTime;
 
@@ -71,6 +74,14 @@ public class Event{
 
 //  Getters and setters
 
+
+    public String getTypedDate() {
+        return typedDate;
+    }
+
+    public void setTypedDate(String typedDate) {
+        this.typedDate = typedDate;
+    }
 
     public String getEventTime() {
         return eventTime;
