@@ -20,8 +20,8 @@
                     <!--← First-->
                 <!--</a>-->
             <!--</li>-->
-            <button  class="col-lg-12 col-sm-12 btn btn-primary" th:class="${pages.hasPrevious()}? '' : 'disabled'">
-                <span th:if='${not pages.hasPrevious()}'>»</span>
+            <button class="col-lg-12 col-sm-12 btn btn-primary">
+                <!--<span th:if='${not pages.hasPrevious()}'>»</span>-->
                 <a
                         th:if='${pages.hasPrevious()}'
                         th:href="'?page=' + ${pages.getNumber() - 1}"
@@ -44,8 +44,8 @@
                     <!--<span th:text='${i}'>1</span>-->
                 <!--</a>-->
             <!--</li>-->
-            <button class="col-lg-12 col-sm-12 btn btn-primary" th:class="${pages.hasNext()} ? '' : 'disabled'">
-                <span th:if='${not pages.hasNext()}'>»</span>
+            <button class="col-lg-12 col-sm-12 btn btn-primary">
+                <!--<span th:if='${not pages.hasNext()}'>»</span>-->
                 <a
                         th:if='${pages.hasNext()}'
                         th:href="'?page=' + ${pages.getNumber() + 1}"
