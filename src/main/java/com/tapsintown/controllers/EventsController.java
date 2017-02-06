@@ -93,11 +93,13 @@ public class EventsController extends BaseController {
 
         String newTitle = existingEvent.getTitle();
         String newDate = existingEvent.getEventDate();
+        String newTypedDate = existingEvent.getTypedDate();
         String newTime = existingEvent.getEventTime();
         String newDescription = existingEvent.getDescription();
 
         currentDetails.setTitle(newTitle);
         currentDetails.setEventDate(newDate);
+        currentDetails.setTypedDate(newTypedDate);
         currentDetails.setEventTime(newTime);
         currentDetails.setDescription(newDescription);
 
