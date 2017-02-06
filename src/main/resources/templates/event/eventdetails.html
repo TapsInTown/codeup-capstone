@@ -17,7 +17,7 @@
                 <h2 th:text="${event.title}"></h2>
                 <h3 th:text="${event.eventDate}"></h3>
                 <h3 th:text="${event.eventTime}"></h3>
-                <h4 th:text="${event.Description}"></h4>
+                <p class="paragraph" th:text="${event.Description}"></p>
                 <h5 class="card-hide" id="address">
                     <span th:text="${event.eventLocation.streetNumber}"></span>
                     <span th:text="${event.eventLocation.streetName}"></span>
