@@ -22,7 +22,7 @@
                             <span class="card-title" th:text="${ event.eventDate + ' ' + event.eventTime }"></span>
                             <!--<span class="card-title" th:text=""></span>-->
                         </h4>
-                        <div class="overlay" style="position: absolute; top: 0;">
+                        <div class="overlay" style="top: 0;">
                             <img class="imgs" style="background-image: #eventHeader" th:each="pic : ${event.pics}"
                                  th:src="@{'/uploads/' + ${pic.imageUrl}}"/>
                         </div>
