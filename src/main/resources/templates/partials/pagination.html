@@ -26,7 +26,7 @@
                     «
                 </a>
             </li>
-            <!-- Show a link to each page -->
+             <!--Show a link to each page -->
             <li th:each="i : ${#numbers.sequence(1, pages.getTotalPages())}">
                 <span
                         th:if='${(i - 1) == param.pages}'
