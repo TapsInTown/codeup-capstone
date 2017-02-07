@@ -70,12 +70,12 @@ $(document).ready(function(){
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
-            document.getElementById("navigation").style.height = "100%";
+            document.getElementById("navigation").style.width = "100%";
             // document.getElementsByClassName("move")[0].style.hieght = "100%";
             // document.getElementsByClassName("container-fluid")[0].style.marginLeft = "20%";
         }else {
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
-            document.getElementById("navigation").style.height = "0";
+            document.getElementById("navigation").style.width = "0";
             // document.getElementsByClassName("move")[0].style.height = "0";
             // document.getElementsByClassName("container-fluid")[0].style.marginLeft = "8.5%";
         }

@@ -10,18 +10,18 @@
 <div id="navbar" th:fragment="theNav">
     <div id="navigation">
         <!--<a href="#" onclick="closeNav()" class="glyphicon glyphicon-remove nav-link"></a>-->
-        <a th:href="@{/}" class="nav-link">HOME</a>
-        <a th:href="@{/location}" class="nav-link">BREWERIES</a>
+        <a th:href="@{/}" class="nav-link"><h1>HOME</h1></a>
+        <a th:href="@{/location}" class="nav-link"><h1>BREWERIES</h1></a>
         <!--<a href="#" class="nav-link">DESTINATIONS</a>-->
-        <a th:href="@{/about-us}" class="nav-link">ABOUT</a>
+        <a th:href="@{/about-us}" class="nav-link"><h1>ABOUT</h1></a>
         <div>
-            <a sec:authorize="isAnonymous()" th:href="@{/login}" class="nav-link">LOGIN</a>
-            <a sec:authorize="isAuthenticated()" th:href="@{/user/me}" class="nav-link">PROFILE</a>
-            <a sec:authorize="isAuthenticated()" Id="logout-btn" class="nav-link">LOGOUT</a>
+            <a sec:authorize="isAnonymous()" th:href="@{/login}" class="nav-link"><h1>LOGIN</h1></a>
+            <a sec:authorize="isAuthenticated()" th:href="@{/user/me}" class="nav-link"><h1>PROFILE</h1></a>
+            <a sec:authorize="isAuthenticated()" Id="logout-btn" class="nav-link"><h1>LOGOUT</h1></a>
             <form th:action="@{/logout}" method="post" id="logout"></form>
         </div>
 
-        <a href="#" onclick="openContact()" class="nav-link">CONTACT</a>
+        <a href="#" onclick="openContact()" class="nav-link"><h1>CONTACT</h1></a>
     </div>
     <div id="contact-info">
         <!--<form>-->
