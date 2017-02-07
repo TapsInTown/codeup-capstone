@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/header :: theHead">
+    <meta charset="UTF-8"/>
+    <title>Register</title>
+</head>
+<body>
+<div th:replace="partials/navbar :: theNav"></div>
+<div class="container-fluid">
+    <div id="register-profile">
+        <h1>Edit Your Info</h1>
+        <div class="login-form">
+            <form th:action="@{'/user/' + *{id} + '/edit'}" method="POST" th:object="${user}">
+                <div class="form-group">
+                    <label><h4>Name:</h4></label>
+                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+                    <input class="form-control" th:field="*{name}"/>
+                </div>
+                <div class="form-group">
+                    <label><h4>Email Address:</h4></label>
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+                    <input class="form-control" th:field="*{email}"/>
+                </div>
+                <div class="form-group">
+                    <label><h4>Username:</h4></label>
+                    <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+                    <input class="form-control" th:field="*{username}"/>
+                </div>
+                <div class="form-group">
+
+                    <label><h4>New Password:</h4></label>
+                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+                    <input class="form-control" th:field="*{password}" type="password"/>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><h4>Confirm Password:</h4></label>
+                    <p th:if="${passwordMatch}" th:text="${passwordMatch}"></p>
+                    <input name="confirmPassword" class="form-control" type="password"/>
+
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary form-control" type="submit" value="Register"><h5>Confirm Changes</h5>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script
+        th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous">
+</script>
+<script th:src="@{/main.js}"></script>
+</html>
