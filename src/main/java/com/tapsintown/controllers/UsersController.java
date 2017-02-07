@@ -85,17 +85,7 @@ public class UsersController extends BaseController{
         m.addAttribute("user", loggedInUser);
         m.addAttribute("savedEvents", savedEventsDao.findByUserId(id));
 
-        System.out.println("trying to bring up user profile...");
-
-//        System.out.println(loggedInUser + " is the logged in in user");
-//        System.out.println(loggedInUser.getUserRole() + " logged in user and user role");
-//        System.out.println("I am a " + loggedInUser.getUserRole().getRole());
-
-
         m.addAttribute("isAdmin", "admin".equalsIgnoreCase(loggedInUser.getUserRole().getRole()));
-
-        System.out.println("You see yourself! YAY");
-
         return "userprofile";
 
     }
@@ -123,7 +113,6 @@ public class UsersController extends BaseController{
         currentDetails.setPassword(sc.passwordEncoder().encode(newPassword));
 
         userDao.save(currentDetails);
-        System.out.println("saved new information to database");
         return "redirect:/user/" + loggedInUser().getId();
     }
 
