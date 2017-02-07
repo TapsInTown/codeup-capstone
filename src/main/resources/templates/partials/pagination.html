@@ -5,61 +5,62 @@
     <title>Pagination</title>
 </head>
 <body>
+
 <!-- Build the pagination component -->
 <div th:fragment="pagination">
-    <div class="text-center">
-        <div class="pagination">
-            <!--<li th:class="${pages.isFirst()}? 'disabled' : ''">-->
-                <!--<span th:if='${pages.isFirst()}'>← First</span>-->
-                <!--<a th:if='${not pages.isFirst()}' th:href="'?page=0'">-->
-                    <!--← First-->
-                <!--</a>-->
-            <!--</li>-->
-            <button  class="col-lg-12 col-sm-12 btn btn-primary" th:class="${pages.hasPrevious()}? '' : 'disabled'">
-                <span th:if='${not pages.hasPrevious()}'>»</span>
+    <nav class="text-center">
+        <ul class="pagination">
+            <li th:class="${pages.isFirst()}? 'disabled' : ''">
+                <span th:if='${pages.isFirst()}'>← First</span>
+                <a th:if='${not pages.isFirst()}' th:href="'?page=0'">
+                    ← First
+                </a>
+            </li>
+            <li th:class="${pages.hasPrevious()}? '' : 'disabled'">
+                <span th:if='${not pages.hasPrevious()}'>«</span>
                 <a
                         th:if='${pages.hasPrevious()}'
                         th:href="'?page=' + ${pages.getNumber() - 1}"
                         title='Go to previous page'
                 >
-                    last
+                    «
                 </a>
-            </button>
-            <!-- Show a link to each page -->
-            <!--<li th:each="i : ${#numbers.sequence(1, pages.getTotalPages())}">-->
-                <!--<span-->
-                        <!--th:if='${(i - 1) == param.pages}'-->
-                        <!--th:text='${i}'>-->
-                    <!--1-->
-                <!--</span>-->
-                <!--<a-->
-                        <!--th:if='${not ((i - 1) == param.pages)}'-->
-                        <!--th:href="'?page=' + ${(i -1)}"-->
-                <!--&gt;-->
-                    <!--<span th:text='${i}'>1</span>-->
-                <!--</a>-->
-            <!--</li>-->
-            <button class="col-lg-12 col-sm-12 btn btn-primary" th:class="${pages.hasNext()} ? '' : 'disabled'">
+            </li>
+             <!--Show a link to each page -->
+            <li th:each="i : ${#numbers.sequence(1, pages.getTotalPages())}">
+                <span
+                        th:if='${(i - 1) == param.pages}'
+                        th:text='${i}'>
+                    1
+                </span>
+                <a
+                        th:if='${not ((i - 1) == param.pages)}'
+                        th:href="'?page=' + ${(i -1)}"
+                >
+                    <span th:text='${i}'>1</span>
+                </a>
+            </li>
+            <li th:class="${pages.hasNext()} ? '' : 'disabled'">
                 <span th:if='${not pages.hasNext()}'>»</span>
                 <a
                         th:if='${pages.hasNext()}'
                         th:href="'?page=' + ${pages.getNumber() + 1}"
                         title='Go to next page'
                 >
-                    next
+                    »
                 </a>
-            </button>
-            <!--<li th:class="${pages.isLast()}? 'disabled' : ''">-->
-                <!--<span th:if='${pages.isLast()}'>Last →</span>-->
-                <!--<a-->
-                        <!--th:if='${not pages.isLast()}'-->
-                        <!--th:href="'?page=' + ${pages.getTotalPages() - 1}"-->
-                <!--&gt;-->
-                    <!--Last →-->
-                <!--</a>-->
-            <!--</li>-->
-        </div>
-    </div>
+            </li>
+            <li th:class="${pages.isLast()}? 'disabled' : ''">
+                <span th:if='${pages.isLast()}'>Last →</span>
+                <a
+                        th:if='${not pages.isLast()}'
+                        th:href="'?page=' + ${pages.getTotalPages() - 1}"
+                >
+                    Last →
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>
 
 </body>
