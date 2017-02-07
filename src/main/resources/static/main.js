@@ -70,14 +70,14 @@ $(document).ready(function(){
     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
         if(toggle % 2 == 0) {
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
-            document.getElementById("navigation").style.width = "20%";
-            document.getElementsByClassName("move")[0].style.marginLeft = "20%";
-            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "20%";
+            document.getElementById("navigation").style.width = "100%";
+            // document.getElementsByClassName("move")[0].style.hieght = "100%";
+            // document.getElementsByClassName("container-fluid")[0].style.marginLeft = "20%";
         }else {
             document.getElementsByClassName("container-fluid")[0].style.transition = "1s";
             document.getElementById("navigation").style.width = "0";
-            document.getElementsByClassName("move")[0].style.marginLeft = "0";
-            document.getElementsByClassName("container-fluid")[0].style.marginLeft = "8.5%";
+            // document.getElementsByClassName("move")[0].style.height = "0";
+            // document.getElementsByClassName("container-fluid")[0].style.marginLeft = "8.5%";
         }
         toggle++;
         console.log(toggle);
@@ -85,24 +85,24 @@ $(document).ready(function(){
     });
 
     });
-$(document).ready(function(){
-
-    var toggle = 0;
-    document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
-        if(toggle % 2 == 0) {
-            document.getElementById("specific-events").style.left = "100%";
-            document.getElementById("specific-events").style.opacity = "0";
-            document.getElementsByClassName("bodies")[0].style.left = "20%";
-        }
-        else {
-            document.getElementById("specific-events").style.left = "0";
-            document.getElementById("specific-events").style.opacity = "1";
-            document.getElementsByClassName("bodies")[0].style.left = "0";
-        }
-        toggle++;
-        console.log(toggle);
-        console.log("success!")
-    });
+// $(document).ready(function(){
+//
+//     var toggle = 0;
+//     document.getElementsByClassName("ham-img")[0].addEventListener('click', function() {
+//         if(toggle % 2 == 0) {
+//             document.getElementById("specific-events").style.left = "100%";
+//             document.getElementById("specific-events").style.opacity = "0";
+//             document.getElementsByClassName("bodies")[0].style.left = "20%";
+//         }
+//         else {
+//             document.getElementById("specific-events").style.left = "0";
+//             document.getElementById("specific-events").style.opacity = "1";
+//             document.getElementsByClassName("bodies")[0].style.left = "0";
+//         }
+//         toggle++;
+//         console.log(toggle);
+//         console.log("success!")
+//     });
 
 /*sticky title*/
 
@@ -167,10 +167,11 @@ console.log(results);
         //     // alert("Geocoding was not successful - STATUS: " + status);
         // }
     });
+doIt();
 
-    }doIt();
 
 
-});
+
+}
 
 
