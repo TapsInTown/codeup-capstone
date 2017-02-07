@@ -58,10 +58,6 @@ public class UsersController extends BaseController{
             return "/register";
         }
         if(validation.hasErrors()){
-
-            System.out.println(userCreated.getPassword());
-            System.out.println(confirmPassword);
-
             m.addAttribute("errors", validation);
             m.addAttribute("user", userCreated);
           return "/register";
@@ -84,15 +80,51 @@ public class UsersController extends BaseController{
     @GetMapping("/{id}")
     public String getUserId(@PathVariable long id, Model m){
 
-        User loggedInUser = userDao.findByUsername(loggedInUser().getUsername());
+        User loggedInUser = userDao.findOne(id);
 
-        m.addAttribute("user", userDao.findOne(id));
+        m.addAttribute("user", loggedInUser);
         m.addAttribute("savedEvents", savedEventsDao.findByUserId(id));
+
+        System.out.println("trying to bring up user profile...");
+
+//        System.out.println(loggedInUser + " is the logged in in user");
+//        System.out.println(loggedInUser.getUserRole() + " logged in user and user role");
+//        System.out.println("I am a " + loggedInUser.getUserRole().getRole());
 
 
         m.addAttribute("isAdmin", "admin".equalsIgnoreCase(loggedInUser.getUserRole().getRole()));
 
+        System.out.println("You see yourself! YAY");
+
         return "userprofile";
+
+    }
+
+    @GetMapping("/{id}/edit")
+    public String showUserEditForm(@PathVariable long id, Model m){
+        m.addAttribute("user", userDao.findOne(id));
+        return "edituser";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateUser(User existingUser){
+
+        User currentDetails = userDao.findOne(existingUser.getId());
+        SecurityConfiguration sc = new SecurityConfiguration();
+
+        String newName = existingUser.getName();
+        String newEmail = existingUser.getEmail();
+        String newUsername = existingUser.getUsername();
+        String newPassword = existingUser.getPassword();
+
+        currentDetails.setName(newName);
+        currentDetails.setEmail(newEmail);
+        currentDetails.setUsername(newUsername);
+        currentDetails.setPassword(sc.passwordEncoder().encode(newPassword));
+
+        userDao.save(currentDetails);
+        System.out.println("saved new information to database");
+        return "redirect:/user/" + loggedInUser().getId();
     }
 
     @PostMapping("/delete/{id}")
