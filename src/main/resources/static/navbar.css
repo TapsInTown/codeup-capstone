@@ -1,3 +1,25 @@
+/*
+
+ /|/|/TABLE OF CONTENTS\|\|\
+ *-------------------------------*
+ 1. media queries
+ 2. global elements
+ 3. navbar
+ 4. location profile
+ 5. location list
+ 6. sliding cards
+ 7. title
+ 8. user profile
+ 9. log in page
+10. register page
+11. jQuery classes
+12. error pages
+13. brewing process
+14. about me
+15. back to top
+ *-------------------------------*
+*/
+
 /*iPad in portrait & landscape*/
 
 @media only screen
@@ -203,6 +225,8 @@ and (orientation: landscape) {
 
 }
 
+/* 2. global elements */
+
 @font-face {
     font-family: "Big John";
     src: url("BIGJOHN.otf");
@@ -231,10 +255,9 @@ body{
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     background-attachment: fixed;
     background-image: url("wood.jpg");
-    background-size: 100%;
     font-size: 15px;
     background-color: lightgray;
 }
@@ -252,6 +275,10 @@ body{
     margin:auto;
 }
 
+.paragraph{
+    font-size: 1.5rem;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -267,7 +294,7 @@ a:hover {
     text-decoration: none;
 }
 
-/*-- #1 Navbar --*/
+/*-- 3. navbar --*/
 
 #navbar{
     font-family:"Big John";
@@ -378,8 +405,7 @@ input {
     opacity: .5;
 }
 
-
-/*-- #2 Location Profile --*/
+/*-- 4. location profile --*/
 
 .bodies{
     transition: 1s;
@@ -409,11 +435,7 @@ input {
     z-index: -1;
 }
 
-
-/* #3 splash  */
-
-
-/*LOCATION LIST*/
+/* 5. location list */
 
 .location-card{
    /*margin-bottom:2%;*/
@@ -426,8 +448,7 @@ input {
     transition:.5s;
 }
 
-/*
-Sliding Cards*/
+/* 6. sliding cards */
 
 .cards {
     border-left: solid .5rem black;
@@ -437,6 +458,20 @@ Sliding Cards*/
 
 .row{
     margin-bottom: 2%;
+}
+
+.homeCard{
+    min-height: 350px;
+    max-height: 350px;
+    overflow-y: visible;
+    margin-top: 4.4rem;
+    margin-bottom: 4.4rem;
+
+}
+
+.cards-background{
+    height: auto;
+    width: 100%;
 }
 
 .infoBar{
@@ -478,11 +513,39 @@ Sliding Cards*/
     z-index: 0;
 }
 
-/* #3 splash  */
+.textPeek {
+    position: relative;
+    top: -40px;
+    z-index: 3;
+}
 
-/*#tapsTitle{
-    margin: 0 auto auto auto;
-}*/
+@supports(object-fit: cover) {
+    .homeCard img {
+        height: 100%;
+        width:100%;
+        opacity: 0.5;
+        object-fit: cover;
+        object-position: center center;
+        position: absolute;
+        top: 0;
+    }
+}
+/*.incrementIdBottom{*/
+/*margin-top: 50px;*/
+/*max-height: 398px;*/
+/*padding:0px 0 0px 0;*/
+/*background-color: white;*/
+/*overflow: hidden*/
+/*}*/
+
+/* 7. title  */
+
+.jumbotron{
+    background: url("../static/iottaHops.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 #tapsTitle a:link{
     color: inherit;
@@ -514,8 +577,8 @@ Sliding Cards*/
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px transparent;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.7s;
     -webkit-transition-property: transform;
     transition-property: transform;
     -webkit-transition-timing-function: ease-out;
@@ -529,7 +592,7 @@ Sliding Cards*/
 }
 
 
-/* #4 USER PROFILE*/
+/* 8. user profile */
 
 #logout-button{
     margin-top: 2%;
@@ -559,7 +622,7 @@ Sliding Cards*/
     border-left: solid .5rem black;
 }
 
-/* #5 LOG IN PAGE*/
+/* 9. log in page */
 
 .login-form{
     /*margin-left: 21%;*/
@@ -585,7 +648,8 @@ Sliding Cards*/
     /*justify-content: center;*/
 /*}*/
 
-/* # 6 REGISTER PAGE*/
+/* 10. register page */
+
 #register-profile{
     /*margin-left: 1%;*/
     transition: 1s;
@@ -594,14 +658,15 @@ Sliding Cards*/
 #register-profile h1{
     margin-left: 12%;
 }
-/* #7 jQuery Classes*/
+
+/* 11. jQuery classes */
 
 .open-nav{
     transition: .7s;
     width: 25%;
 }
 
-/* #8 ERROR PAGES*/
+/* 12. error pages */
 
 .error-shift{
     margin-left: 5%;
@@ -629,38 +694,6 @@ Sliding Cards*/
     position: absolute;
 
 }
-.homeCard{
-    min-height: 350px;
-    max-height: 350px;
-    overflow-y: visible;
-    margin-top: 4.4rem;
-    margin-bottom: 4.4rem;
-
-}
-
-.cards-background{
-    height: auto;
-    width: 100%;
-}
-
-@supports(object-fit: cover) {
-    .homeCard img {
-        height: 100%;
-        width:100%;
-        opacity: 0.5;
-        object-fit: cover;
-        object-position: center center;
-        position: absolute;
-        top: 0;
-    }
-}
-/*.incrementIdBottom{*/
-    /*margin-top: 50px;*/
-    /*max-height: 398px;*/
-    /*padding:0px 0 0px 0;*/
-    /*background-color: white;*/
-    /*overflow: hidden*/
-/*}*/
 
 .incrementIdClick :hover{
     background-color: #ffc744
@@ -672,9 +705,12 @@ Sliding Cards*/
 
 
 }
+
 .h4Hover :hover{
     background-color: #ffc744;
 }
+
+/* 13. brewing process */
 
 .bp1{
     position: absolute;
@@ -798,31 +834,25 @@ Sliding Cards*/
     z-index: -15;
 }
 
-.textPeek {
-    position: relative;
-    top: -40px;
-    z-index: 3;
-}
-
-.paragraph{
-    font-size: 1.5rem;
-}
-
 .imgs{
     height: 100%;
     width: 100%;
     position: absolute;
     top:0;
 }
-.aboutMe{
-    min-height: 618px;
-    max-height: 700px;
-}
+
+
 body::-webkit-scrollbar-thumb{
     background-color: #ffc744;
 }
 
-/* Overline From Center */
+/* 14. about me */
+
+.aboutMe{
+    min-height: 618px;
+    max-height: 700px;
+}
+
 .hvr-overline-from-center {
     display: inline-block;
     vertical-align: middle;
@@ -851,4 +881,17 @@ body::-webkit-scrollbar-thumb{
 .hvr-overline-from-center:hover:before, .hvr-overline-from-center:focus:before, .hvr-overline-from-center:active:before {
     left: 0;
     right: 0;
+}
+
+/* 15. back to top */
+
+#toTop{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 10;
+    padding: 1.5rem 2rem;
+    color: #ffffff;
+    background-color: black;
+
 }

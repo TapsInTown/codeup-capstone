@@ -174,4 +174,13 @@ doIt();
 
 }
 
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 600) {
+        $('#topButton').fadeIn();
+    } else {
+        $('#topButton').fadeOut();
+    }
+});
+
+
 
