@@ -2,42 +2,42 @@
  * Created by joshua on 1/18/17.
  */
 "use strict";
-function slideUp() {
-    // var idIndexs = [];
-    // var clickIndexs = [];
-    // var bottomIndexs = [];
-    //
-    // var length = idIndexs.length;
-    //$('.classToInc').each(function(index) {
-    //*                             */\\
-    var $buttonWeClick = $('.clickClass');
-    var $bottomDiv = $('.scrollBottom');
-    var $topDiv = $('.topDiv');
-    console.log("top length " + $topDiv.length);
-    console.log("click length " + $buttonWeClick.length);
-    console.log("bottom length" + $bottomDiv.length);
-
-
-    $buttonWeClick.each(function () {
-        var toggle = 0;
-        $buttonWeClick.click(function () {
-        console.log(this);
-            console.log("click" + $buttonWeClick);
-            if (toggle % 2 == 0) {
-                $topDiv.animate({
-                    scrollTop: $bottomDiv.offset().top
-                }, 'slow');
-                console.log('run');
-            } else {
-                $topDiv.animate({
-                    scrollTop: $bottomDiv.offset().top - 1000
-                }, 'slow');
-            }
-            toggle++;
-        })
-    })
-}
-slideUp();
+// function slideUp() {
+//     // var idIndexs = [];
+//     // var clickIndexs = [];
+//     // var bottomIndexs = [];
+//     //
+//     // var length = idIndexs.length;
+//     //$('.classToInc').each(function(index) {
+//     //*                             */\\
+//     var $buttonWeClick = $('.clickClass');
+//     var $bottomDiv = $('.scrollBottom');
+//     var $topDiv = $('.topDiv');
+//     console.log("top length " + $topDiv.length);
+//     console.log("click length " + $buttonWeClick.length);
+//     console.log("bottom length" + $bottomDiv.length);
+//
+//
+//     $buttonWeClick.each(function () {
+//         var toggle = 0;
+//         $buttonWeClick.click(function () {
+//         console.log(this);
+//             console.log("click" + $buttonWeClick);
+//             if (toggle % 2 == 0) {
+//                 $topDiv.animate({
+//                     scrollTop: $bottomDiv.offset().top
+//                 }, 'slow');
+//                 console.log('run');
+//             } else {
+//                 $topDiv.animate({
+//                     scrollTop: $bottomDiv.offset().top - 1000
+//                 }, 'slow');
+//             }
+//             toggle++;
+//         })
+//     })
+// }
+// slideUp();
 
 /* logout link on the nav bar */
 var logoutSubmit = function() {
@@ -167,12 +167,8 @@ console.log(results);
         //     // alert("Geocoding was not successful - STATUS: " + status);
         // }
     });
-doIt();
 
-
-
-
-}
+}doIt();
 
 $(window).scroll(function() {
     if ($(this).scrollTop() > 600) {
