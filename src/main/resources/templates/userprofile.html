@@ -15,12 +15,13 @@
     <!--</div>-->
 
     <h3><a th:href="@{'/'}">Go to Home page</a></h3>
+    <h3><a th:href="@{/user/{id}/edit (id=${user.id})}">Edit your information</a></h3>
     <div class="col-md-12">
         <h3>Here is a list of your saved events</h3>
 
     <div class="col-md-12 col-md-8 col-md-offset-2 wow fadeInUp">
         <div style="padding:2% 5%; margin-bottom: 5%" class="cards" th:each="saveEvent : ${savedEvents}">
-           <!--this is mapping incorrectly--> <h2><a th:href="@{/events/{id} (id=${saveEvent.id})}" th:text="${saveEvent.event.title}"></a></h2>
+            <h2><a th:href="@{/events/{id} (id=${saveEvent.id})}" th:text="${saveEvent.event.title}"></a></h2>
             <h3 th:text="${saveEvent.event.eventDate}"></h3>
             <p th:text="${saveEvent.event.description}"></p>
             <form th:action="@{'/user/delete/' + ${saveEvent.id}}" method="POST">
