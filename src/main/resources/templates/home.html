@@ -6,6 +6,9 @@
 </head>
 <body>
     <div th:replace="partials/navbar :: theNav"></div>
+    <div class="container-fluid">
+        <div th:replace="partials/title :: title"></div>
+    </div>
     <div class="jumbotron">
         <div class="container">
             <div class="row text-center">
@@ -19,7 +22,6 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div th:replace="partials/title :: title"></div>
         <div class="row col-lg-12 col-sm-12">
             <img id="tapsImg" class="taps center-block" th:src="@{/frontPageTaps/taps-combined.png}"/>
         </div>
@@ -28,6 +30,7 @@
             <div th:replace="partials/brewing-process :: brewing"></div>
         </div>
         <div th:replace="partials/pagination :: pagination"></div>
+        <div th:replace="partials/backToTop :: backToTop"></div>
     </div>
 
     <script
