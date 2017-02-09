@@ -70,6 +70,7 @@ public class LocationController extends BaseController {
                 return e1.getEventDate().compareTo(e2.getEventDate());
             }
         });
+        Collections.reverse(events);
         m.addAttribute("location", locationDao.findOne(id));
         m.addAttribute("events", events );
         m.addAttribute("isAdmin", isAdmin);
