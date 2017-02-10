@@ -41,7 +41,7 @@
     <div class="col-md-4 col-sm-12 cards wow bounceInDown" id="specific-events">
         <h4>EVENTS FOR THIS LOCATION</h4>
         <div th:each="event : ${events}">
-            <h3><a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title+ '' + event.typedDate}"></a></h3>
+            <h3><a th:href="@{/events/{id} (id=${event.id})}" th:text="${event.title + ' ' + event.typedDate}"></a></h3>
         </div>
 
     </div>
