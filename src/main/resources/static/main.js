@@ -126,6 +126,24 @@ $(document).ready(function(){
 //     sticky_relocate();
 // });
 
+function backToTop() {
+    if($(window).scrollTop() == 0){
+        $('#topButton').hide();
+        backToTopMiddleOfPage();
+    }
+}
+function backToTopMiddleOfPage() {
+    $(window).scroll(function() {
+        console.log("it works");
+        if ($(this).scrollTop() >= 600) {
+            $('#topButton').fadeIn("slow");
+        } else {
+            $('#topButton').fadeOut();
+        }
+    });
+}
+backToTop();
+
 /*Map Canvas*/
     function doIt(){
 
@@ -170,13 +188,6 @@ console.log(results);
 
 }doIt();
 
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 600) {
-        $('#topButton').fadeIn();
-    } else {
-        $('#topButton').fadeOut();
-    }
-});
 
 
 
