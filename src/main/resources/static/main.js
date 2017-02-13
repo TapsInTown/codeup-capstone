@@ -134,7 +134,7 @@ function backToTop() {
 }
 function backToTopMiddleOfPage() {
     $(window).scroll(function() {
-        console.log("it works");
+        /*console.log("it works");*/
         if ($(this).scrollTop() >= 600) {
             $('#topButton').fadeIn("slow");
         } else {
