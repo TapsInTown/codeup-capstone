@@ -895,3 +895,15 @@ body::-webkit-scrollbar-thumb{
     background-color: black;
 
 }
+
+
+/* 16. pagination*/
+
+.pagination a{
+    text-decoration: none;
+
+}
+
+.pagination a:visited{
+    text-decoration: none;
+}
