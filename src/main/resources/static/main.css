@@ -637,7 +637,7 @@ input {
 }
 
 .login-form button{
-    width:20%;
+    /*width:20%;*/
     height: auto;
     overflow: hidden;
 }
