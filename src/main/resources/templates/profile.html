@@ -8,7 +8,8 @@
 <span th:replace="partials/navbar :: theNav"></span>
 <div class="container-fluid">
     <div th:replace="partials/title :: title"></div>
-    <div class="col-md-4 bodies col-sm-12 cards wow bounceInDown">
+    <div class="col-lg-12">
+    <div class="col-md-6 bodies col-sm-12 cards wow bounceInDown">
         <h2 th:text="${location.name}"></h2>
         <div>
             <h3>
@@ -38,7 +39,7 @@
 
     </div>
 
-    <div class="col-md-4 col-sm-12 cards wow bounceInDown" id="specific-events">
+    <div class="col-md-5 col-sm-12 cards wow bounceInDown" id="specific-events">
         <h4>EVENTS FOR THIS LOCATION</h4>
         <div th:each="event : ${events}">
             <a th:href="@{/events/{id} (id=${event.id})}"><h3 th:text="${event.title}"></h3>
@@ -46,6 +47,7 @@
         </div>
         </div>
 
+    </div>
     </div>
 </body>
 <script th:src="@{https://code.jquery.com/jquery-3.1.1.js}"
